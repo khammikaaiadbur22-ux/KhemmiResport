@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกี่ยวกับผู้จัดทำ (Profile) - เขมมิกา สุทธิชาติ</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Mali & Itim -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --font-head: 'Mali', cursive, sans-serif;
+            --font-body: 'Itim', cursive, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: #334155;
+            background-color: #f8fafc;
+            line-height: 1.65;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-mali {
+            font-family: var(--font-head);
+            letter-spacing: -0.01em;
+        }
+
+        /* Glassmorphism System */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1.5px solid rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 32px rgba(236, 72, 153, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(16px) saturate(160%);
+            -webkit-backdrop-filter: blur(16px) saturate(160%);
+            border: 1.5px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.06);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, background-color 0.35s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 42px rgba(236, 72, 153, 0.12);
+            background: rgba(255, 255, 255, 0.92);
+        }
+
+        /* Roadmap Timeline styling */
+        .timeline-line {
+            background: linear-gradient(180deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%);
+        }
+
+        /* Animated Blobs */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(75px);
+            opacity: 0.5;
+            z-index: -1;
+            animation: moveBlob 16s infinite alternate ease-in-out;
+            pointer-events: none;
+        }
+        .blob-1 { top: -8%; left: -8%; width: clamp(280px, 40vw, 500px); height: clamp(280px, 40vw, 500px); background: #fbcfe8; animation-delay: 0s; }
+        .blob-2 { top: 25%; right: -6%; width: clamp(300px, 45vw, 550px); height: clamp(300px, 45vw, 550px); background: #e0e7ff; animation-delay: -5s; }
+        .blob-3 { bottom: -10%; left: 15%; width: clamp(260px, 35vw, 480px); height: clamp(260px, 35vw, 480px); background: #fed7aa; animation-delay: -10s; }
+
+        @keyframes moveBlob {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(35px, 50px) scale(1.08); }
+            100% { transform: translate(-25px, -35px) scale(0.92); }
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fdf2f8; }
+        ::-webkit-scrollbar-thumb { background: #fbcfe8; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ec4899; }
+    </style>
+</head>
+<body class="relative min-h-screen overflow-x-hidden selection:bg-pink-200 selection:text-pink-900">
+
+    <!-- Background Animated Blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none w-full h-full">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Unified Sticky Glass Navigation Header -->
+    <header class="sticky top-3 sm:top-5 z-50 max-w-6xl mx-auto px-3 sm:px-6">
+        <nav class="glass-nav rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between shadow-xl transition-all">
+            <!-- Brand Logo & Title -->
+            <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none">
+                <img 
+                    src="_Banner/701.jpeg" 
+                    onerror="this.src='_Banner/701.png'; this.onerror=null;" 
+                    alt="โลโก้หน้าเว็บ" 
+                    class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover shadow-md border-2 border-white/90 group-hover:scale-105 transition-transform shrink-0"
+                >
+                <div class="flex flex-col">
+                    <span class="font-mali font-bold text-slate-800 text-sm sm:text-base leading-tight group-hover:text-pink-600 transition-colors">เกี่ยวกับผู้จัดทำ</span>
+                    <span class="text-[10px] sm:text-xs text-slate-500 font-medium hidden xs:inline">นางสาวเขมมิกา สุทธิชาติ</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="flex items-center gap-1 sm:gap-1.5 flex-wrap">
+                <a href="index.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-blue-600 active:scale-95">
+                    <i data-lucide="home" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500 shrink-0"></i>
+                    <span class="hidden lg:inline">หน้าหลัก</span>
+                </a>
+                <a href="report.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-pink-600 active:scale-95">
+                    <i data-lucide="book-open" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-500 shrink-0"></i>
+                    <span class="hidden lg:inline">รายงานการสอน</span>
+                </a>
+                <a href="log.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-amber-600 active:scale-95">
+                    <i data-lucide="clipboard-list" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500 shrink-0"></i>
+                    <span class="hidden lg:inline">บันทึกผลการสอน</span>
+                </a>
+                <a href="school.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-blue-600 active:scale-95">
+                    <i data-lucide="building-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500 shrink-0"></i>
+                    <span class="hidden lg:inline">ข้อมูลวิทยาลัย</span>
+                </a>
+                <a href="research.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-emerald-600 active:scale-95">
+                    <i data-lucide="flask-conical" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500 shrink-0"></i>
+                    <span class="hidden lg:inline">Research</span>
+                </a>
+                <a href="profile.html" class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-mali font-bold text-xs sm:text-sm shadow-md flex items-center gap-1.5 transition-all">
+                    <i data-lucide="user" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                    <span>ผู้จัดทำ</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+        <!-- Cover Banner Section (_Banner/2.png) -->
+        <section class="w-full mb-12 sm:mb-16 relative">
+            <div class="w-full rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl border-2 sm:border-4 border-white/90 bg-white/40 relative">
+                <img 
+                    src="_Banner/2.png" 
+                    alt="หน้าปกผู้จัดทำ - Profile Cover Banner" 
+                    class="w-full h-auto object-cover max-h-[500px]"
+                >
+            </div>
+            
+            <!-- Floating Profile Badge -->
+            <div class="flex justify-center -mt-8 sm:-mt-12 relative z-20 px-3">
+                <div class="inline-flex items-center gap-3 sm:gap-4 bg-white/90 backdrop-blur-xl px-6 sm:px-9 py-3 sm:py-4 rounded-full border-2 border-white shadow-xl max-w-full">
+                    <img 
+                        src="https://i.postimg.cc/RhspXpw8/r-p-por-fil.jpg" 
+                        alt="นางสาวเขมมิกา สุทธิชาติ" 
+                        class="w-14 h-14 sm:w-18 sm:h-18 rounded-full object-cover shadow-sm border-2 border-pink-300 shrink-0"
+                    >
+                    <div class="text-left min-w-0">
+                        <p class="text-[11px] sm:text-xs text-pink-600 font-mali font-bold">ข้อมูลผู้จัดทำรายงานปฏิบัติการสอน</p>
+                        <p class="text-lg sm:text-2xl font-bold font-mali text-slate-800 truncate">นางสาวเขมมิกา สุทธิชาติ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: ข้อมูลส่วนตัว (Personal Profile with Km01.jpg) -->
+        <section class="mb-14 sm:mb-18">
+            <div class="mb-8 text-center">
+                <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 inline-block relative">
+                    ข้อมูลส่วนตัว (Personal Info)
+                    <div class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full"></div>
+                </h2>
+            </div>
+
+            <div class="glass-card rounded-[2.5rem] p-6 sm:p-10 border-2 border-pink-100/90 shadow-xl">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    
+                    <!-- Single Photo (Personal/Km01.jpg) -->
+                    <div class="relative group overflow-hidden rounded-3xl border-4 border-white shadow-xl w-48 h-64 sm:w-56 sm:h-72 shrink-0">
+                        <img 
+                            src="Personal/Km01.jpg" 
+                            alt="นางสาวเขมมิกา สุทธิชาติ - ภาพ Km01" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                        <span class="absolute bottom-3 left-4 text-xs font-mali text-white font-semibold drop-shadow">เขมมิกา สุทธิชาติ</span>
+                    </div>
+
+                    <!-- Personal Details -->
+                    <div class="flex-1 flex flex-col justify-center space-y-4 text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-pink-100/80 text-pink-700 text-xs font-mali font-bold w-fit border border-pink-200">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            <span>ประวัติและข้อมูลทั่วไป</span>
+                        </div>
+
+                        <h3 class="text-2xl sm:text-3xl font-bold font-mali text-slate-800">
+                            นางสาวเขมมิกา สุทธิชาติ
+                        </h3>
+
+                        <div class="space-y-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+                            <div class="flex items-start gap-3 bg-white/70 p-3 rounded-2xl border border-slate-200/80">
+                                <div class="w-8 h-8 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i data-lucide="id-card" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <span class="font-mali font-bold text-slate-800 block text-xs sm:text-sm">รหัสนักศึกษา</span>
+                                    <span class="text-slate-700 font-semibold">6602041620041</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 bg-white/70 p-3 rounded-2xl border border-slate-200/80">
+                                <div class="w-8 h-8 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <span class="font-mali font-bold text-slate-800 block text-xs sm:text-sm">การศึกษาปัจจุบัน</span>
+                                    <span class="text-slate-700">นักศึกษาชั้นปีที่ 4 ภาควิชาคอมพิวเตอร์ศึกษา คณะครุศาสตร์อุตสาหกรรม มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (มจพ.)</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 bg-white/70 p-3 rounded-2xl border border-slate-200/80">
+                                <div class="w-8 h-8 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i data-lucide="building-2" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <span class="font-mali font-bold text-slate-800 block text-xs sm:text-sm">สถานที่ฝึกประสบการณ์วิชาชีพครู</span>
+                                    <span class="text-slate-700">แผนกวิชาธุรกิจดิจิทัลและเทคโนโลยีสารสนเทศ วิทยาลัยอาชีวศึกษาสุราษฎร์ธานี (ปฏิบัติการสอน 540 ชั่วโมง)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: ประวัติการศึกษา (Education Roadmap Timeline) -->
+        <section class="mb-14 sm:mb-18">
+            <div class="mb-8 text-center">
+                <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 inline-block relative">
+                    ประวัติการศึกษา (Education Roadmap)
+                    <div class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full"></div>
+                </h2>
+                <p class="text-slate-500 text-xs sm:text-sm mt-2 font-mali">เส้นทางการศึกษาตั้งแต่งานประถมศึกษาจนถึงระดับปริญญาตรี</p>
+            </div>
+
+            <!-- Roadmap Timeline Container -->
+            <div class="relative max-w-4xl mx-auto px-2">
+                <!-- Vertical Center Line (Desktop) -->
+                <div class="hidden md:block absolute left-1/2 top-4 bottom-4 w-1 timeline-line -translate-x-1/2 rounded-full z-0 opacity-70"></div>
+                
+                <div class="space-y-8 md:space-y-12 relative z-10">
+
+                    <!-- Milestone 1: Primary Education -->
+                    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 group">
+                        <div class="w-full md:w-1/2 md:text-right order-2 md:order-1">
+                            <div class="glass-card rounded-3xl p-5 border-2 border-pink-100/90 shadow-md hover:border-pink-300 transition-all">
+                                <div class="flex items-center gap-4 md:flex-row-reverse text-left md:text-right">
+                                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white p-2 shadow-sm border border-pink-100 shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                        <img src="_Banner/LogoSH01.jpg" alt="โลโก้โรงเรียนบ้านพรหมรังสิต" class="w-full h-full object-contain rounded-lg">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-mali font-bold inline-block mb-2">
+                                            ระดับประถมศึกษา
+                                        </span>
+                                        <h3 class="font-mali font-bold text-base sm:text-lg text-slate-800 leading-snug">โรงเรียนบ้านพรหมรังสิต</h3>
+                                        <p class="text-slate-500 text-xs sm:text-sm mt-1">การศึกษาขั้นพื้นฐานระดับประถมศึกษา</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-400 text-white flex items-center justify-center font-mali font-bold text-base shadow-lg shrink-0 order-1 md:order-2 border-4 border-white group-hover:scale-110 transition-transform">
+                            1
+                        </div>
+                        <div class="hidden md:block w-1/2 order-3"></div>
+                    </div>
+
+                    <!-- Milestone 2: Junior High School -->
+                    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 group">
+                        <div class="hidden md:block w-1/2 order-1"></div>
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-500 to-indigo-400 text-white flex items-center justify-center font-mali font-bold text-base shadow-lg shrink-0 order-1 md:order-2 border-4 border-white group-hover:scale-110 transition-transform">
+                            2
+                        </div>
+                        <div class="w-full md:w-1/2 order-2 md:order-3">
+                            <div class="glass-card rounded-3xl p-5 border-2 border-purple-100/90 shadow-md hover:border-purple-300 transition-all">
+                                <div class="flex items-center gap-4 text-left">
+                                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white p-2 shadow-sm border border-purple-100 shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                        <img src="_Banner/LogoSH02.jpeg" alt="โลโก้โรงเรียนมัธยมพัชรกิจกิติยาภา ๓ สุราษฎร์ธานี" class="w-full h-full object-contain rounded-lg">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-mali font-bold inline-block mb-2">
+                                            ระดับมัธยมศึกษาตอนต้น
+                                        </span>
+                                        <h3 class="font-mali font-bold text-base sm:text-lg text-slate-800 leading-snug">โรงเรียนมัธยมพัชรกิจกิติยาภา ๓ สุราษฎร์ธานี</h3>
+                                        <p class="text-slate-500 text-xs sm:text-sm mt-1">การศึกษาระดับมัธยมศึกษาตอนต้น (ม.1 - ม.3)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3: Vocational Certificate (ปวช.) -->
+                    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 group">
+                        <div class="w-full md:w-1/2 md:text-right order-2 md:order-1">
+                            <div class="glass-card rounded-3xl p-5 border-2 border-blue-100/90 shadow-md hover:border-blue-300 transition-all">
+                                <div class="flex items-center gap-4 md:flex-row-reverse text-left md:text-right">
+                                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white p-2 shadow-sm border border-blue-100 shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                        <img src="_Banner/LogoSH03.png" alt="โลโก้วิทยาลัยอาชีวศึกษาสุราษฎร์ธานี" class="w-full h-full object-contain rounded-lg">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-mali font-bold inline-block mb-2">
+                                            ระดับประกาศนียบัตรวิชาชีพ (ปวช.)
+                                        </span>
+                                        <h3 class="font-mali font-bold text-base sm:text-lg text-slate-800 leading-snug">วิทยาลัยอาชีวศึกษาสุราษฎร์ธานี</h3>
+                                        <p class="text-slate-500 text-xs sm:text-sm mt-1">การศึกษาวิชาชีพอาชีวศึกษา รางวัลพระราชทาน</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-500 to-cyan-400 text-white flex items-center justify-center font-mali font-bold text-base shadow-lg shrink-0 order-1 md:order-2 border-4 border-white group-hover:scale-110 transition-transform">
+                            3
+                        </div>
+                        <div class="hidden md:block w-1/2 order-3"></div>
+                    </div>
+
+                    <!-- Milestone 4: Bachelor Degree (มจพ.) -->
+                    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 group">
+                        <div class="hidden md:block w-1/2 order-1"></div>
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 text-white flex items-center justify-center font-mali font-bold text-base shadow-lg shrink-0 order-1 md:order-2 border-4 border-white group-hover:scale-110 transition-transform">
+                            4
+                        </div>
+                        <div class="w-full md:w-1/2 order-2 md:order-3">
+                            <div class="glass-card rounded-3xl p-5 border-2 border-emerald-200/90 shadow-md hover:border-emerald-400 transition-all">
+                                <div class="flex items-center gap-4 text-left">
+                                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white p-2 shadow-sm border border-emerald-100 shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform">
+                                        <img src="_Banner/LogoSH04.png" alt="โลโก้มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ" class="w-full h-full object-contain rounded-lg">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-mali font-bold inline-block mb-2">
+                                            ระดับปริญญาตรี (ปัจจุบัน - ชั้นปีที่ 4)
+                                        </span>
+                                        <h3 class="font-mali font-bold text-base sm:text-lg text-slate-800 leading-snug">มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (มจพ.)</h3>
+                                        <p class="text-slate-600 text-xs sm:text-sm font-semibold mt-1">ภาควิชาคอมพิวเตอร์ศึกษา คณะครุศาสตร์อุตสาหกรรม</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: ความเชี่ยวชาญ & ความถนัด (Specialization & Skills with Km02.jpg) -->
+        <section class="mb-14 sm:mb-18">
+            <div class="mb-8 text-center">
+                <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 inline-block relative">
+                    ความเชี่ยวชาญและความถนัด
+                    <div class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full"></div>
+                </h2>
+                <p class="text-slate-500 text-xs sm:text-sm mt-2 font-mali">ทักษะความเชี่ยวชาญด้านการศึกษาวิชาชีพครูและการผลิตสื่อดิจิทัล</p>
+            </div>
+
+            <!-- Featured Showcase Card with Personal/Km02.jpg -->
+            <div class="glass-card rounded-[2.5rem] p-6 sm:p-8 border-2 border-emerald-100/90 shadow-xl mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                    <div class="md:col-span-4 flex justify-center">
+                        <div class="relative group overflow-hidden rounded-3xl border-4 border-white shadow-lg w-full max-w-[240px] aspect-[3/4]">
+                            <img 
+                                src="Personal/Km02.jpg" 
+                                alt="เขมมิกา สุทธิชาติ - ความเชี่ยวชาญและความถนัด Km02" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 right-3 text-center">
+                                <span class="px-3 py-1 rounded-full bg-emerald-600/90 text-white font-mali font-semibold text-xs shadow-sm">
+                                    🌟 ทักษะ & ความถนัด
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-8 space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-mali font-bold border border-emerald-200">
+                            <i data-lucide="award" class="w-4 h-4"></i>
+                            <span>ทักษะหลักทางการศึกษาและดีไซน์</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold font-mali text-slate-800">
+                            การสร้างสรรค์สื่อดิจิทัลและเทคโนโลยีการเรียนรู้
+                        </h3>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            มุ่งเน้นการประยุกต์ใช้เทคโนโลยีคอมพิวเตอร์สมัยใหม่ การสร้างสรรค์สื่อการเรียนรู้ที่มีประสิทธิภาพ และการออกแบบงานกราฟิกอย่างมืออาชีพ เพื่อพัฒนาผู้เรียนและขับเคลื่อนนวัตกรรมการศึกษา
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 Skill Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Skill 1 -->
+                <div class="glass-card rounded-[2rem] p-6 text-center flex flex-col justify-between items-center border-2 border-blue-100 shadow-lg">
+                    <div class="w-16 h-16 mb-4 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center border border-blue-200 shadow-sm">
+                        <i data-lucide="laptop" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-mali font-bold text-lg text-slate-800 mb-2">เทคโนโลยีเพื่อการศึกษา</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        มีความถนัดในการใช้เทคโนโลยีเพื่อการศึกษา การประยุกต์ใช้เครื่องมือดิจิทัลและซอฟต์แวร์ในการจัดการเรียนรู้ยุคใหม่
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-slate-200/60 w-full text-xs text-blue-600 font-mali font-semibold">
+                        💻 EdTech Specialization
+                    </div>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="glass-card rounded-[2rem] p-6 text-center flex flex-col justify-between items-center border-2 border-pink-100 shadow-lg">
+                    <div class="w-16 h-16 mb-4 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center border border-pink-200 shadow-sm">
+                        <i data-lucide="video" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-mali font-bold text-lg text-slate-800 mb-2">การผลิตสื่อการเรียนรู้</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        ออกแบบและพัฒนานวัตกรรมสื่อการเรียนรู้ สื่อมัลติมีเดีย สื่อการสอนปฏิสัมพันธ์ และสื่อโมชั่นกราฟิกเพื่อเพิ่มประสิทธิภาพผู้เรียน
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-slate-200/60 w-full text-xs text-pink-600 font-mali font-semibold">
+                        🎬 Learning Media Production
+                    </div>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="glass-card rounded-[2rem] p-6 text-center flex flex-col justify-between items-center border-2 border-purple-100 shadow-lg">
+                    <div class="w-16 h-16 mb-4 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center border border-purple-200 shadow-sm">
+                        <i data-lucide="palette" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-mali font-bold text-lg text-slate-800 mb-2">สร้างสรรค์งานกราฟิกและดีไซน์</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        การออกแบบกราฟิกอัตลักษณ์ การเลือกใช้โทนสีและองค์ประกอบศิลป์ (Visual Graphic & UI Design) เพื่อการสื่อสารอย่างมีสไตล์
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-slate-200/60 w-full text-xs text-purple-600 font-mali font-semibold">
+                        🎨 Graphic & UI Design
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-16 mb-8 mx-auto max-w-4xl">
+            <div class="glass-card rounded-[2.5rem] p-6 sm:p-10 text-center relative overflow-hidden flex flex-col items-center">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-white text-slate-600 text-xs sm:text-sm font-mali mb-3 shadow-sm">
+                    <i data-lucide="heart" class="w-4 h-4 text-pink-500"></i>
+                    <span>จัดทำโดย นางสาวเขมมิกา สุทธิชาติ</span>
+                </div>
+
+                <h2 class="font-mali font-bold text-xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-blue-600 mb-2">
+                    นางสาวเขมมิกา สุทธิชาติ
+                </h2>
+                <p class="text-slate-500 font-mali font-medium mb-5 bg-white/70 px-4 py-1 rounded-full text-xs sm:text-sm inline-block border border-slate-200/60 shadow-sm">
+                    รหัสนักศึกษา 6602041620041
+                </p>
+
+                <div class="w-full max-w-lg h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent mb-5"></div>
+
+                <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-mali">
+                    ภาควิชาคอมพิวเตอร์ศึกษา คณะครุศาสตร์อุตสาหกรรม มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (มจพ.)
+                </p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

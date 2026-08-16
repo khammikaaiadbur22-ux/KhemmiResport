@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บันทึกผลการสอน - เขมมิกา สุทธิชาติ</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Mali & Itim -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --font-head: 'Mali', cursive, sans-serif;
+            --font-body: 'Itim', cursive, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: #334155;
+            background-color: #fafafa;
+            line-height: 1.65;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-mali {
+            font-family: var(--font-head);
+            letter-spacing: -0.01em;
+        }
+
+        /* Glassmorphism System */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1.5px solid rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 32px rgba(245, 158, 11, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px) saturate(160%);
+            -webkit-backdrop-filter: blur(16px) saturate(160%);
+            border: 1.5px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.06);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, background-color 0.35s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.12);
+            background: rgba(255, 255, 255, 0.92);
+        }
+
+        /* Animated Blobs */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(75px);
+            opacity: 0.55;
+            z-index: -1;
+            animation: moveBlob 16s infinite alternate ease-in-out;
+            pointer-events: none;
+        }
+        .blob-1 { top: -8%; left: -8%; width: clamp(280px, 40vw, 500px); height: clamp(280px, 40vw, 500px); background: #fef3c7; animation-delay: 0s; }
+        .blob-2 { top: 25%; right: -6%; width: clamp(300px, 45vw, 550px); height: clamp(300px, 45vw, 550px); background: #fed7aa; animation-delay: -5s; }
+        .blob-3 { bottom: -10%; left: 15%; width: clamp(260px, 35vw, 480px); height: clamp(260px, 35vw, 480px); background: #fbcfe8; animation-delay: -10s; }
+
+        @keyframes moveBlob {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(35px, 50px) scale(1.08); }
+            100% { transform: translate(-25px, -35px) scale(0.92); }
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fffbeb; }
+        ::-webkit-scrollbar-thumb { background: #fde68a; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
+    </style>
+</head>
+<body class="relative min-h-screen overflow-x-hidden selection:bg-amber-200 selection:text-amber-900">
+
+    <!-- Background Animated Blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none w-full h-full">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Unified Sticky Glass Navigation Header -->
+    <header class="sticky top-3 sm:top-5 z-50 max-w-6xl mx-auto px-3 sm:px-6">
+        <nav class="glass-nav rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between shadow-xl transition-all">
+            <!-- Brand Logo & Title -->
+            <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none">
+                <img 
+                    src="_Banner/701.jpeg" 
+                    onerror="this.src='_Banner/701.png'; this.onerror=null;" 
+                    alt="โลโก้หน้าเว็บ" 
+                    class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover shadow-md border-2 border-white/90 group-hover:scale-105 transition-transform shrink-0"
+                >
+                <div class="flex flex-col">
+                    <span class="font-mali font-bold text-slate-800 text-sm sm:text-base leading-tight group-hover:text-amber-600 transition-colors">บันทึกผลการสอน</span>
+                    <span class="text-[10px] sm:text-xs text-slate-500 font-medium hidden xs:inline">บันทึกภาระงานและผลการปฏิบัติงาน</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="flex items-center gap-1 sm:gap-1.5 flex-wrap">
+                <a href="index.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-blue-600 active:scale-95">
+                    <i data-lucide="home" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500 shrink-0"></i>
+                    <span class="hidden lg:inline">หน้าหลัก</span>
+                </a>
+                <a href="report.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-pink-600 active:scale-95">
+                    <i data-lucide="book-open" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-500 shrink-0"></i>
+                    <span class="hidden lg:inline">รายงานการสอน</span>
+                </a>
+                <a href="log.html" class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-mali font-bold text-xs sm:text-sm shadow-md flex items-center gap-1.5 transition-all">
+                    <i data-lucide="clipboard-list" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                    <span>บันทึกผลการสอน</span>
+                </a>
+                <a href="school.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-blue-600 active:scale-95">
+                    <i data-lucide="building-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500 shrink-0"></i>
+                    <span class="hidden lg:inline">ข้อมูลวิทยาลัย</span>
+                </a>
+                <a href="research.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-emerald-600 active:scale-95">
+                    <i data-lucide="flask-conical" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500 shrink-0"></i>
+                    <span class="hidden lg:inline">Research</span>
+                </a>
+                <a href="profile.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-pink-600 active:scale-95">
+                    <i data-lucide="user" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-500 shrink-0"></i>
+                    <span>ผู้จัดทำ</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+        <!-- Cover Banner Section (_Banner/6.png) -->
+        <section class="w-full mb-12 sm:mb-16 relative">
+            <div class="w-full rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl border-2 sm:border-4 border-white/90 bg-white/40 relative">
+                <img 
+                    src="_Banner/6.png" 
+                    alt="หน้าปกบันทึกผลการสอน - Teaching Log Cover Banner" 
+                    class="w-full h-auto object-cover max-h-[500px]"
+                >
+            </div>
+            
+            <!-- Floating Profile Badge -->
+            <div class="flex justify-center -mt-8 sm:-mt-12 relative z-20 px-3">
+                <div class="inline-flex items-center gap-3 sm:gap-4 bg-white/90 backdrop-blur-xl px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full border-2 border-white shadow-xl max-w-full">
+                    <img 
+                        src="https://i.postimg.cc/RhspXpw8/r-p-por-fil.jpg" 
+                        alt="นางสาวเขมมิกา สุทธิชาติ" 
+                        class="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover shadow-sm border-2 border-amber-300 shrink-0"
+                    >
+                    <div class="text-left min-w-0">
+                        <p class="text-[11px] sm:text-xs text-amber-600 font-mali font-bold">สมุดบันทึกผลการปฏิบัติการสอน</p>
+                        <p class="text-base sm:text-xl font-bold font-mali text-slate-800 truncate">นางสาวเขมมิกา สุทธิชาติ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Overview Cards Grid (3 Cards) -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mb-12">
+            <!-- Stat 1: จำนวนวันที่บันทึกงาน -->
+            <div class="glass-card rounded-3xl p-5 border-2 border-orange-100/90 shadow-md flex items-center gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center border border-orange-200 shrink-0 shadow-sm">
+                    <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <p class="text-slate-500 text-xs font-mali">จำนวนวันที่บันทึกงาน</p>
+                    <p class="font-mali font-bold text-slate-800 text-sm sm:text-base" id="stat-recorded-days">4 วันการทำงาน</p>
+                    <p class="text-[11px] text-orange-700 font-semibold">อัปเดตข้อมูลล่าสุด 🟢</p>
+                </div>
+            </div>
+
+            <!-- Stat 2: ช่วงเวลาที่บันทึกงาน -->
+            <div class="glass-card rounded-3xl p-5 border-2 border-amber-100/90 shadow-md flex items-center gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center border border-amber-200 shrink-0 shadow-sm">
+                    <i data-lucide="calendar" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <p class="text-slate-500 text-xs font-mali">ช่วงเวลาที่บันทึกงาน</p>
+                    <p class="font-mali font-bold text-slate-800 text-sm sm:text-base">05 พ.ค. - 08 พ.ค. 2026</p>
+                    <p class="text-[11px] text-amber-700 font-semibold">บันทึกภาระการปฏิบัติงาน</p>
+                </div>
+            </div>
+
+            <!-- Stat 3: Google Sheet Link Button (เปิดดูแผ่นงาน) -->
+            <a 
+                href="https://docs.google.com/spreadsheets/d/1GrId__304A1f3dF_13D_5DKDxaOPSAg042LBKJpQJs4/edit?usp=sharing" 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="glass-card rounded-3xl p-5 border-2 border-emerald-200/90 shadow-md flex items-center gap-4 hover:border-emerald-400 group active:scale-95 transition-all"
+            >
+                <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center border border-emerald-200 shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+                    <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
+                </div>
+                <div class="min-w-0">
+                    <p class="text-slate-500 text-xs font-mali flex items-center gap-1">
+                        <span>Google Sheets</span>
+                        <i data-lucide="external-link" class="w-3 h-3 text-emerald-600"></i>
+                    </p>
+                    <p class="font-mali font-bold text-emerald-800 text-sm sm:text-base truncate">เปิดดูแผ่นงานต้นฉบับ</p>
+                    <p class="text-[11px] text-emerald-600 font-semibold">ซิงก์ข้อมูลเรียลไทม์ 🟢</p>
+                </div>
+            </a>
+        </section>
+
+        <!-- SECTION: Interactive File Preview Frame (หน้าพรีวิวเอกสารตารางบันทึกการสอน) -->
+        <section class="mb-14 sm:mb-18">
+            <div class="mb-8 text-center">
+                <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 inline-block relative">
+                    ตารางบันทึกผลการสอน 1/2569
+                    <div class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400 rounded-full"></div>
+                </h2>
+            </div>
+
+            <div class="glass-card rounded-[2.5rem] p-4 sm:p-7 border-2 border-amber-100/90 shadow-xl overflow-hidden">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 px-2">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center border border-emerald-200 shadow-sm shrink-0">
+                            <i data-lucide="file-spreadsheet" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-mali font-bold text-slate-800 text-base sm:text-lg leading-tight">ตารางบันทึกผลการสอน 1/2569</h3>
+                            <p class="text-slate-500 text-xs font-mali">วันที่ 05 พ.ค. - 08 พ.ค. 2026</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-2 flex-wrap w-full sm:w-auto">
+                        <button 
+                            onclick="scrollToDetailSection()"
+                            class="px-4 py-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-mali font-bold text-xs shadow-md hover:from-amber-600 hover:to-orange-600 transition-all flex items-center gap-1.5 active:scale-95 cursor-pointer"
+                        >
+                            <i data-lucide="list" class="w-4 h-4"></i>
+                            <span>ดูรายละเอียดเพิ่มเติม</span>
+                            <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+                        </button>
+                        
+                        <a 
+                            href="https://docs.google.com/spreadsheets/d/1GrId__304A1f3dF_13D_5DKDxaOPSAg042LBKJpQJs4/edit?usp=sharing" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="px-4 py-2 rounded-full bg-white text-slate-700 hover:text-emerald-700 font-mali font-semibold text-xs border border-slate-200 shadow-sm flex items-center gap-1.5 transition-all hover:bg-slate-50 active:scale-95"
+                        >
+                            <i data-lucide="external-link" class="w-3.5 h-3.5 text-emerald-600"></i>
+                            <span>เปิดใน Google Sheets</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Embedded Google Sheet Viewer Iframe -->
+                <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-lg bg-white relative">
+                    <iframe 
+                        src="https://docs.google.com/spreadsheets/d/1GrId__304A1f3dF_13D_5DKDxaOPSAg042LBKJpQJs4/preview" 
+                        class="w-full h-[500px] sm:h-[600px] border-0 rounded-2xl"
+                        loading="lazy"
+                        title="พรีวิวเอกสารบันทึกผลการสอน"
+                    ></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Detailed Daily Breakdown (ข้อมูลเพิ่มเติม / รายละเอียดแบบเจาะลึก) -->
+        <section class="mb-14 sm:mb-18" id="detail-section">
+            <div class="mb-8 text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-mali font-bold border border-amber-200 shadow-sm mb-3">
+                    <i data-lucide="info" class="w-4 h-4 text-amber-600"></i>
+                    <span>รายละเอียดข้อมูลเพิ่มเติม</span>
+                </div>
+                <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 inline-block relative">
+                    รายละเอียดการปฏิบัติงานประจำวัน (เจาะลึก)
+                    <div class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400 rounded-full"></div>
+                </h2>
+                <p class="text-slate-500 text-xs sm:text-sm mt-2 font-mali">สรุปแยกรายวัน ระยะเวลาการทำงาน และภาระหน้าที่ที่ได้รับมอบหมาย</p>
+            </div>
+
+            <!-- Toggle Button to Open/Collapse Detail Section -->
+            <div class="text-center mb-8">
+                <button 
+                    id="toggle-detail-btn"
+                    onclick="toggleDetailView()"
+                    class="px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 text-white font-mali font-bold text-sm sm:text-base shadow-xl hover:shadow-2xl hover:scale-105 transition-all inline-flex items-center gap-2.5 active:scale-95 cursor-pointer"
+                >
+                    <i data-lucide="eye" id="toggle-icon" class="w-5 h-5"></i>
+                    <span id="toggle-text">กดดูรายละเอียดการปฏิบัติงานเพิ่มเติม</span>
+                    <i data-lucide="chevron-down" id="arrow-icon" class="w-4 h-4 transition-transform duration-300"></i>
+                </button>
+            </div>
+
+            <!-- Expandable Detailed Container -->
+            <div id="detailed-log-container" class="transition-all duration-500">
+                
+                <!-- Controls Header: Filter & Search -->
+                <div class="glass-card rounded-3xl p-4 sm:p-6 border-2 border-amber-100/90 shadow-lg mb-8">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-2 w-full md:w-auto">
+                            <span class="px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-800 font-mali font-bold text-xs sm:text-sm border border-amber-200 shadow-sm flex items-center gap-1.5">
+                                <i data-lucide="list-checks" class="w-4 h-4"></i>
+                                <span>ช่วงเวลาบันทึก (วันที่ 05 พ.ค. - 08 พ.ค. 2026)</span>
+                            </span>
+                        </div>
+
+                        <div class="relative w-full md:w-80">
+                            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                            <input 
+                                type="text" 
+                                id="search-input" 
+                                placeholder="ค้นหาภาระงาน หรือ วันที่..." 
+                                class="w-full pl-10 pr-4 py-2 rounded-2xl bg-white/80 border border-slate-200 text-xs sm:text-sm font-mali text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-400/50 shadow-inner"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teaching Log Cards List -->
+                <div class="space-y-4 sm:space-y-6">
+                    
+                    <!-- Day 1 -->
+                    <article class="glass-card rounded-3xl p-5 sm:p-6 border-2 border-amber-100/90 shadow-md hover:border-amber-300 transition-all group log-card" data-search="05/05/2026 5/5/26 พบฝ่ายบริหารและอาจารย์ในแผนกวิชา">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div class="flex items-start sm:items-center gap-4">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-400 text-white font-mali font-bold flex flex-col items-center justify-center shrink-0 shadow-md border-2 border-white group-hover:scale-105 transition-transform">
+                                    <span class="text-xs leading-none text-amber-100">พ.ค.</span>
+                                    <span class="text-lg leading-tight">05</span>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                        <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-mali font-bold border border-amber-200">
+                                            🗓️ วันอังคาร 5/5/26
+                                        </span>
+                                        <span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 text-[11px] font-mali font-semibold border border-blue-100">
+                                            🏛️ บริหาร/ปฐมนิเทศ
+                                        </span>
+                                    </div>
+                                    <h3 class="font-mali font-bold text-base sm:text-lg text-slate-800 leading-snug">
+                                        พบฝ่ายบริหารและอาจารย์ในแผนกวิชา
+                                    </h3>
+                                    <p class="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed">
+                                        รายงานตัวเข้าปฏิบัติการสอน ปรึกษาหารือภาระงานร่วมกับหัวหน้าแผนกและอาจารย์ผู้ดูแลในสถานศึกษา
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="self-end sm:self-center shrink-0">
+                                <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-mali font-bold inline-flex items-center gap-1 border border-emerald-200">
+                                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                    <span>ปฏิบัติงานเรียบร้อย</span>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Day 2 -->
+                    <article class="glass-card rounded-3xl p-5 sm:p-6 border-2 border-amber-100/90 shadow-md hover:border-amber-300 transition-all group log-card" data-search="06/05/2026 6/5/26 เตรียมความพร้อมอุปกรณ์คอมพิวเตอร์และลงโปรแกรม">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div class="flex items-start sm:items-center gap-4">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-400 text-white font-mali font-bold flex flex-col items-center justify-center shrink-0 shadow-md border-2 border-white group-hover:scale-105 transition-transform">
+                                    <span class="text-xs leading-none text-amber-100">พ.ค.</span>
+                                    <span class="text-lg leading-tight">06</span>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                        <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-mali font-bold border border-amber-200">
+                                            🗓️ วันพุธ 6/5/26
+                                        </span>
+                                        <span class="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 text-[11px] font-mali font-semibold border border-purple-100">
+                                            💻 เทคโนโลยี/โปรแกรม
+                                        </span>
+                                    </div>
+                                    <h3 class="font-mali font-bold text-base sm:text-lg text-slate-800 leading-snug">
+                                        เตรียมความพร้อมอุปกรณ์คอมพิวเตอร์และลงโปรแกรม
+                                    </h3>
+                                    <p class="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed">
+                                        ตรวจสอบระบบคอมพิวเตอร์ห้องปฏิบัติการ ติดตั้งซอฟต์แวร์สื่อมัลติมีเดียและเครื่องมือสำหรับการเรียนการสอน
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="self-end sm:self-center shrink-0">
+                                <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-mali font-bold inline-flex items-center gap-1 border border-emerald-200">
+                                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                    <span>ปฏิบัติงานเรียบร้อย</span>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Day 3 -->
+                    <article class="glass-card rounded-3xl p-5 sm:p-6 border-2 border-amber-100/90 shadow-md hover:border-amber-300 transition-all group log-card" data-search="07/05/2026 7/5/26 เตรียมความพร้อมอุปกรณ์คอมพิวเตอร์และลงโปรแกรม">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div class="flex items-start sm:items-center gap-4">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-400 text-white font-mali font-bold flex flex-col items-center justify-center shrink-0 shadow-md border-2 border-white group-hover:scale-105 transition-transform">
+                                    <span class="text-xs leading-none text-amber-100">พ.ค.</span>
+                                    <span class="text-lg leading-tight">07</span>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                        <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-mali font-bold border border-amber-200">
+                                            🗓️ วันพฤหัสบดี 7/5/26
+                                        </span>
+                                        <span class="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 text-[11px] font-mali font-semibold border border-purple-100">
+                                            💻 เทคโนโลยี/โปรแกรม
+                                        </span>
+                                    </div>
+                                    <h3 class="font-mali font-bold text-base sm:text-lg text-slate-800 leading-snug">
+                                        เตรียมความพร้อมอุปกรณ์คอมพิวเตอร์และลงโปรแกรม
+                                    </h3>
+                                    <p class="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed">
+                                        ทดสอบเครือข่ายและระบบปฏิบัติการ อัปเดตเครื่องมือและเตรียมห้องปฏิบัติการคอมพิวเตอร์
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="self-end sm:self-center shrink-0">
+                                <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-mali font-bold inline-flex items-center gap-1 border border-emerald-200">
+                                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                    <span>ปฏิบัติงานเรียบร้อย</span>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Day 4 -->
+                    <article class="glass-card rounded-3xl p-5 sm:p-6 border-2 border-amber-100/90 shadow-md hover:border-amber-300 transition-all group log-card" data-search="08/05/2026 8/5/26 เตรียมความพร้อมอุปกรณ์คอมพิวเตอร์และลงโปรแกรม">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div class="flex items-start sm:items-center gap-4">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-400 text-white font-mali font-bold flex flex-col items-center justify-center shrink-0 shadow-md border-2 border-white group-hover:scale-105 transition-transform">
+                                    <span class="text-xs leading-none text-amber-100">พ.ค.</span>
+                                    <span class="text-lg leading-tight">08</span>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                        <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-mali font-bold border border-amber-200">
+                                            🗓️ วันศุกร์ 8/5/26
+                                        </span>
+                                        <span class="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 text-[11px] font-mali font-semibold border border-purple-100">
+                                            💻 เทคโนโลยี/โปรแกรม
+                                        </span>
+                                    </div>
+                                    <h3 class="font-mali font-bold text-base sm:text-lg text-slate-800 leading-snug">
+                                        เตรียมความพร้อมอุปกรณ์คอมพิวเตอร์และลงโปรแกรม
+                                    </h3>
+                                    <p class="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed">
+                                        สรุปการจัดเตรียมเครื่องคอมพิวเตอร์ประจำสัปดาห์ที่ 1 และเตรียมแผนปฏิบัติการสอนสัปดาห์ถัดไป
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="self-end sm:self-center shrink-0">
+                                <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-mali font-bold inline-flex items-center gap-1 border border-emerald-200">
+                                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                    <span>ปฏิบัติงานเรียบร้อย</span>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-16 mb-8 mx-auto max-w-4xl">
+            <div class="glass-card rounded-[2.5rem] p-6 sm:p-10 text-center relative overflow-hidden flex flex-col items-center">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-white text-slate-600 text-xs sm:text-sm font-mali mb-3 shadow-sm">
+                    <i data-lucide="heart" class="w-4 h-4 text-amber-500"></i>
+                    <span>จัดทำโดย นางสาวเขมมิกา สุทธิชาติ</span>
+                </div>
+
+                <h2 class="font-mali font-bold text-xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 mb-2">
+                    นางสาวเขมมิกา สุทธิชาติ
+                </h2>
+                <p class="text-slate-500 font-mali font-medium mb-5 bg-white/70 px-4 py-1 rounded-full text-xs sm:text-sm inline-block border border-slate-200/60 shadow-sm">
+                    รหัสนักศึกษา 6602041620041
+                </p>
+
+                <div class="w-full max-w-lg h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent mb-5"></div>
+
+                <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-mali">
+                    ภาควิชาคอมพิวเตอร์ศึกษา คณะครุศาสตร์อุตสาหกรรม มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (มจพ.)
+                </p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Smooth scroll to Detail Section
+        function scrollToDetailSection() {
+            const el = document.getElementById('detail-section');
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+                // Make sure details are visible if hidden
+                const container = document.getElementById('detailed-log-container');
+                if (container && container.classList.contains('hidden')) {
+                    toggleDetailView();
+                }
+            }
+        }
+
+        // Toggle Expandable Detail Section
+        let isExpanded = true;
+        function toggleDetailView() {
+            const container = document.getElementById('detailed-log-container');
+            const textEl = document.getElementById('toggle-text');
+            const arrowIcon = document.getElementById('arrow-icon');
+
+            if (!container) return;
+
+            if (isExpanded) {
+                container.style.display = 'none';
+                if (textEl) textEl.textContent = 'กดเพื่อดูรายละเอียดการปฏิบัติงานเพิ่มเติม';
+                if (arrowIcon) arrowIcon.style.transform = 'rotate(0deg)';
+                isExpanded = false;
+            } else {
+                container.style.display = 'block';
+                if (textEl) textEl.textContent = 'ย่อเก็บรายละเอียดการปฏิบัติงาน';
+                if (arrowIcon) arrowIcon.style.transform = 'rotate(180deg)';
+                isExpanded = true;
+            }
+        }
+
+        // Client-side Live Search filtering
+        const searchInput = document.getElementById('search-input');
+        const logCards = document.querySelectorAll('.log-card');
+
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase().trim();
+                logCards.forEach(card => {
+                    const text = card.getAttribute('data-search') ? card.getAttribute('data-search').toLowerCase() : card.textContent.toLowerCase();
+                    if (text.includes(term)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

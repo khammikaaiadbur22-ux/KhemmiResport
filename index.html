@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายงานผลการฝึกปฏิบัติการสอน - เขมมิกา สุทธิชาติ</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Mali & Itim -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --font-head: 'Mali', cursive, sans-serif;
+            --font-body: 'Itim', cursive, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: #334155;
+            background-color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-mali {
+            font-family: var(--font-head);
+            letter-spacing: -0.01em;
+        }
+
+        /* Glassmorphism Design System */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1.5px solid rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 32px rgba(37, 99, 235, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(16px) saturate(160%);
+            -webkit-backdrop-filter: blur(16px) saturate(160%);
+            border: 1.5px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.06);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.35s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 22px 45px rgba(37, 99, 235, 0.12);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Animated Blobs */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(75px);
+            opacity: 0.5;
+            z-index: -1;
+            animation: floatBlob 18s infinite alternate ease-in-out;
+            pointer-events: none;
+        }
+        .blob-1 { top: -5%; left: -10%; width: clamp(280px, 40vw, 550px); height: clamp(280px, 40vw, 550px); background: #93c5fd; animation-delay: 0s; }
+        .blob-2 { top: 35%; right: -8%; width: clamp(300px, 45vw, 600px); height: clamp(300px, 45vw, 600px); background: #f472b6; animation-delay: -5s; }
+        .blob-3 { bottom: -5%; left: 15%; width: clamp(250px, 35vw, 500px); height: clamp(250px, 35vw, 500px); background: #fde047; animation-delay: -10s; }
+        .blob-4 { top: 65%; right: 20%; width: clamp(220px, 30vw, 420px); height: clamp(220px, 30vw, 420px); background: #6ee7b7; animation-delay: -14s; }
+
+        @keyframes floatBlob {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, 45px) scale(1.08); }
+            100% { transform: translate(-25px, -35px) scale(0.94); }
+        }
+
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+    </style>
+</head>
+<body class="relative min-h-screen overflow-x-hidden selection:bg-blue-200 selection:text-blue-900">
+
+    <!-- Background Blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none w-full h-full">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <!-- Unified Sticky Glass Navigation Header -->
+    <header class="sticky top-3 sm:top-5 z-50 max-w-6xl mx-auto px-3 sm:px-6">
+        <nav class="glass-nav rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between shadow-xl transition-all">
+            <!-- Brand Logo / Title -->
+            <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none">
+                <img 
+                    src="_Banner/701.jpeg" 
+                    onerror="this.src='_Banner/701.png'; this.onerror=null;" 
+                    alt="โลโก้หน้าเว็บ" 
+                    class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover shadow-md border-2 border-white/90 group-hover:scale-105 transition-transform shrink-0"
+                >
+                <div class="flex flex-col">
+                    <span class="font-mali font-bold text-slate-800 text-sm sm:text-base leading-tight group-hover:text-blue-600 transition-colors">รายงานผลการฝึกปฏิบัติการสอน</span>
+                    <span class="text-[10px] sm:text-xs text-slate-500 font-medium hidden xs:inline">ศูนย์รวมข้อมูลการปฏิบัติการสอน</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="flex items-center gap-1 sm:gap-1.5 flex-wrap">
+                <a href="index.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-mali font-bold text-xs sm:text-sm shadow-md flex items-center gap-1.5 transition-all">
+                    <i data-lucide="home" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                    <span class="hidden lg:inline">หน้าหลัก</span>
+                </a>
+                <a href="report.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-pink-600 active:scale-95">
+                    <i data-lucide="book-open" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-500 shrink-0"></i>
+                    <span class="hidden lg:inline">รายงานการสอน</span>
+                </a>
+                <a href="log.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-amber-600 active:scale-95">
+                    <i data-lucide="clipboard-list" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500 shrink-0"></i>
+                    <span class="hidden lg:inline">บันทึกผลการสอน</span>
+                </a>
+                <a href="school.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-blue-600 active:scale-95">
+                    <i data-lucide="building-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500 shrink-0"></i>
+                    <span class="hidden lg:inline">ข้อมูลวิทยาลัย</span>
+                </a>
+                <a href="research.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-emerald-600 active:scale-95">
+                    <i data-lucide="flask-conical" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500 shrink-0"></i>
+                    <span class="hidden lg:inline">Research</span>
+                </a>
+                <a href="profile.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-pink-600 active:scale-95">
+                    <i data-lucide="user" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-500 shrink-0"></i>
+                    <span>ผู้จัดทำ</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+        <!-- Student Profile Hero Header -->
+        <section class="text-center mb-10 sm:mb-14 relative">
+            <div class="inline-flex flex-col xs:flex-row items-center gap-3 sm:gap-4 bg-white/90 backdrop-blur-xl p-3.5 sm:p-4 pr-5 sm:pr-7 rounded-3xl border-2 border-white shadow-xl max-w-full">
+                <img 
+                    src="https://i.postimg.cc/RhspXpw8/r-p-por-fil.jpg" 
+                    alt="นางสาวเขมมิกา สุทธิชาติ"
+                    class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-cover shadow-sm border-2 border-pink-200 shrink-0"
+                >
+                <div class="text-center xs:text-left min-w-0">
+                    <div class="flex items-center justify-center xs:justify-start gap-2 flex-wrap">
+                        <span class="font-mali font-bold text-slate-800 text-base sm:text-lg truncate">นางสาวเขมมิกา สุทธิชาติ</span>
+                        <span class="px-2.5 py-0.5 rounded-md bg-pink-100 text-pink-700 text-xs font-mali font-semibold shrink-0">นักศึกษาฝึกประสบการณ์สอน</span>
+                    </div>
+                    <p class="text-slate-500 text-xs sm:text-sm mt-0.5 truncate">รหัสนักศึกษา: 6602041620041 • มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (มจพ.)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Portal Cards Grid (4 Cards) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 mb-12 sm:mb-16">
+
+            <!-- Card 1: Teaching Practice Report -->
+            <article class="glass-card rounded-[2rem] overflow-hidden flex flex-col justify-between group">
+                <div>
+                    <div class="relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-tr from-pink-100 to-purple-100">
+                        <img 
+                            src="_Banner/3.png" 
+                            alt="ปกตารางสอนที่ได้รับมอบหมาย 1/2569"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-3 left-4 right-4 flex justify-between items-end text-white">
+                            <span class="px-2.5 py-0.5 rounded-full bg-pink-500/90 backdrop-blur-md text-[11px] font-mali font-semibold shadow-sm">
+                                📘 รายงานการสอน
+                            </span>
+                            <span class="text-[11px] font-medium text-white/95 bg-black/40 backdrop-blur-md px-2 py-0.5 rounded-lg">
+                                540 ชม.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-5">
+                        <h2 class="text-lg font-bold font-mali text-slate-800 mb-2 group-hover:text-pink-600 transition-colors flex items-center justify-between">
+                            <span>รายงานปฏิบัติการสอน</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-pink-500 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+                        </h2>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            สรุปรายละเอียดรายวิชาปฏิบัติการสอน 1 ข้อมูลสถานที่ฝึกสอน และครูพี่เลี้ยง
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-5 pb-5 pt-0">
+                    <a 
+                        href="report.html" 
+                        class="w-full py-2.5 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 text-white font-mali font-bold text-xs text-center shadow-md flex items-center justify-center gap-1.5 hover:from-pink-600 hover:to-rose-600 transition-all active:scale-95"
+                    >
+                        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        <span>เปิดดูรายงานการสอน</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 2: Vocational College Info -->
+            <article class="glass-card rounded-[2rem] overflow-hidden flex flex-col justify-between group">
+                <div>
+                    <div class="relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-tr from-blue-100 to-teal-100">
+                        <img 
+                            src="https://i.postimg.cc/fTgTFHgC/hn-a-pk-sthan-s-ks'a.png" 
+                            alt="ปกสถานศึกษา วิทยาลัยอาชีวศึกษาสุราษฎร์ธานี"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-3 left-4 right-4 flex justify-between items-end text-white">
+                            <span class="px-2.5 py-0.5 rounded-full bg-blue-600/90 backdrop-blur-md text-[11px] font-mali font-semibold shadow-sm">
+                                🏫 ข้อมูลวิทยาลัย
+                            </span>
+                            <span class="text-[11px] font-medium text-white/95 bg-black/40 backdrop-blur-md px-2 py-0.5 rounded-lg">
+                                สอศ.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-5">
+                        <h2 class="text-lg font-bold font-mali text-slate-800 mb-2 group-hover:text-blue-600 transition-colors flex items-center justify-between">
+                            <span>วิทยาลัยอาชีวศึกษาฯ</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-blue-500 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+                        </h2>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            ข้อมูลทั่วไปของสถานศึกษารางวัลพระราชทาน ประวัติ และโครงสร้างบริหาร
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-5 pb-5 pt-0">
+                    <a 
+                        href="school.html" 
+                        class="w-full py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-mali font-bold text-xs text-center shadow-md flex items-center justify-center gap-1.5 hover:from-blue-700 hover:to-indigo-700 transition-all active:scale-95"
+                    >
+                        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        <span>เปิดดูข้อมูลวิทยาลัย</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 3: Research -->
+            <article class="glass-card rounded-[2rem] overflow-hidden flex flex-col justify-between group">
+                <div>
+                    <div class="relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-tr from-emerald-100 to-teal-100">
+                        <img 
+                            src="_Banner/1.png" 
+                            alt="ปกรายงานวิจัยในชั้นเรียน Research"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-3 left-4 right-4 flex justify-between items-end text-white">
+                            <span class="px-2.5 py-0.5 rounded-full bg-emerald-600/90 backdrop-blur-md text-[11px] font-mali font-semibold shadow-sm">
+                                🔬 Research
+                            </span>
+                            <span class="text-[11px] font-medium text-white/95 bg-black/40 backdrop-blur-md px-2 py-0.5 rounded-lg">
+                                วิจัย
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-5">
+                        <h2 class="text-lg font-bold font-mali text-slate-800 mb-2 group-hover:text-emerald-600 transition-colors flex items-center justify-between">
+                            <span>วิจัยในชั้นเรียน</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-emerald-500 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+                        </h2>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4 line-clamp-3">
+                            การพัฒนาสมรรถนะผู้ประกอบการในการผลิตสื่อโมชั่นกราฟิกร่วมกับ Generative AI
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-5 pb-5 pt-0">
+                    <a 
+                        href="research.html" 
+                        class="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-mali font-bold text-xs text-center shadow-md flex items-center justify-center gap-1.5 hover:from-emerald-700 hover:to-teal-700 transition-all active:scale-95"
+                    >
+                        <i data-lucide="flask-conical" class="w-3.5 h-3.5"></i>
+                        <span>เปิดดูงานวิจัย</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 4: Creator Profile (NEW - _Banner/2.png) -->
+            <article class="glass-card rounded-[2rem] overflow-hidden flex flex-col justify-between group">
+                <div>
+                    <div class="relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-tr from-pink-100 to-purple-100">
+                        <img 
+                            src="_Banner/2.png" 
+                            alt="ปกผู้จัดทำ Profile"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-3 left-4 right-4 flex justify-between items-end text-white">
+                            <span class="px-2.5 py-0.5 rounded-full bg-purple-600/90 backdrop-blur-md text-[11px] font-mali font-semibold shadow-sm">
+                                👤 Profile
+                            </span>
+                            <span class="text-[11px] font-medium text-white/95 bg-black/40 backdrop-blur-md px-2 py-0.5 rounded-lg">
+                                ผู้จัดทำ
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-5">
+                        <h2 class="text-lg font-bold font-mali text-slate-800 mb-2 group-hover:text-purple-600 transition-colors flex items-center justify-between">
+                            <span>ผู้จัดทำ (Profile)</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-purple-500 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+                        </h2>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            ข้อมูลส่วนตัว ประวัติการศึกษา และผลงานของ นางสาวเขมมิกา สุทธิชาติ
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-5 pb-5 pt-0">
+                    <a 
+                        href="profile.html" 
+                        class="w-full py-2.5 rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 text-white font-mali font-bold text-xs text-center shadow-md flex items-center justify-center gap-1.5 hover:from-pink-600 hover:to-purple-700 transition-all active:scale-95"
+                    >
+                        <i data-lucide="user" class="w-3.5 h-3.5"></i>
+                        <span>เปิดดูข้อมูลผู้จัดทำ</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 5: Teaching Log (NEW - _Banner/6.png) -->
+            <article class="glass-card rounded-[2rem] overflow-hidden flex flex-col justify-between group">
+                <div>
+                    <div class="relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-tr from-amber-100 to-orange-100">
+                        <img 
+                            src="_Banner/6.png" 
+                            alt="ปกบันทึกผลการสอน"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-3 left-4 right-4 flex justify-between items-end text-white">
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-500/90 backdrop-blur-md text-[11px] font-mali font-semibold shadow-sm">
+                                📋 บันทึกการสอน
+                            </span>
+                            <span class="text-[11px] font-medium text-white/95 bg-black/40 backdrop-blur-md px-2 py-0.5 rounded-lg">
+                                Google Sheets
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-5">
+                        <h2 class="text-lg font-bold font-mali text-slate-800 mb-2 group-hover:text-amber-600 transition-colors flex items-center justify-between">
+                            <span>บันทึกผลการสอน</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-amber-500 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+                        </h2>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            สมุดบันทึกภาระงานและผลการปฏิบัติงานประจำวัน ซิงก์ข้อมูลจาก Google Sheets
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-5 pb-5 pt-0">
+                    <a 
+                        href="log.html" 
+                        class="w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-mali font-bold text-xs text-center shadow-md flex items-center justify-center gap-1.5 hover:from-amber-600 hover:to-orange-600 transition-all active:scale-95"
+                    >
+                        <i data-lucide="clipboard-list" class="w-3.5 h-3.5"></i>
+                        <span>เปิดดูบันทึกผลการสอน</span>
+                    </a>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-12 sm:mt-16 mx-auto max-w-4xl">
+            <div class="glass-card rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 text-center relative overflow-hidden flex flex-col items-center">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-white text-slate-600 text-xs sm:text-sm font-mali mb-3 shadow-sm">
+                    <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i>
+                    <span>รายงานผลการฝึกปฏิบัติการสอนวิชาชีพครู</span>
+                </div>
+
+                <h2 class="font-mali font-bold text-xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 mb-2">
+                    นางสาวเขมมิกา สุทธิชาติ
+                </h2>
+                <p class="text-slate-500 font-mali font-medium mb-5 bg-white/70 px-4 py-1 rounded-full text-xs sm:text-sm inline-block border border-slate-200/60 shadow-sm">
+                    นักศึกษาชั้นปีที่ 4 • รหัสนักศึกษา 6602041620041
+                </p>
+
+                <div class="w-full max-w-md h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent mb-5"></div>
+
+                <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-mali max-w-xl">
+                    ภาควิชาคอมพิวเตอร์ศึกษา คณะครุศาสตร์อุตสาหกรรม<br class="xs:hidden"> มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (มจพ.)
+                </p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

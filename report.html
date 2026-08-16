@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายงานปฏิบัติการสอน - เขมมิกา สุทธิชาติ</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Mali & Itim -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --font-head: 'Mali', cursive, sans-serif;
+            --font-body: 'Itim', cursive, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: #334155;
+            background-color: #fafafa;
+            line-height: 1.65;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-mali {
+            font-family: var(--font-head);
+            letter-spacing: -0.01em;
+        }
+
+        /* Glassmorphism System */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1.5px solid rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 32px rgba(100, 100, 111, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(14px) saturate(160%);
+            -webkit-backdrop-filter: blur(14px) saturate(160%);
+            border: 1.5px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 0 8px 32px rgba(100, 100, 111, 0.08);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 38px rgba(100, 100, 111, 0.14);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .glass-img {
+            padding: 6px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1.5px solid rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Animated Blobs */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(65px);
+            opacity: 0.55;
+            z-index: -1;
+            animation: moveBlob 15s infinite alternate ease-in-out;
+            pointer-events: none;
+        }
+        .blob-1 { top: -10%; left: -10%; width: clamp(280px, 40vw, 450px); height: clamp(280px, 40vw, 450px); background: #FFD1DC; animation-delay: 0s; }
+        .blob-2 { top: 20%; right: -5%; width: clamp(300px, 45vw, 500px); height: clamp(300px, 45vw, 500px); background: #E0E7FF; animation-delay: -5s; }
+        .blob-3 { bottom: -20%; left: 10%; width: clamp(260px, 40vw, 450px); height: clamp(260px, 40vw, 450px); background: #FEF08A; animation-delay: -10s; }
+        .blob-4 { bottom: 10%; right: 20%; width: clamp(220px, 30vw, 350px); height: clamp(220px, 30vw, 350px); background: #FBCFE8; animation-delay: -7s; }
+
+        @keyframes moveBlob {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, 45px) scale(1.08); }
+            100% { transform: translate(-20px, -30px) scale(0.92); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fdf2f8; }
+        ::-webkit-scrollbar-thumb { background: #fbcfe8; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f9a8d4; }
+    </style>
+</head>
+<body class="relative min-h-screen overflow-x-hidden selection:bg-pink-200 selection:text-pink-900">
+
+    <!-- Background Animated Blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none w-full h-full">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <!-- Unified Sticky Glass Navigation Header -->
+    <header class="sticky top-3 sm:top-5 z-50 max-w-6xl mx-auto px-3 sm:px-6">
+        <nav class="glass-nav rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between shadow-xl transition-all">
+            <!-- Brand Logo & Title -->
+            <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none">
+                <img 
+                    src="_Banner/701.jpeg" 
+                    onerror="this.src='_Banner/701.png'; this.onerror=null;" 
+                    alt="โลโก้หน้าเว็บ" 
+                    class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover shadow-md border-2 border-white/90 group-hover:scale-105 transition-transform shrink-0"
+                >
+                <div class="flex flex-col">
+                    <span class="font-mali font-bold text-slate-800 text-sm sm:text-base leading-tight group-hover:text-pink-600 transition-colors">รายงานการสอน</span>
+                    <span class="text-[10px] sm:text-xs text-slate-500 font-medium hidden xs:inline">รายละเอียดรายวิชาและบุคลากร</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="flex items-center gap-1 sm:gap-1.5 flex-wrap">
+                <a href="index.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-blue-600 active:scale-95">
+                    <i data-lucide="home" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500 shrink-0"></i>
+                    <span class="hidden lg:inline">หน้าหลัก</span>
+                </a>
+                <a href="report.html" class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 text-white font-mali font-bold text-xs sm:text-sm shadow-md flex items-center gap-1.5 transition-all">
+                    <i data-lucide="book-open" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                    <span class="hidden lg:inline">รายงานการสอน</span>
+                </a>
+                <a href="log.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-amber-600 active:scale-95">
+                    <i data-lucide="clipboard-list" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500 shrink-0"></i>
+                    <span class="hidden lg:inline">บันทึกผลการสอน</span>
+                </a>
+                <a href="school.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-blue-600 active:scale-95">
+                    <i data-lucide="building-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500 shrink-0"></i>
+                    <span class="hidden lg:inline">ข้อมูลวิทยาลัย</span>
+                </a>
+                <a href="research.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-emerald-600 active:scale-95">
+                    <i data-lucide="flask-conical" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500 shrink-0"></i>
+                    <span class="hidden lg:inline">Research</span>
+                </a>
+                <a href="profile.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-pink-600 active:scale-95">
+                    <i data-lucide="user" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-500 shrink-0"></i>
+                    <span>ผู้จัดทำ</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+        
+        <!-- Header Banner Section (_Banner/3.png) -->
+        <section class="w-full mb-12 sm:mb-16 relative">
+            <div class="w-full rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl border-2 sm:border-4 border-white/90 bg-white/40 relative">
+                <img 
+                    src="_Banner/3.png" 
+                    alt="หน้าปกตารางสอนที่ได้รับมอบหมาย ปีการศึกษา 1/2569" 
+                    class="w-full h-auto object-cover max-h-[500px]"
+                >
+            </div>
+            
+            <!-- Floating Profile Badge -->
+            <div class="flex justify-center -mt-8 sm:-mt-12 relative z-20 px-3">
+                <div class="inline-flex items-center gap-3 sm:gap-4 bg-white/90 backdrop-blur-xl px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full border-2 border-white shadow-xl max-w-full">
+                    <img 
+                        src="https://i.postimg.cc/RhspXpw8/r-p-por-fil.jpg" 
+                        alt="นางสาวเขมมิกา สุทธิชาติ" 
+                        onerror="fallbackImage(this, 'เขมมิกา')"
+                        class="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover shadow-sm border-2 border-pink-200 shrink-0"
+                    >
+                    <div class="text-left min-w-0">
+                        <p class="text-[11px] sm:text-xs text-pink-500 font-mali font-bold">นักศึกษาฝึกประสบการณ์สอน</p>
+                        <p class="text-base sm:text-xl font-bold font-mali text-slate-800 truncate">นางสาวเขมมิกา สุทธิชาติ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Course & Timing Info Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-12">
+            
+            <!-- Course Card -->
+            <div class="glass-card rounded-3xl p-5 sm:p-6 lg:col-span-3">
+                <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center border border-blue-200 shadow-sm">
+                        <i data-lucide="book-open" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-mali font-bold text-base sm:text-lg text-slate-500 mb-1">รายวิชาที่ลงทะเบียนฝึกประสบการณ์วิชาชีพครู</h2>
+                        <p class="text-base sm:text-xl text-slate-800 font-bold leading-snug">020413232 ปฏิบัติการสอนด้านเทคโนโลยีคอมพิวเตอร์ในสถานศึกษา 1 (540 ชั่วโมง)</p>
+                        <p class="text-slate-500 text-xs sm:text-sm mt-1">Teaching Practice in Computer Technology in Educational Institute I</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location Card -->
+            <div class="glass-card rounded-3xl p-5 sm:p-6 flex flex-col justify-between">
+                <div>
+                    <div class="w-11 h-11 mb-3.5 rounded-xl bg-green-100 text-green-600 flex items-center justify-center border border-green-200">
+                        <i data-lucide="map-pin" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </div>
+                    <h3 class="font-mali font-bold text-slate-500 text-xs sm:text-sm mb-1.5">สถานที่ฝึกประสบการณ์</h3>
+                    <p class="text-base sm:text-lg text-slate-800 font-bold mb-2">วิทยาลัยอาชีวศึกษาสุราษฎร์ธานี</p>
+                </div>
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-green-50 rounded-xl text-green-700 text-xs sm:text-sm mt-2 border border-green-100 font-medium">
+                    <i data-lucide="briefcase" class="w-4 h-4 shrink-0"></i>
+                    <span class="truncate">แผนกวิชา ธุรกิจดิจิทัลและเทคโนโลยีสารสนเทศ</span>
+                </div>
+            </div>
+
+            <!-- Duration Card -->
+            <div class="glass-card rounded-3xl p-5 sm:p-6 flex flex-col justify-between">
+                <div>
+                    <div class="w-11 h-11 mb-3.5 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center border border-orange-200">
+                        <i data-lucide="calendar-days" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </div>
+                    <h3 class="font-mali font-bold text-slate-500 text-xs sm:text-sm mb-1.5">ระยะเวลาในการฝึกประสบการณ์</h3>
+                    <p class="text-base sm:text-lg text-slate-800 font-bold">5 พฤษภาคม 2569</p>
+                </div>
+                <p class="text-slate-500 text-xs sm:text-sm flex items-center gap-1 mt-2 font-medium">
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-orange-500"></i>
+                    <span>สิ้นสุด 31 มีนาคม 2570</span>
+                </p>
+            </div>
+
+            <!-- Time Card -->
+            <div class="glass-card rounded-3xl p-5 sm:p-6 flex flex-col justify-between">
+                <div>
+                    <div class="w-11 h-11 mb-3.5 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center border border-purple-200">
+                        <i data-lucide="clock" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </div>
+                    <h3 class="font-mali font-bold text-slate-500 text-xs sm:text-sm mb-1.5">วันเวลาในการฝึกสอน</h3>
+                    <p class="text-base sm:text-lg text-slate-800 font-bold">วันจันทร์ - วันศุกร์</p>
+                </div>
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-50 rounded-xl text-purple-700 text-xs sm:text-sm mt-2 border border-purple-100 font-medium">
+                    <i data-lucide="alarm-clock" class="w-4 h-4 shrink-0"></i>
+                    <span>เวลา 07.00 - 17.30 น.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mentors & Personnel Section -->
+        <section class="mb-12 sm:mb-16">
+            <div class="mb-8 text-center">
+                <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 inline-block relative">
+                    บุคลากรที่เกี่ยวข้อง / งานที่รับผิดชอบ
+                    <div class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full"></div>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                
+                <!-- Head of Dept -->
+                <article class="glass-card rounded-[2rem] p-6 text-center flex flex-col items-center justify-between">
+                    <div class="flex flex-col items-center">
+                        <div class="relative mb-4">
+                            <img 
+                                src="https://i.postimg.cc/PJrFbn8h/khr-hy-ng.png" 
+                                alt="นางเสาวณีย์ ไกรนุกูล" 
+                                onerror="fallbackImage(this, 'เสาวณีย์')"
+                                class="w-28 h-28 sm:w-32 sm:h-32 object-cover rounded-full glass-img"
+                                loading="lazy"
+                            >
+                            <div class="absolute -bottom-1 -right-1 bg-pink-100 text-pink-600 p-2 rounded-full border-2 border-white shadow-sm">
+                                <i data-lucide="award" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-mali font-bold text-lg sm:text-xl text-slate-800">นางเสาวณีย์ ไกรนุกูล</h3>
+                        <p class="text-pink-600 text-xs sm:text-sm font-bold mt-1">ครูหัวหน้าแผนก</p>
+                    </div>
+                    <div class="w-full">
+                        <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent my-3"></div>
+                        <p class="text-slate-500 text-xs sm:text-sm px-2">แผนกวิชาธุรกิจดิจิทัลและเทคโนโลยีสารสนเทศ</p>
+                    </div>
+                </article>
+
+                <!-- Mentor 1 -->
+                <article class="glass-card rounded-[2rem] p-6 text-center flex flex-col items-center justify-between">
+                    <div class="flex flex-col items-center">
+                        <div class="relative mb-4">
+                            <img 
+                                src="https://i.postimg.cc/NFJCpCRz/khr-xakr.png" 
+                                alt="นายอากรณ์ ดิษฐ์คล้าย" 
+                                onerror="fallbackImage(this, 'อากรณ์')"
+                                class="w-28 h-28 sm:w-32 sm:h-32 object-cover rounded-full glass-img"
+                                loading="lazy"
+                            >
+                            <div class="absolute -bottom-1 -right-1 bg-blue-100 text-blue-600 p-2 rounded-full border-2 border-white shadow-sm">
+                                <i data-lucide="monitor-play" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-mali font-bold text-lg sm:text-xl text-slate-800">นายอากรณ์ ดิษฐ์คล้าย</h3>
+                        <p class="text-blue-600 text-xs sm:text-sm font-bold mt-1">ครูพี่เลี้ยง</p>
+                        <p class="text-slate-400 text-xs mt-0.5">ครูชำนาญการพิเศษ (คศ. 3)</p>
+                    </div>
+                    <div class="w-full mt-3">
+                        <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent my-3"></div>
+                        <div class="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-xl text-xs sm:text-sm border border-blue-100 font-medium">
+                            ประจำรายวิชา โปรแกรมสื่อมัลติมีเดีย
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Mentor 2 -->
+                <article class="glass-card rounded-[2rem] p-6 text-center flex flex-col items-center justify-between">
+                    <div class="flex flex-col items-center">
+                        <div class="relative mb-4">
+                            <img 
+                                src="https://i.postimg.cc/SRT1D1cP/khr-xr.png" 
+                                alt="นางอรอนงค์ แซ่ลิ่ม" 
+                                onerror="fallbackImage(this, 'อรอนงค์')"
+                                class="w-28 h-28 sm:w-32 sm:h-32 object-cover rounded-full glass-img"
+                                loading="lazy"
+                            >
+                            <div class="absolute -bottom-1 -right-1 bg-purple-100 text-purple-600 p-2 rounded-full border-2 border-white shadow-sm">
+                                <i data-lucide="film" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-mali font-bold text-lg sm:text-xl text-slate-800">นางอรอนงค์ แซ่ลิ่ม</h3>
+                        <p class="text-purple-600 text-xs sm:text-sm font-bold mt-1">ครูพี่เลี้ยง</p>
+                        <p class="text-slate-400 text-xs mt-0.5">พนักงานราชการ (ครู)</p>
+                    </div>
+                    <div class="w-full mt-3">
+                        <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent my-3"></div>
+                        <div class="bg-purple-50 text-purple-700 px-3 py-1.5 rounded-xl text-xs sm:text-sm border border-purple-100 font-medium">
+                            ประจำรายวิชา การสร้างภาพเคลื่อนไหวเบื้องต้น
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Section: ตารางสอนที่ได้รับมอบหมาย (Teaching Schedule) -->
+        <section class="mb-12 sm:mb-16">
+            <div class="mb-8 text-center">
+                <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 inline-block relative">
+                    ตารางสอนที่ได้รับมอบหมายใน ปีการศึกษา 1/2569
+                    <div class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-full"></div>
+                </h2>
+                <p class="text-slate-500 text-xs sm:text-sm mt-2 font-mali">ตารางภาระงานสอนและรายวิชาปฏิบัติการสอน ปีการศึกษา 1/2569</p>
+            </div>
+
+            <div class="glass-card rounded-[2.5rem] p-4 sm:p-8 border-2 border-pink-100/90 shadow-xl overflow-hidden">
+                <div class="flex items-center justify-between mb-4 px-2">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-100 text-pink-700 text-xs font-mali font-bold border border-pink-200">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>ตารางภาระงานสอน</span>
+                    </div>
+                    <span class="text-xs text-slate-500 font-mali font-semibold bg-white/80 px-3 py-1 rounded-full border border-slate-200 shadow-sm">ปีการศึกษา 1/2569</span>
+                </div>
+                
+                <div class="rounded-2xl overflow-hidden border-2 border-white shadow-lg group relative bg-white">
+                    <img 
+                        src="Personal/teaching.png" 
+                        alt="ตารางภาระงานสอนของฉัน ปีการศึกษา 1/2569" 
+                        class="w-full h-auto object-contain rounded-2xl group-hover:scale-[1.01] transition-transform duration-500"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: แผนการสอนรายวิชา (Lesson Plans & Course Outlines) -->
+        <section class="mb-12 sm:mb-16">
+            <div class="mb-8 text-center">
+                <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 inline-block relative">
+                    แผนการจัดการเรียนรู้ / แผนการสอนรายวิชา
+                    <div class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-rose-400 via-purple-400 to-indigo-500 rounded-full"></div>
+                </h2>
+                <p class="text-slate-500 text-xs sm:text-sm mt-2 font-mali">รายละเอียดแผนการสอนและประมวลรายวิชา (Course Outline) ที่ได้รับมอบหมาย</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Course 1: การสร้างภาพเคลื่อนไหวเบื้องต้น -->
+                <div class="glass-card rounded-[2.5rem] p-4 sm:p-7 border-2 border-rose-100/90 shadow-xl overflow-hidden">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 px-2">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-11 h-11 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center border border-rose-200 shadow-sm shrink-0">
+                                <i data-lucide="film" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-mali font-bold text-slate-800 text-base sm:text-lg leading-tight">
+                                    แผนการสอน รายวิชาการสร้างภาพเคลื่อนไหวเบื้องต้น
+                                </h3>
+                                <p class="text-slate-500 text-xs font-mali mt-0.5">Basic Animation Course Lesson Plan</p>
+                            </div>
+                        </div>
+                        
+                        <a 
+                            href="https://drive.google.com/file/d/1jaTVVau6TJvilvkmcFM85XmJIcaW684m/view?usp=sharing" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="px-4 py-2 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white font-mali font-bold text-xs shadow-md hover:from-rose-600 hover:to-pink-600 transition-all flex items-center gap-1.5 active:scale-95 shrink-0"
+                        >
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                            <span>เปิดใน Google Drive</span>
+                        </a>
+                    </div>
+
+                    <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-md bg-white">
+                        <iframe 
+                            src="https://drive.google.com/file/d/1jaTVVau6TJvilvkmcFM85XmJIcaW684m/preview" 
+                            class="w-full h-[480px] sm:h-[580px] border-0 rounded-2xl" 
+                            loading="lazy"
+                            title="พรีวิวแผนการสอน รายวิชาการสร้างภาพเคลื่อนไหวเบื้องต้น"
+                        ></iframe>
+                    </div>
+                </div>
+
+                <!-- Course 2: สื่อโมชันกราฟิก -->
+                <div class="glass-card rounded-[2.5rem] p-4 sm:p-7 border-2 border-purple-100/90 shadow-xl overflow-hidden">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 px-2">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-11 h-11 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center border border-purple-200 shadow-sm shrink-0">
+                                <i data-lucide="video" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-mali font-bold text-slate-800 text-base sm:text-lg leading-tight">
+                                    แผนการสอน รายวิชาสื่อโมชันกราฟิก
+                                </h3>
+                                <p class="text-slate-500 text-xs font-mali mt-0.5">Motion Graphics Course Lesson Plan</p>
+                            </div>
+                        </div>
+                        
+                        <a 
+                            href="https://drive.google.com/file/d/1-UeKtRvQkUjuvHspafQdGx_EcXxDD05N/view?usp=sharing" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-mali font-bold text-xs shadow-md hover:from-purple-700 hover:to-indigo-700 transition-all flex items-center gap-1.5 active:scale-95 shrink-0"
+                        >
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                            <span>เปิดใน Google Drive</span>
+                        </a>
+                    </div>
+
+                    <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-md bg-white">
+                        <iframe 
+                            src="https://drive.google.com/file/d/1-UeKtRvQkUjuvHspafQdGx_EcXxDD05N/preview" 
+                            class="w-full h-[480px] sm:h-[580px] border-0 rounded-2xl" 
+                            loading="lazy"
+                            title="พรีวิวแผนการสอน รายวิชาสื่อโมชันกราฟิก"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-16 mb-8 mx-auto max-w-4xl">
+            <div class="glass-card rounded-[2.5rem] p-6 sm:p-10 text-center relative overflow-hidden flex flex-col items-center">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 border border-white text-slate-500 text-xs sm:text-sm font-mali mb-3 shadow-sm">
+                    <i data-lucide="heart-handshake" class="w-4 h-4 text-pink-500"></i>
+                    <span>จัดทำโดย</span>
+                </div>
+
+                <h2 class="font-mali font-bold text-xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 mb-2">
+                    นางสาวเขมมิกา สุทธิชาติ
+                </h2>
+                <p class="text-slate-500 font-mali font-medium mb-5 bg-white/60 px-4 py-1 rounded-full text-xs sm:text-sm inline-block border border-slate-200/60 shadow-sm">
+                    รหัสนักศึกษา 6602041620041
+                </p>
+
+                <div class="w-full max-w-lg h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent mb-5"></div>
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-xs sm:text-sm text-slate-600">
+                    <div class="flex items-center gap-3 text-left">
+                        <div class="w-9 h-9 shrink-0 rounded-full bg-blue-50 flex items-center justify-center text-blue-500 border border-blue-100 shadow-sm">
+                            <i data-lucide="graduation-cap" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                        </div>
+                        <span class="leading-relaxed">นักศึกษาชั้นปีที่ 4 ภาควิชาคอมพิวเตอร์ศึกษา<br class="hidden md:block">คณะครุศาสตร์อุตสาหกรรม</span>
+                    </div>
+                    
+                    <div class="hidden md:block w-px h-10 bg-slate-300"></div>
+                    
+                    <div class="flex items-center gap-3 text-left">
+                        <div class="w-9 h-9 shrink-0 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 border border-orange-100 shadow-sm">
+                            <i data-lucide="school" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                        </div>
+                        <span class="leading-relaxed">มหาวิทยาลัยเทคโนโลยี<br class="hidden md:block">พระจอมเกล้าพระนครเหนือ</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Fallback function for images
+        function fallbackImage(imgElement, name) {
+            imgElement.onerror = null;
+            const encodedName = encodeURIComponent(name);
+            imgElement.src = `https://api.dicebear.com/7.x/notionists/svg?seed=${encodedName}&backgroundColor=ffd5dc,ffdfbf,d1d4f9,c0aede,b6e3f4`;
+        }
+    </script>
+</body>
+</html>
