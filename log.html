@@ -192,8 +192,8 @@
                 </div>
                 <div>
                     <p class="text-slate-500 text-xs font-mali">ช่วงเวลาที่บันทึกงาน</p>
-                    <p class="font-mali font-bold text-slate-800 text-sm sm:text-base">05 พ.ค. - 08 พ.ค. 2026</p>
-                    <p class="text-[11px] text-amber-700 font-semibold">บันทึกภาระการปฏิบัติงาน</p>
+                    <p class="font-mali font-bold text-slate-800 text-sm sm:text-base" id="stat-date-range">05 พ.ค. - 08 พ.ค. 2026</p>
+                    <p class="text-[11px] text-amber-700 font-semibold" id="stat-week-name">สัปดาห์ที่ 1</p>
                 </div>
             </div>
 
@@ -234,8 +234,8 @@
                             <i data-lucide="file-spreadsheet" class="w-5 h-5"></i>
                         </div>
                         <div>
-                            <h3 class="font-mali font-bold text-slate-800 text-base sm:text-lg leading-tight">ตารางบันทึกผลการสอน 1/2569</h3>
-                            <p class="text-slate-500 text-xs font-mali">วันที่ 05 พ.ค. - 08 พ.ค. 2026</p>
+                            <h3 class="font-mali font-bold text-slate-800 text-base sm:text-lg leading-tight" id="preview-title">ตารางบันทึกผลการสอน 1/2569</h3>
+                            <p class="text-slate-500 text-xs font-mali" id="preview-date-range">วันที่ 05 พ.ค. - 08 พ.ค. 2026</p>
                         </div>
                     </div>
                     
@@ -264,7 +264,8 @@
                 <!-- Embedded Google Sheet Viewer Iframe -->
                 <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-lg bg-white relative">
                     <iframe 
-                        src="https://docs.google.com/spreadsheets/d/1GrId__304A1f3dF_13D_5DKDxaOPSAg042LBKJpQJs4/preview" 
+                        id="sheet-iframe"
+                        src="https://docs.google.com/spreadsheets/d/1GrId__304A1f3dF_13D_5DKDxaOPSAg042LBKJpQJs4/preview#gid=0" 
                         class="w-full h-[500px] sm:h-[600px] border-0 rounded-2xl"
                         loading="lazy"
                         title="พรีวิวเอกสารบันทึกผลการสอน"
@@ -306,27 +307,51 @@
                 <!-- Controls Header: Filter & Search -->
                 <div class="glass-card rounded-3xl p-4 sm:p-6 border-2 border-amber-100/90 shadow-lg mb-8">
                     <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                        <div class="flex items-center gap-2 w-full md:w-auto">
-                            <span class="px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-800 font-mali font-bold text-xs sm:text-sm border border-amber-200 shadow-sm flex items-center gap-1.5">
-                                <i data-lucide="list-checks" class="w-4 h-4"></i>
-                                <span>ช่วงเวลาบันทึก (วันที่ 05 พ.ค. - 08 พ.ค. 2026)</span>
-                            </span>
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full md:w-auto">
+                            <label for="week-select" class="font-mali font-bold text-xs sm:text-sm text-slate-700 flex items-center gap-1.5 shrink-0">
+                                <i data-lucide="calendar-range" class="w-4 h-4 text-amber-600"></i>
+                                <span>ค้นหาข้อมูลตามสัปดาห์:</span>
+                            </label>
+                            
+                            <select 
+                                id="week-select" 
+                                onchange="onWeekChange()" 
+                                class="w-full sm:w-auto px-4 py-2.5 rounded-2xl bg-white/90 border-2 border-amber-200 text-xs sm:text-sm font-mali text-slate-800 font-bold focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-sm cursor-pointer"
+                            >
+                                <option value="0">🗓️ สัปดาห์ที่ 1 (05 พ.ค. - 08 พ.ค. 2026)</option>
+                                <option value="866581680">🗓️ สัปดาห์ที่ 2 (11 พ.ค. - 15 พ.ค. 2026)</option>
+                                <option value="188364376">🗓️ สัปดาห์ที่ 3</option>
+                                <option value="270017129">🗓️ สัปดาห์ที่ 4</option>
+                                <option value="710451819">🗓️ สัปดาห์ที่ 5</option>
+                                <option value="779562987">🗓️ สัปดาห์ที่ 6</option>
+                                <option value="2096177221">🗓️ สัปดาห์ที่ 7</option>
+                                <option value="548195662">🗓️ สัปดาห์ที่ 8</option>
+                                <option value="1704083279">🗓️ สัปดาห์ที่ 9</option>
+                                <option value="218288890">🗓️ สัปดาห์ที่ 10</option>
+                                <option value="1061557100">🗓️ สัปดาห์ที่ 11</option>
+                                <option value="200880564">🗓️ สัปดาห์ที่ 12</option>
+                                <option value="895013610">🗓️ สัปดาห์ที่ 13</option>
+                                <option value="1072838634">🗓️ สัปดาห์ที่ 14</option>
+                                <option value="1729346197">🗓️ สัปดาห์ที่ 15</option>
+                                <option value="1437051386">🗓️ สัปดาห์ที่ 16</option>
+                                <option value="762880104">🗓️ สัปดาห์ที่ 17</option>
+                            </select>
                         </div>
 
-                        <div class="relative w-full md:w-80">
+                        <div class="relative w-full md:w-72">
                             <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
                             <input 
                                 type="text" 
                                 id="search-input" 
                                 placeholder="ค้นหาภาระงาน หรือ วันที่..." 
-                                class="w-full pl-10 pr-4 py-2 rounded-2xl bg-white/80 border border-slate-200 text-xs sm:text-sm font-mali text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-400/50 shadow-inner"
+                                class="w-full pl-10 pr-4 py-2.5 rounded-2xl bg-white/80 border border-slate-200 text-xs sm:text-sm font-mali text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-400/50 shadow-inner"
                             >
                         </div>
                     </div>
                 </div>
 
-                <!-- Teaching Log Cards List -->
-                <div class="space-y-4 sm:space-y-6">
+                <!-- Teaching Log Cards List Container -->
+                <div id="log-cards-container" class="space-y-4 sm:space-y-6">
                     
                     <!-- Day 1 -->
                     <article class="glass-card rounded-3xl p-5 sm:p-6 border-2 border-amber-100/90 shadow-md hover:border-amber-300 transition-all group log-card" data-search="05/05/2026 5/5/26 พบฝ่ายบริหารและอาจารย์ในแผนกวิชา">
@@ -506,9 +531,8 @@
             const el = document.getElementById('detail-section');
             if (el) {
                 el.scrollIntoView({ behavior: 'smooth' });
-                // Make sure details are visible if hidden
                 const container = document.getElementById('detailed-log-container');
-                if (container && container.classList.contains('hidden')) {
+                if (container && container.style.display === 'none') {
                     toggleDetailView();
                 }
             }
@@ -536,23 +560,181 @@
             }
         }
 
-        // Client-side Live Search filtering
-        const searchInput = document.getElementById('search-input');
-        const logCards = document.querySelectorAll('.log-card');
+        // Dynamic Google Sheet Fetching per Week
+        async function fetchWeekData(gid, weekText) {
+            const cardsContainer = document.getElementById('log-cards-container');
+            const iframe = document.getElementById('sheet-iframe');
+            const recordedDaysEl = document.getElementById('stat-recorded-days');
+            const dateRangeEl = document.getElementById('stat-date-range');
+            const weekNameEl = document.getElementById('stat-week-name');
+            const previewDateRangeEl = document.getElementById('preview-date-range');
 
-        if (searchInput) {
-            searchInput.addEventListener('input', (e) => {
-                const term = e.target.value.toLowerCase().trim();
-                logCards.forEach(card => {
-                    const text = card.getAttribute('data-search') ? card.getAttribute('data-search').toLowerCase() : card.textContent.toLowerCase();
-                    if (text.includes(term)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
+            // Update iframe preview tab
+            if (iframe) {
+                iframe.src = `https://docs.google.com/spreadsheets/d/1GrId__304A1f3dF_13D_5DKDxaOPSAg042LBKJpQJs4/preview#gid=${gid}`;
+            }
+
+            if (weekNameEl) weekNameEl.textContent = weekText;
+
+            if (!cardsContainer) return;
+
+            // Show loading animation
+            cardsContainer.innerHTML = `
+                <div class="glass-card rounded-3xl p-8 text-center border-2 border-amber-100/90 shadow-md">
+                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 mb-3 animate-spin">
+                        <i data-lucide="loader-2" class="w-6 h-6"></i>
+                    </div>
+                    <p class="font-mali font-bold text-slate-700 text-base">กำลังดึงข้อมูล ${weekText} จาก Google Sheets...</p>
+                    <p class="text-xs text-slate-500 font-mali mt-1">ซิงก์ข้อมูลตรงจาก Google Sheets แบบเรียลไทม์ 🟢</p>
+                </div>
+            `;
+            lucide.createIcons();
+
+            try {
+                const url = `https://docs.google.com/spreadsheets/d/1GrId__304A1f3dF_13D_5DKDxaOPSAg042LBKJpQJs4/gviz/tq?gid=${gid}&tqx=out:json`;
+                const res = await fetch(url);
+                const text = await res.text();
+
+                const jsonMatch = text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*)\);/);
+                if (!jsonMatch) throw new Error("Format error");
+
+                const data = JSON.parse(jsonMatch[1]);
+                const table = data.table;
+
+                // Extract Date Range from Header (Col C label)
+                let dateRange = "";
+                if (table.cols && table.cols[2] && table.cols[2].label) {
+                    dateRange = table.cols[2].label.replace("หมายเหตุ", "").trim();
+                }
+
+                if (dateRange) {
+                    if (dateRangeEl) dateRangeEl.textContent = dateRange;
+                    if (previewDateRangeEl) previewDateRangeEl.textContent = dateRange;
+                }
+
+                // Filter valid rows
+                const validRows = (table.rows || []).filter(r => r.c && (r.c[0] || r.c[1]) && r.c[0]?.v !== null);
+
+                if (recordedDaysEl) {
+                    recordedDaysEl.textContent = `${validRows.length} วันการทำงาน`;
+                }
+
+                if (validRows.length === 0) {
+                    cardsContainer.innerHTML = `
+                        <div class="glass-card rounded-3xl p-8 text-center border-2 border-amber-100/90 shadow-md">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-500 flex items-center justify-center mx-auto mb-3 border border-amber-200">
+                                <i data-lucide="calendar-off" class="w-6 h-6"></i>
+                            </div>
+                            <p class="font-mali font-bold text-slate-700 text-base">ยังไม่มีบันทึกข้อมูลสำหรับ ${weekText}</p>
+                            <p class="text-xs text-slate-500 font-mali mt-1">สามารถเปิดดูหรือบันทึกข้อมูลเพิ่มเติมบน Google Sheets ได้โดยตรง</p>
+                        </div>
+                    `;
+                    lucide.createIcons();
+                    return;
+                }
+
+                let html = '';
+                validRows.forEach(r => {
+                    const dateObj = r.c[0];
+                    const dateStr = dateObj ? (dateObj.f || dateObj.v || "") : "";
+                    const taskStr = r.c[1] ? (r.c[1].v || r.c[1].f || "") : "";
+
+                    let dayNum = "01";
+                    let monthText = "พ.ค.";
+                    if (dateStr) {
+                        const parts = dateStr.split('/');
+                        if (parts.length >= 2) {
+                            dayNum = parts[0].padStart(2, '0');
+                            const m = parseInt(parts[1], 10);
+                            const thaiMonths = ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."];
+                            if (m >= 1 && m <= 12) monthText = thaiMonths[m - 1];
+                        }
                     }
+
+                    html += `
+                        <article class="glass-card rounded-3xl p-5 sm:p-6 border-2 border-amber-100/90 shadow-md hover:border-amber-300 transition-all group log-card" data-search="${dateStr} ${taskStr} ${weekText}">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                <div class="flex items-start sm:items-center gap-4">
+                                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-400 text-white font-mali font-bold flex flex-col items-center justify-center shrink-0 shadow-md border-2 border-white group-hover:scale-105 transition-transform">
+                                        <span class="text-xs leading-none text-amber-100">${monthText}</span>
+                                        <span class="text-lg leading-tight">${dayNum}</span>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                            <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-mali font-bold border border-amber-200">
+                                                🗓️ วันที่ ${dateStr}
+                                            </span>
+                                            <span class="px-2.5 py-0.5 rounded-full bg-orange-50 text-orange-700 text-[11px] font-mali font-semibold border border-orange-100">
+                                                📌 ${weekText}
+                                            </span>
+                                        </div>
+                                        <h3 class="font-mali font-bold text-base sm:text-lg text-slate-800 leading-snug">
+                                            ${taskStr}
+                                        </h3>
+                                    </div>
+                                </div>
+
+                                <div class="self-end sm:self-center shrink-0">
+                                    <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-mali font-bold inline-flex items-center gap-1 border border-emerald-200">
+                                        <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                        <span>ปฏิบัติงานเรียบร้อย</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    `;
                 });
-            });
+
+                cardsContainer.innerHTML = html;
+                lucide.createIcons();
+                bindSearchFilter();
+
+            } catch (err) {
+                console.error("Fetch error:", err);
+                cardsContainer.innerHTML = `
+                    <div class="glass-card rounded-3xl p-8 text-center border-2 border-amber-100/90 shadow-md">
+                        <i data-lucide="alert-circle" class="w-10 h-10 text-rose-500 mx-auto mb-2"></i>
+                        <p class="font-mali font-bold text-slate-800 text-base">ไม่สามารถโหลดข้อมูลสัปดาห์นี้ได้ในขณะนี้</p>
+                        <p class="text-xs text-slate-500 font-mali mt-1">สามารถเปิดดูแผ่นงานต้นฉบับผ่านปุ่ม Google Sheets ด้านบนได้</p>
+                    </div>
+                `;
+                lucide.createIcons();
+            }
         }
+
+        function onWeekChange() {
+            const select = document.getElementById('week-select');
+            if (select) {
+                const selectedOption = select.options[select.selectedIndex];
+                const weekText = selectedOption.text.split('(')[0].trim();
+                fetchWeekData(select.value, weekText);
+            }
+        }
+
+        // Live Search Filter
+        function bindSearchFilter() {
+            const searchInput = document.getElementById('search-input');
+            const logCards = document.querySelectorAll('.log-card');
+
+            if (searchInput) {
+                searchInput.oninput = (e) => {
+                    const term = e.target.value.toLowerCase().trim();
+                    logCards.forEach(card => {
+                        const text = card.getAttribute('data-search') ? card.getAttribute('data-search').toLowerCase() : card.textContent.toLowerCase();
+                        if (text.includes(term)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                };
+            }
+        }
+
+        // Auto load initial Week 1 on startup
+        document.addEventListener('DOMContentLoaded', () => {
+            onWeekChange();
+        });
     </script>
 </body>
 </html>
