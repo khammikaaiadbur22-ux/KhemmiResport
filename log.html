@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Swiper CSS & JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <style>
         :root {
@@ -216,6 +219,35 @@
                     <p class="text-[11px] text-emerald-600 font-semibold">ซิงก์ข้อมูลเรียลไทม์ 🟢</p>
                 </div>
             </a>
+        </section>
+
+        <!-- SECTION: Activity Gallery (ภาพรวมการเข้าร่วมกิจกรรม) -->
+        <section class="mb-14 sm:mb-18">
+            <div class="mb-8 text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 text-blue-800 text-xs font-mali font-bold border border-blue-200 shadow-sm mb-3">
+                    <i data-lucide="camera" class="w-4 h-4 text-blue-600"></i>
+                    <span>ประมวลภาพกิจกรรม</span>
+                </div>
+                <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 inline-block relative">
+                    ภาพรวมการเข้าร่วมกิจกรรมของวิทยาลัยและแผนก
+                    <div class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 rounded-full"></div>
+                </h2>
+                <p class="text-slate-500 text-xs sm:text-sm mt-2 font-mali">ภาพบรรยากาศการทำงานและการมีส่วนร่วมในกิจกรรมต่างๆ ของสถานศึกษา</p>
+            </div>
+
+            <div class="glass-card rounded-[2.5rem] p-4 sm:p-6 border-2 border-blue-100/90 shadow-xl overflow-hidden relative group">
+                <!-- Swiper Container -->
+                <div class="swiper activity-swiper w-full rounded-2xl overflow-hidden">
+                    <div class="swiper-wrapper" id="activity-gallery-wrapper">
+                        <!-- Images will be injected here via JS -->
+                    </div>
+                    
+                    <!-- Pagination & Navigation -->
+                    <div class="swiper-pagination mt-4"></div>
+                    <div class="swiper-button-prev !text-white !bg-black/30 hover:!bg-black/50 !w-10 !h-10 !rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm after:!text-sm"></div>
+                    <div class="swiper-button-next !text-white !bg-black/30 hover:!bg-black/50 !w-10 !h-10 !rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm after:!text-sm"></div>
+                </div>
+            </div>
         </section>
 
         <!-- SECTION: Interactive File Preview Frame (หน้าพรีวิวเอกสารตารางบันทึกการสอน) -->
@@ -523,6 +555,15 @@
     </main>
 
     <script>
+        // Array of images from Personal/KMmm directory
+        const kmImages = [
+            "IMG_4526.JPG", "IMG_4566.JPG", "IMG_4567.JPG", "IMG_4568.JPG", 
+            "IMG_4748.JPG", "IMG_4749.JPG", "IMG_4751.JPG", "IMG_4752.JPG", 
+            "IMG_4753.JPG", "IMG_4754.JPG", "IMG_4755.JPG", "IMG_4972.JPG", 
+            "IMG_4973.JPG", "IMG_4974.JPG", "IMG_4975.JPG", "IMG_4976.JPG", 
+            "IMG_4977.JPG", "IMG_4978.JPG"
+        ];
+
         // Initialize Icons
         lucide.createIcons();
 
@@ -651,15 +692,17 @@
                         }
                     }
 
+                    const randomImg = kmImages[Math.floor(Math.random() * kmImages.length)];
+
                     html += `
                         <article class="glass-card rounded-3xl p-5 sm:p-6 border-2 border-amber-100/90 shadow-md hover:border-amber-300 transition-all group log-card" data-search="${dateStr} ${taskStr} ${weekText}">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                                <div class="flex items-start sm:items-center gap-4">
+                            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 flex-1">
                                     <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-400 text-white font-mali font-bold flex flex-col items-center justify-center shrink-0 shadow-md border-2 border-white group-hover:scale-105 transition-transform">
                                         <span class="text-xs leading-none text-amber-100">${monthText}</span>
                                         <span class="text-lg leading-tight">${dayNum}</span>
                                     </div>
-                                    <div>
+                                    <div class="flex-1">
                                         <div class="flex items-center gap-2 mb-1 flex-wrap">
                                             <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-mali font-bold border border-amber-200">
                                                 🗓️ วันที่ ${dateStr}
@@ -674,7 +717,7 @@
                                     </div>
                                 </div>
 
-                                <div class="self-end sm:self-center shrink-0">
+                                <div class="self-end lg:self-center shrink-0 border-t lg:border-t-0 lg:border-l border-slate-200/60 pt-3 lg:pt-0 lg:pl-4 mt-2 lg:mt-0 w-full lg:w-auto text-right">
                                     <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-mali font-bold inline-flex items-center gap-1 border border-emerald-200">
                                         <i data-lucide="check" class="w-3.5 h-3.5"></i>
                                         <span>ปฏิบัติงานเรียบร้อย</span>
@@ -731,9 +774,49 @@
             }
         }
 
-        // Auto load initial Week 1 on startup
+        // Auto load initial Week 1 on startup and render Activity Gallery
         document.addEventListener('DOMContentLoaded', () => {
             onWeekChange();
+            
+            // Render Activity Gallery
+            const galleryWrapper = document.getElementById('activity-gallery-wrapper');
+            if (galleryWrapper && typeof kmImages !== 'undefined') {
+                let html = '';
+                kmImages.forEach(img => {
+                    html += `
+                        <div class="swiper-slide">
+                            <div class="w-full h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200">
+                                <img src="Personal/KMmm/${img}" alt="กิจกรรม" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    `;
+                });
+                galleryWrapper.innerHTML = html;
+                
+                // Initialize Swiper
+                new Swiper('.activity-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 16,
+                    loop: true,
+                    autoplay: {
+                        delay: 3500,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                        dynamicBullets: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                        640: { slidesPerView: 2, spaceBetween: 20 },
+                        1024: { slidesPerView: 3, spaceBetween: 24 }
+                    }
+                });
+            }
         });
     </script>
 </body>

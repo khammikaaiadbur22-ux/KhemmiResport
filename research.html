@@ -12,6 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .swiper-button-next, .swiper-button-prev {
+            color: #059669 !important;
+        }
+        .swiper-pagination-bullet-active {
+            background: #059669 !important;
+        }
+    </style>
 
     <style>
         :root {
@@ -182,25 +192,25 @@
                     </div>
 
                     <h1 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 leading-snug mb-4">
-                        การพัฒนาสมรรถนะด้านการเป็นผู้ประกอบการในการผลิตสื่อโมชั่นกราฟิกด้วยกระบวนการคิดเชิงออกแบบเพื่อสร้างนวัตกรรมร่วมกับปัญญาประดิษฐ์เชิงรู้สร้าง สำหรับนักเรียนในระดับชั้นประกาศนียบัตรวิชาชีพ
+                        การพัฒนาทักษะความคิดสร้างสรรค์โดยใช้รูปแบบการเรียนรู้แบบสร้างสรรค์เป็นฐานร่วมกับปัญญาประดิษฐ์แชทบอทออกแบบเนื้อเรื่อง ด้วยโปรแกรมสแครช ของนักเรียนระดับประกาศนียบัตรวิชาชีพ
                     </h1>
 
                     <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
-                        Development of Entrepreneurial Competency in Motion Graphics Production through Design Thinking Process to Create Innovation Co-created with Generative AI for Vocational Certificate Students
+                        งานวิจัยเพื่อพัฒนาทักษะความคิดสร้างสรรค์ของผู้เรียนระดับ ปวช. โดยประยุกต์ใช้รูปแบบการเรียนรู้แบบสร้างสรรค์เป็นฐาน (CBL) ร่วมกับการใช้ AI Chatbot ในการออกแบบเนื้อเรื่องและการสร้างชิ้นงานด้วยโปรแกรม Scratch
                     </p>
 
                     <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-200/80">
                         <span class="px-3 py-1 rounded-xl bg-emerald-50 text-emerald-700 text-xs font-mali font-semibold border border-emerald-100 flex items-center gap-1">
-                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Generative AI Co-Creation
+                            <i data-lucide="bot" class="w-3.5 h-3.5"></i> AI Chatbot
                         </span>
                         <span class="px-3 py-1 rounded-xl bg-teal-50 text-teal-700 text-xs font-mali font-semibold border border-teal-100 flex items-center gap-1">
-                            <i data-lucide="lightbulb" class="w-3.5 h-3.5"></i> กระบวนการคิดเชิงออกแบบ (Design Thinking)
+                            <i data-lucide="lightbulb" class="w-3.5 h-3.5"></i> Creativity-Based Learning (CBL)
                         </span>
                         <span class="px-3 py-1 rounded-xl bg-cyan-50 text-cyan-700 text-xs font-mali font-semibold border border-cyan-100 flex items-center gap-1">
-                            <i data-lucide="briefcase" class="w-3.5 h-3.5"></i> สมรรถนะผู้ประกอบการ
+                            <i data-lucide="code" class="w-3.5 h-3.5"></i> โปรแกรม Scratch
                         </span>
                         <span class="px-3 py-1 rounded-xl bg-purple-50 text-purple-700 text-xs font-mali font-semibold border border-purple-100 flex items-center gap-1">
-                            <i data-lucide="video" class="w-3.5 h-3.5"></i> สื่อโมชั่นกราฟิก
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> ทักษะความคิดสร้างสรรค์
                         </span>
                     </div>
                 </div>
@@ -226,7 +236,7 @@
                     <!-- External Link Actions -->
                     <div class="flex items-center gap-2 w-full sm:w-auto">
                         <a 
-                            href="https://drive.google.com/file/d/1J03dAFouPiMB5chtqfRU8wm825bdpyV6/view?usp=sharing" 
+                            href="https://drive.google.com/file/d/1PYb9jhODu386dYBw-viPwUxo2IvZJKn0/view?usp=sharing" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-mali font-bold text-xs sm:text-sm shadow-md flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
@@ -240,7 +250,7 @@
                 <!-- Google Drive PDF Embedded Iframe Container -->
                 <div class="w-full h-[550px] sm:h-[700px] md:h-[800px] rounded-2xl overflow-hidden border-2 border-slate-200/90 bg-slate-900 shadow-inner relative">
                     <iframe 
-                        src="https://drive.google.com/file/d/1J03dAFouPiMB5chtqfRU8wm825bdpyV6/preview" 
+                        src="https://drive.google.com/file/d/1PYb9jhODu386dYBw-viPwUxo2IvZJKn0/preview" 
                         class="w-full h-full border-0"
                         allow="autoplay"
                         title="เอกสารโครงร่างงานวิจัยในชั้นเรียน"
@@ -253,7 +263,7 @@
                         <span>หากพรีวิวเอกสารไม่โหลด สามารถคลิกปุ่ม "เปิดใน Google Drive" เพื่อรับชมไฟล์ต้นฉบับได้โดยตรง</span>
                     </span>
                     <a 
-                        href="https://drive.google.com/file/d/1J03dAFouPiMB5chtqfRU8wm825bdpyV6/view?usp=sharing" 
+                        href="https://drive.google.com/file/d/1PYb9jhODu386dYBw-viPwUxo2IvZJKn0/view?usp=sharing" 
                         target="_blank"
                         class="text-emerald-700 hover:text-emerald-900 font-bold underline underline-offset-2 shrink-0"
                     >
@@ -263,73 +273,156 @@
             </div>
         </section>
 
-        <!-- Research Framework & Key Pillars Cards -->
+        <!-- Creative Thinking Skills Cards -->
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             
-            <!-- Pillar 1 -->
+            <!-- Skill 1 -->
             <div class="glass-card rounded-3xl p-6 flex flex-col justify-between">
                 <div>
                     <div class="w-12 h-12 mb-4 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center border border-purple-200">
                         <i data-lucide="video" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="font-mali font-bold text-slate-800 text-base mb-2">1. การผลิตสื่อโมชั่นกราฟิก</h3>
+                    <h3 class="font-mali font-bold text-slate-800 text-base mb-2">1. ความคิดคล่องแคล่ว</h3>
                     <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        การสร้างสรรค์ภาพเคลื่อนไหว การเรียบเรียงกราฟิกและสื่อมัลติมีเดีย เพื่อสื่อสารแนวคิดธุรกิจอย่างมืออาชีพ
+                        ความสามารถในการคิดหาคำตอบหรือสร้างสรรค์ไอเดียได้อย่างรวดเร็วและมีปริมาณมากในเวลาจำกัด
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-200/60 text-xs text-purple-700 font-mali font-semibold">
-                    🎬 Motion Graphics Skill
+                    ⚡ Fluency
                 </div>
             </div>
 
-            <!-- Pillar 2 -->
+            <!-- Skill 2 -->
             <div class="glass-card rounded-3xl p-6 flex flex-col justify-between">
                 <div>
                     <div class="w-12 h-12 mb-4 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center border border-teal-200">
                         <i data-lucide="lightbulb" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="font-mali font-bold text-slate-800 text-base mb-2">2. กระบวนการคิดเชิงออกแบบ</h3>
+                    <h3 class="font-mali font-bold text-slate-800 text-base mb-2">2. ความคิดยืดหยุ่น</h3>
                     <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        ประยุกต์ใช้ 5 ขั้นตอน (Empathize, Define, Ideate, Prototype, Test) ในการวิเคราะห์โจทย์และสร้างนวัตกรรม
+                        ความสามารถในการคิดหาคำตอบได้หลากหลายประเภท หลากหลายทิศทาง และสามารถปรับเปลี่ยนมุมมองได้
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-200/60 text-xs text-teal-700 font-mali font-semibold">
-                    💡 Design Thinking Method
+                    🔀 Flexibility
                 </div>
             </div>
 
-            <!-- Pillar 3 -->
+            <!-- Skill 3 -->
             <div class="glass-card rounded-3xl p-6 flex flex-col justify-between">
                 <div>
                     <div class="w-12 h-12 mb-4 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center border border-emerald-200">
                         <i data-lucide="bot" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="font-mali font-bold text-slate-800 text-base mb-2">3. ปัญญาประดิษฐ์เชิงรู้สร้าง</h3>
+                    <h3 class="font-mali font-bold text-slate-800 text-base mb-2">3. ความคิดริเริ่ม</h3>
                     <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        การนำ Generative AI มาร่วมสร้างสรรค์ผลงาน (Co-creation) เพื่อเพิ่มประสิทธิภาพและความคิดสร้างสรรค์
+                        ความสามารถในการคิดสิ่งที่แปลกใหม่ แตกต่างจากเดิม หรือการนำสิ่งที่มีอยู่มาประยุกต์ให้เกิดความแปลกใหม่
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-200/60 text-xs text-emerald-700 font-mali font-semibold">
-                    🤖 Generative AI Tools
+                    ✨ Originality
                 </div>
             </div>
 
-            <!-- Pillar 4 -->
+            <!-- Skill 4 -->
             <div class="glass-card rounded-3xl p-6 flex flex-col justify-between">
                 <div>
                     <div class="w-12 h-12 mb-4 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center border border-cyan-200">
                         <i data-lucide="briefcase" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="font-mali font-bold text-slate-800 text-base mb-2">4. สมรรถนะผู้ประกอบการ</h3>
+                    <h3 class="font-mali font-bold text-slate-800 text-base mb-2">4. ความคิดละเอียดลออ</h3>
                     <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        พัฒนาทักษะด้านธุรกิจ การคิดเชิงนวัตกรรม การสร้างมูลค่าเพิ่ม และการต่อยอดทักษะสู่อาชีพจริงสำหรับผู้เรียน ปวช.
+                        ความสามารถในการคิดรายละเอียดของสิ่งต่างๆ เพื่อขยายความคิดหลักให้สมบูรณ์และมีความชัดเจนมากยิ่งขึ้น
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-200/60 text-xs text-cyan-700 font-mali font-semibold">
-                    💼 Entrepreneurial Skill
+                    🔍 Elaboration
                 </div>
             </div>
 
+        </section>
+
+        <!-- Activity Photos Galleries Section -->
+        <section class="mb-12">
+            <div class="mb-8 text-center">
+                <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 inline-block relative">
+                    ภาพการนำไปใช้ในชั้นเรียน
+                    <div class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full"></div>
+                </h2>
+                <p class="text-slate-500 text-sm mt-4 font-mali">ประมวลภาพกิจกรรมและการประเมินผลการเรียนรู้</p>
+            </div>
+
+            <!-- T1 Gallery -->
+            <div class="glass-card rounded-[2rem] p-6 sm:p-8 mb-8 border-2 border-emerald-200/80 shadow-xl">
+                <h3 class="font-mali font-bold text-lg text-slate-800 mb-4 flex items-center gap-2">
+                    <i data-lucide="image" class="w-5 h-5 text-emerald-600"></i>
+                    การประเมินความพึงพอใจของผู้เรียนที่มีต่อรูปแบบการเรียนรู้
+                </h3>
+                <div class="swiper mySwiper rounded-xl overflow-hidden shadow-inner relative group">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="Photos/T1/IMG_4734.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T1"></div>
+                        <div class="swiper-slide"><img src="Photos/T1/IMG_4735.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T1"></div>
+                        <div class="swiper-slide"><img src="Photos/T1/IMG_4736.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T1"></div>
+                        <div class="swiper-slide"><img src="Photos/T1/IMG_4737.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T1"></div>
+                    </div>
+                    <div class="swiper-button-next opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="swiper-button-prev opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="swiper-pagination pb-2"></div>
+                </div>
+            </div>
+
+            <!-- T2 Gallery -->
+            <div class="glass-card rounded-[2rem] p-6 sm:p-8 mb-8 border-2 border-emerald-200/80 shadow-xl">
+                <h3 class="font-mali font-bold text-lg text-slate-800 mb-4 flex items-center gap-2">
+                    <i data-lucide="image" class="w-5 h-5 text-emerald-600"></i>
+                    การประเมินทักษะความคิดสร้างสรรค์หลังการใช้รูปแบบการเรียนรู้
+                </h3>
+                <div class="swiper mySwiper rounded-xl overflow-hidden shadow-inner relative group">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="Photos/T2/IMG_4738.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T2"></div>
+                        <div class="swiper-slide"><img src="Photos/T2/IMG_4739.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T2"></div>
+                        <div class="swiper-slide"><img src="Photos/T2/IMG_4740.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T2"></div>
+                        <div class="swiper-slide"><img src="Photos/T2/IMG_4741.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T2"></div>
+                        <div class="swiper-slide"><img src="Photos/T2/IMG_4742.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T2"></div>
+                        <div class="swiper-slide"><img src="Photos/T2/IMG_4743.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T2"></div>
+                        <div class="swiper-slide"><img src="Photos/T2/IMG_4968.JPG" class="w-full h-64 sm:h-[500px] object-cover" alt="T2"></div>
+                        <div class="swiper-slide"><img src="Photos/T2/IMG_4969.JPG" class="w-full h-64 sm:h-[500px] object-cover" alt="T2"></div>
+                        <div class="swiper-slide"><img src="Photos/T2/IMG_4970.JPG" class="w-full h-64 sm:h-[500px] object-cover" alt="T2"></div>
+                        <div class="swiper-slide"><img src="Photos/T2/IMG_4971.JPG" class="w-full h-64 sm:h-[500px] object-cover" alt="T2"></div>
+                    </div>
+                    <div class="swiper-button-next opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="swiper-button-prev opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="swiper-pagination pb-2"></div>
+                </div>
+            </div>
+
+            <!-- T3 Gallery -->
+            <div class="glass-card rounded-[2rem] p-6 sm:p-8 mb-8 border-2 border-emerald-200/80 shadow-xl">
+                <h3 class="font-mali font-bold text-lg text-slate-800 mb-4 flex items-center gap-2">
+                    <i data-lucide="image" class="w-5 h-5 text-emerald-600"></i>
+                    บรรยากาศการจัดการเรียนรู้โดยใช้รูปแบบการเรียนรู้ในชั้นเรียน
+                </h3>
+                <div class="swiper mySwiper rounded-xl overflow-hidden shadow-inner relative group">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="Photos/T3/IMG_4609.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T3"></div>
+                        <div class="swiper-slide"><img src="Photos/T3/IMG_4620.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T3"></div>
+                        <div class="swiper-slide"><img src="Photos/T3/IMG_4621.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T3"></div>
+                        <div class="swiper-slide"><img src="Photos/T3/IMG_4622.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T3"></div>
+                        <div class="swiper-slide"><img src="Photos/T3/IMG_4623.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T3"></div>
+                        <div class="swiper-slide"><img src="Photos/T3/IMG_4624.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T3"></div>
+                        <div class="swiper-slide"><img src="Photos/T3/IMG_4626.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T3"></div>
+                        <div class="swiper-slide"><img src="Photos/T3/IMG_4627.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T3"></div>
+                        <div class="swiper-slide"><img src="Photos/T3/IMG_4628.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T3"></div>
+                        <div class="swiper-slide"><img src="Photos/T3/IMG_4629.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T3"></div>
+                        <div class="swiper-slide"><img src="Photos/T3/IMG_4630.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T3"></div>
+                        <div class="swiper-slide"><img src="Photos/T3/IMG_4631.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T3"></div>
+                        <div class="swiper-slide"><img src="Photos/T3/IMG_4632.jpg" class="w-full h-64 sm:h-[500px] object-cover" alt="T3"></div>
+                    </div>
+                    <div class="swiper-button-next opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="swiper-button-prev opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="swiper-pagination pb-2"></div>
+                </div>
+            </div>
         </section>
 
         <!-- Advisors Section (2 Advisors Grid) -->
@@ -417,8 +510,28 @@
 
     </main>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         lucide.createIcons();
+        var swipers = document.querySelectorAll('.mySwiper');
+        swipers.forEach(function(swiperEl) {
+            new Swiper(swiperEl, {
+                loop: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+            });
+        });
     </script>
 </body>
 </html>
