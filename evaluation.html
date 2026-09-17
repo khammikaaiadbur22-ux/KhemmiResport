@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>นิเทศการสอน - เขมมิกา สุทธิชาติ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        :root { --font-head:'Mali',cursive,sans-serif; --font-body:'Itim',cursive,sans-serif; }
+        html { scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+        body { font-family:var(--font-body); color:#334155; background-color:#fafafa; line-height:1.65; }
+        h1,h2,h3,h4,h5,h6,.font-mali { font-family:var(--font-head); letter-spacing:-0.01em; }
+        .glass-nav { background:rgba(255,255,255,0.85); backdrop-filter:blur(20px) saturate(180%); -webkit-backdrop-filter:blur(20px) saturate(180%); border:1.5px solid rgba(255,255,255,0.95); box-shadow:0 8px 32px rgba(245,158,11,0.08); }
+        .glass-card { background:rgba(255,255,255,0.78); backdrop-filter:blur(16px) saturate(160%); -webkit-backdrop-filter:blur(16px) saturate(160%); border:1.5px solid rgba(255,255,255,0.92); box-shadow:0 10px 30px rgba(245,158,11,0.07); transition:transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s ease; }
+        .glass-card:hover { transform:translateY(-3px); box-shadow:0 18px 40px rgba(245,158,11,0.13); }
+        .blob { position:absolute; border-radius:50%; filter:blur(75px); opacity:0.5; z-index:-1; animation:moveBlob 16s infinite alternate ease-in-out; pointer-events:none; }
+        .blob-1 { top:-8%; left:-8%; width:clamp(280px,40vw,500px); height:clamp(280px,40vw,500px); background:#fef3c7; animation-delay:0s; }
+        .blob-2 { top:25%; right:-6%; width:clamp(300px,45vw,550px); height:clamp(300px,45vw,550px); background:#ede9fe; animation-delay:-5s; }
+        .blob-3 { bottom:-10%; left:15%; width:clamp(260px,35vw,480px); height:clamp(260px,35vw,480px); background:#fbcfe8; animation-delay:-10s; }
+        @keyframes moveBlob { 0%{transform:translate(0,0) scale(1);} 50%{transform:translate(30px,45px) scale(1.07);} 100%{transform:translate(-20px,-30px) scale(0.93);} }
+        .sup-badge { background:linear-gradient(135deg,#f59e0b,#f97316); color:white; font-family:var(--font-head); font-weight:700; width:2.75rem; height:2.75rem; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.15rem; box-shadow:0 4px 14px rgba(245,158,11,0.35); flex-shrink:0; }
+        .sup-badge.online { background:linear-gradient(135deg,#7c3aed,#6d28d9); box-shadow:0 4px 14px rgba(124,58,237,0.35); }
+        .iframe-wrap { position:relative; width:100%; padding-top:56.25%; border-radius:1rem; overflow:hidden; }
+        .iframe-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+        ::-webkit-scrollbar{width:8px;} ::-webkit-scrollbar-track{background:#fffbeb;} ::-webkit-scrollbar-thumb{background:#fde68a;border-radius:10px;} ::-webkit-scrollbar-thumb:hover{background:#f59e0b;}
+    </style>
+</head>
+<body class="relative min-h-screen overflow-x-hidden selection:bg-violet-100 selection:text-violet-900">
+
+<div class="fixed inset-0 overflow-hidden pointer-events-none w-full h-full">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+</div>
+
+<!-- Navigation -->
+<header class="sticky top-3 sm:top-5 z-50 max-w-6xl mx-auto px-3 sm:px-6">
+    <nav class="glass-nav rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between shadow-xl transition-all">
+        <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none">
+            <img src="_Banner/701.jpeg" onerror="this.src='_Banner/701.png'; this.onerror=null;" alt="โลโก้" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover shadow-md border-2 border-white/90 group-hover:scale-105 transition-transform shrink-0">
+            <div class="flex flex-col">
+                <span class="font-mali font-bold text-slate-800 text-sm sm:text-base leading-tight group-hover:text-amber-600 transition-colors">บันทึกผลการสอน</span>
+                <span class="text-[10px] sm:text-xs text-slate-500 font-medium hidden xs:inline">บันทึกภาระงานและผลการปฏิบัติงาน</span>
+            </div>
+        </a>
+        <div class="flex items-center gap-1 sm:gap-1.5 flex-wrap">
+            <a href="index.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-blue-600 active:scale-95"><i data-lucide="home" class="w-3.5 h-3.5 text-blue-500 shrink-0"></i><span class="hidden lg:inline">หน้าหลัก</span></a>
+            <a href="report.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-pink-600 active:scale-95"><i data-lucide="book-open" class="w-3.5 h-3.5 text-pink-500 shrink-0"></i><span class="hidden lg:inline">รายงานการสอน</span></a>
+            <a href="log.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-amber-600 active:scale-95"><i data-lucide="clipboard-list" class="w-3.5 h-3.5 text-amber-500 shrink-0"></i><span class="hidden lg:inline">บันทึกผลการสอน</span></a>
+            <a href="school.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-blue-600 active:scale-95"><i data-lucide="building-2" class="w-3.5 h-3.5 text-blue-500 shrink-0"></i><span class="hidden lg:inline">ข้อมูลวิทยาลัย</span></a>
+            <a href="research.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-emerald-600 active:scale-95"><i data-lucide="flask-conical" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i><span class="hidden lg:inline">Research</span></a>
+            <a href="evaluation.html" class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-violet-500 to-purple-600 text-white font-mali font-bold text-xs sm:text-sm shadow-md flex items-center gap-1.5 transition-all"><i data-lucide="star" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i><span>นิเทศการสอน</span></a>
+            <a href="profile.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-pink-600 active:scale-95"><i data-lucide="user" class="w-3.5 h-3.5 text-pink-500 shrink-0"></i><span>ผู้จัดทำ</span></a>
+        </div>
+    </nav>
+</header>
+
+<main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- Page Header -->
+    <section class="w-full mb-10 sm:mb-14">
+        <div class="glass-card rounded-[2rem] sm:rounded-[2.5rem] p-7 sm:p-10 border-2 border-violet-100/90 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-violet-50/60 via-purple-50/40 to-pink-50/60 pointer-events-none"></div>
+            <div class="relative z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-100 text-violet-800 text-xs font-mali font-bold border border-violet-200 shadow-sm mb-4">
+                    <i data-lucide="star" class="w-4 h-4 text-violet-600"></i>
+                    <span>การประเมินผลการปฏิบัติงาน</span>
+                </div>
+                <h1 class="text-2xl sm:text-4xl font-bold font-mali text-slate-800 mb-3">🎓 การนิเทศการสอน</h1>
+                <p class="text-slate-600 text-sm sm:text-base font-mali max-w-xl mx-auto leading-relaxed">บันทึกและสรุปผลการนิเทศการสอนของ<br><strong>นางสาวเขมมิกา สุทธิชาติ</strong> — ภาคเรียนที่ 1 ปีการศึกษา 2569</p>
+                <div class="flex items-center justify-center gap-3 mt-5 flex-wrap">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-slate-700 text-xs font-mali font-semibold border border-slate-200 shadow-sm"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500"></i>นิเทศ 3 ครั้ง</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-slate-700 text-xs font-mali font-semibold border border-slate-200 shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-500"></i>วิทยาลัยอาชีวศึกษาสุราษฎร์ธานี</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-slate-700 text-xs font-mali font-semibold border border-slate-200 shadow-sm"><i data-lucide="monitor" class="w-3.5 h-3.5 text-blue-500"></i>รายวิชา 21901-2010</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ นิเทศครั้งที่ 1 (ออนไซต์) ═══════════ -->
+    <section class="mb-12 sm:mb-16" id="supervision-1">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="sup-badge">1</div>
+            <div>
+                <h2 class="text-lg sm:text-2xl font-bold font-mali text-slate-800 leading-tight">🏫 นิเทศการสอนครั้งที่ 1 <span class="text-amber-600">รูปแบบออนไซต์</span></h2>
+                <p class="text-slate-500 text-xs sm:text-sm font-mali">โดย นางสาวเขมมิกา สุทธิชาติ 👩🏻‍🏫</p>
+            </div>
+        </div>
+        <div class="glass-card rounded-3xl p-5 sm:p-8 border-2 border-amber-100/90 shadow-lg space-y-5">
+            <div class="flex flex-wrap gap-3">
+                <span class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-amber-50 text-amber-800 text-xs font-mali font-semibold border border-amber-200"><i data-lucide="book" class="w-3.5 h-3.5 text-amber-600"></i>รายวิชา: การสร้างภาพเคลื่อนไหว 21901-2010</span>
+                <span class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-orange-50 text-orange-800 text-xs font-mali font-semibold border border-orange-200"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-orange-600"></i>ออนไซต์ ณ สถานศึกษา</span>
+            </div>
+            <div>
+                <p class="text-slate-600 text-xs font-mali font-semibold mb-3 flex items-center gap-1.5"><i data-lucide="images" class="w-4 h-4 text-amber-500"></i>ภาพบรรยากาศการนิเทศ</p>
+                <div class="swiper sup1-swiper w-full rounded-2xl overflow-hidden group relative pb-8">
+                    <div class="swiper-wrapper" id="sup1-wrapper"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev !text-white !bg-black/30 hover:!bg-black/50 !w-9 !h-9 !rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm after:!text-sm"></div>
+                    <div class="swiper-button-next !text-white !bg-black/30 hover:!bg-black/50 !w-9 !h-9 !rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm after:!text-sm"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ นิเทศครั้งที่ 2 (ออนไลน์) ═══════════ -->
+    <section class="mb-12 sm:mb-16" id="supervision-2">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="sup-badge online">2</div>
+            <div>
+                <h2 class="text-lg sm:text-2xl font-bold font-mali text-slate-800 leading-tight">🖥️ นิเทศการสอนครั้งที่ 2 <span class="text-violet-600">รูปแบบออนไลน์</span> ✨</h2>
+                <p class="text-slate-500 text-xs sm:text-sm font-mali">โดย นางสาวเขมมิกา สุทธิชาติ 👩🏻‍🏫</p>
+            </div>
+        </div>
+        <div class="glass-card rounded-3xl p-5 sm:p-8 border-2 border-violet-100/90 shadow-lg space-y-7">
+            <div class="flex flex-wrap gap-3">
+                <span class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-violet-50 text-violet-800 text-xs font-mali font-semibold border border-violet-200"><i data-lucide="book" class="w-3.5 h-3.5 text-violet-600"></i>รายวิชา: การสร้างภาพเคลื่อนไหว 21901-2010</span>
+                <span class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-pink-50 text-pink-800 text-xs font-mali font-semibold border border-pink-200"><i data-lucide="calendar" class="w-3.5 h-3.5 text-pink-600"></i>วันที่ 21 กรกฎาคม 2569</span>
+                <span class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-blue-50 text-blue-800 text-xs font-mali font-semibold border border-blue-200"><i data-lucide="monitor" class="w-3.5 h-3.5 text-blue-600"></i>รูปแบบออนไลน์</span>
+            </div>
+            <!-- Photo Gallery PPA1 -->
+            <div>
+                <p class="text-slate-600 text-xs font-mali font-semibold mb-3 flex items-center gap-1.5"><i data-lucide="images" class="w-4 h-4 text-violet-500"></i>ภาพบรรยากาศการนิเทศออนไลน์</p>
+                <div class="swiper sup2-swiper w-full rounded-2xl overflow-hidden group relative pb-8">
+                    <div class="swiper-wrapper" id="sup2-wrapper"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev !text-white !bg-black/30 hover:!bg-black/50 !w-9 !h-9 !rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm after:!text-sm"></div>
+                    <div class="swiper-button-next !text-white !bg-black/30 hover:!bg-black/50 !w-9 !h-9 !rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm after:!text-sm"></div>
+                </div>
+            </div>
+            <!-- YouTube Video Preview -->
+            <div>
+                <p class="text-slate-600 text-xs font-mali font-semibold mb-3 flex items-center gap-1.5"><i data-lucide="video" class="w-4 h-4 text-red-500"></i>🔗 วิดีโอบรรยากาศการเรียนการสอน</p>
+                <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-lg">
+                    <div class="iframe-wrap">
+                        <iframe src="https://www.youtube.com/embed/YczWhVd7l_A?rel=0&showinfo=0" title="วิดีโอนิเทศครั้งที่ 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+                <a href="https://youtu.be/YczWhVd7l_A" target="_blank" rel="noopener noreferrer" class="mt-2 inline-flex items-center gap-1.5 text-xs font-mali text-red-600 hover:text-red-700 font-semibold transition-colors"><i data-lucide="external-link" class="w-3.5 h-3.5"></i>เปิดใน YouTube</a>
+            </div>
+            <!-- Lesson Plan Preview -->
+            <div>
+                <p class="text-slate-600 text-xs font-mali font-semibold mb-3 flex items-center gap-1.5"><i data-lucide="file-text" class="w-4 h-4 text-emerald-500"></i>🔗 แผนการสอน</p>
+                <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-lg">
+                    <iframe src="https://drive.google.com/file/d/1xefpJy3bPmajG3EDyv-5f6hw6riq2TlK/preview" class="w-full h-[500px] sm:h-[620px] border-0" title="แผนการสอน นิเทศครั้งที่ 2" loading="lazy" allow="autoplay"></iframe>
+                </div>
+                <a href="https://drive.google.com/file/d/1xefpJy3bPmajG3EDyv-5f6hw6riq2TlK/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="mt-2 inline-flex items-center gap-1.5 text-xs font-mali text-emerald-700 hover:text-emerald-800 font-semibold transition-colors"><i data-lucide="external-link" class="w-3.5 h-3.5"></i>เปิดใน Google Drive</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ นิเทศครั้งที่ 3 (ออนไลน์) ═══════════ -->
+    <section class="mb-12 sm:mb-16" id="supervision-3">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="sup-badge online">3</div>
+            <div>
+                <h2 class="text-lg sm:text-2xl font-bold font-mali text-slate-800 leading-tight">🖥️ นิเทศการสอนครั้งที่ 3 <span class="text-violet-600">รูปแบบออนไลน์</span> ✨</h2>
+                <p class="text-slate-500 text-xs sm:text-sm font-mali">โดย นางสาวเขมมิกา สุทธิชาติ 👩🏻‍🏫</p>
+            </div>
+        </div>
+        <div class="glass-card rounded-3xl p-5 sm:p-8 border-2 border-violet-100/90 shadow-lg space-y-7">
+            <div class="flex flex-wrap gap-3">
+                <span class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-violet-50 text-violet-800 text-xs font-mali font-semibold border border-violet-200"><i data-lucide="book" class="w-3.5 h-3.5 text-violet-600"></i>รายวิชา: การสร้างภาพเคลื่อนไหว 21901-2010</span>
+                <span class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-pink-50 text-pink-800 text-xs font-mali font-semibold border border-pink-200"><i data-lucide="calendar" class="w-3.5 h-3.5 text-pink-600"></i>วันที่ 21 กรกฎาคม 2569</span>
+                <span class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-blue-50 text-blue-800 text-xs font-mali font-semibold border border-blue-200"><i data-lucide="monitor" class="w-3.5 h-3.5 text-blue-600"></i>รูปแบบออนไลน์</span>
+            </div>
+            <!-- YouTube -->
+            <div>
+                <p class="text-slate-600 text-xs font-mali font-semibold mb-3 flex items-center gap-1.5"><i data-lucide="video" class="w-4 h-4 text-red-500"></i>🔗 วิดีโอบรรยากาศการเรียนการสอน</p>
+                <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-lg">
+                    <div class="iframe-wrap">
+                        <iframe src="https://www.youtube.com/embed/YczWhVd7l_A?rel=0&showinfo=0" title="วิดีโอนิเทศครั้งที่ 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+                <a href="https://youtu.be/YczWhVd7l_A" target="_blank" rel="noopener noreferrer" class="mt-2 inline-flex items-center gap-1.5 text-xs font-mali text-red-600 hover:text-red-700 font-semibold transition-colors"><i data-lucide="external-link" class="w-3.5 h-3.5"></i>เปิดใน YouTube</a>
+            </div>
+            <!-- Lesson Plan -->
+            <div>
+                <p class="text-slate-600 text-xs font-mali font-semibold mb-3 flex items-center gap-1.5"><i data-lucide="file-text" class="w-4 h-4 text-emerald-500"></i>🔗 แผนการสอน</p>
+                <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-lg">
+                    <iframe src="https://drive.google.com/file/d/1xefpJy3bPmajG3EDyv-5f6hw6riq2TlK/preview" class="w-full h-[500px] sm:h-[620px] border-0" title="แผนการสอน นิเทศครั้งที่ 3" loading="lazy" allow="autoplay"></iframe>
+                </div>
+                <a href="https://drive.google.com/file/d/1xefpJy3bPmajG3EDyv-5f6hw6riq2TlK/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="mt-2 inline-flex items-center gap-1.5 text-xs font-mali text-emerald-700 hover:text-emerald-800 font-semibold transition-colors"><i data-lucide="external-link" class="w-3.5 h-3.5"></i>เปิดใน Google Drive</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ เล่มประเมินผล ═══════════ -->
+    <section class="mb-14 sm:mb-18" id="evaluation-book">
+        <div class="mb-6 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100 text-rose-800 text-xs font-mali font-bold border border-rose-200 shadow-sm mb-3"><i data-lucide="file-text" class="w-4 h-4 text-rose-600"></i><span>เอกสารประเมินผล</span></div>
+            <h2 class="text-xl sm:text-2xl font-bold font-mali text-slate-800 inline-block relative">📋 เล่มประเมินผลการปฏิบัติงาน<div class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-rose-400 via-pink-400 to-violet-400 rounded-full"></div></h2>
+            <p class="text-slate-500 text-xs sm:text-sm mt-4 font-mali">เอกสารสรุปผลการประเมินการปฏิบัติงานตลอดภาคเรียน</p>
+        </div>
+        <div class="glass-card rounded-3xl p-5 sm:p-7 border-2 border-rose-100/90 shadow-xl overflow-hidden">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-5 px-1">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center border border-rose-200 shadow-sm shrink-0"><i data-lucide="file-text" class="w-5 h-5"></i></div>
+                    <div>
+                        <h3 class="font-mali font-bold text-slate-800 text-base sm:text-lg leading-tight">เล่มประเมินผลการปฏิบัติงาน</h3>
+                        <p class="text-slate-500 text-xs font-mali">นางสาวเขมมิกา สุทธิชาติ — ภาคเรียน 1/2569</p>
+                    </div>
+                </div>
+                <a href="https://drive.google.com/file/d/1yeY82Ei_mZqmzP85xiJAqyuaQDdpVJ-c/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full bg-white text-slate-700 hover:text-rose-700 font-mali font-semibold text-xs border border-slate-200 shadow-sm flex items-center gap-1.5 transition-all hover:bg-slate-50 active:scale-95"><i data-lucide="external-link" class="w-3.5 h-3.5 text-rose-500"></i><span>เปิดใน Google Drive</span></a>
+            </div>
+            <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-lg bg-white">
+                <iframe src="https://drive.google.com/file/d/1yeY82Ei_mZqmzP85xiJAqyuaQDdpVJ-c/preview" class="w-full h-[600px] sm:h-[750px] border-0" title="เล่มประเมินผลการปฏิบัติงาน" loading="lazy" allow="autoplay"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-8 mb-8 mx-auto max-w-4xl">
+        <div class="glass-card rounded-[2.5rem] p-6 sm:p-10 text-center relative overflow-hidden flex flex-col items-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-white text-slate-600 text-xs sm:text-sm font-mali mb-3 shadow-sm"><i data-lucide="heart" class="w-4 h-4 text-amber-500"></i><span>จัดทำโดย นางสาวเขมมิกา สุทธิชาติ</span></div>
+            <h2 class="font-mali font-bold text-xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 mb-2">นางสาวเขมมิกา สุทธิชาติ</h2>
+            <p class="text-slate-500 font-mali font-medium mb-5 bg-white/70 px-4 py-1 rounded-full text-xs sm:text-sm inline-block border border-slate-200/60 shadow-sm">รหัสนักศึกษา 6602041620041</p>
+            <div class="w-full max-w-lg h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent mb-5"></div>
+            <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-mali">ภาควิชาคอมพิวเตอร์ศึกษา คณะครุศาสตร์อุตสาหกรรม มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (มจพ.)</p>
+        </div>
+    </footer>
+
+</main>
+
+<script>
+    lucide.createIcons();
+
+    const sup1Photos = [
+        'Photos/week-05/นิเทศครั้งทธ1ภาพ1.JPG',
+        'Photos/week-05/นิเทศครั้งทธ1ภาพ2.JPG',
+        'Photos/week-05/นิเทศครั้งทธ1ภาพ3.JPG',
+    ];
+    const sup2Photos = [
+        'Photos/PPA1/764861896_5349883878569275_4625572434203968635_n.png',
+        'Photos/PPA1/kkm.png',
+    ];
+
+    function encodeSrc(rawPath) {
+        // Encode each path segment individually to support Thai filenames
+        return rawPath.split('/').map((seg, i) => i === 0 ? seg : encodeURIComponent(seg)).join('/');
+    }
+    function buildSwiper(wrapperId, photos, cls) {
+        const wrapper = document.getElementById(wrapperId);
+        if (!wrapper || !photos.length) return;
+        wrapper.innerHTML = photos.map(rawSrc => {
+            const src = encodeSrc(rawSrc);
+            return `
+            <div class="swiper-slide">
+                <div class="w-full h-56 sm:h-72 md:h-80 rounded-xl overflow-hidden bg-slate-100 border border-slate-200/60">
+                    <img src="${src}" alt="ภาพนิเทศการสอน" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                </div>
+            </div>`;
+        }).join('');
+        new Swiper(`.${cls}`, {
+            slidesPerView:1, spaceBetween:12, loop: photos.length >= 2,
+            autoplay:{delay:3500,disableOnInteraction:false},
+            pagination:{el:`.${cls} .swiper-pagination`,clickable:true,dynamicBullets:true},
+            navigation:{nextEl:`.${cls} .swiper-button-next`,prevEl:`.${cls} .swiper-button-prev`},
+            breakpoints:{640:{slidesPerView:2,spaceBetween:16},1024:{slidesPerView:3,spaceBetween:20}}
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        buildSwiper('sup1-wrapper', sup1Photos, 'sup1-swiper');
+        buildSwiper('sup2-wrapper', sup2Photos, 'sup2-swiper');
+    });
+</script>
+</body>
+</html>
