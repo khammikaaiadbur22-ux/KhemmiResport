@@ -616,18 +616,19 @@ def inject_partials(filename, meta, html):
     if "<footer" in html:
         html = re.sub(
             r"(?:<!-- Footer -->|<!-- Partial: Standardized Unified Footer -->)?\s*<footer[\s\S]*?</footer>",
-            combined_bottom,
+            combined_bottom.strip(),
             html,
             count=1,
         )
     elif filename == "school.html":
         html = re.sub(
             r"<!-- ====== CUSTOM STUDENT FOOTER ====== -->[\s\S]*?<div class=\"student-footer-wrap fu\">[\s\S]*?</div>\s*</div>\s*</div>",
-            f'<div class="max-w-6xl mx-auto px-4">{combined_bottom}</div>',
+            f'<div class="max-w-6xl mx-auto px-4">{combined_bottom.strip()}</div>',
             html,
             count=1,
         )
 
+    html = re.sub(r"</footer>\s*</main>", "</footer>\n    </main>", html)
     return html
 
 
