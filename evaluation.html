@@ -63,8 +63,12 @@
 
 <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
 
-    <!-- Page Header -->
+    <!-- Page Header & Banner (_Banner/5.png) -->
     <section class="w-full mb-10 sm:mb-14">
+        <div class="w-full rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl border-2 sm:border-4 border-white/90 bg-white/40 relative mb-6">
+            <img src="_Banner/5.png" alt="แบบประเมินและการนิเทศการสอน" class="w-full h-auto object-cover max-h-[460px]">
+        </div>
+
         <div class="glass-card rounded-[2rem] sm:rounded-[2.5rem] p-7 sm:p-10 border-2 border-violet-100/90 text-center relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-br from-violet-50/60 via-purple-50/40 to-pink-50/60 pointer-events-none"></div>
             <div class="relative z-10">
@@ -73,16 +77,35 @@
                     <span>การประเมินผลการปฏิบัติงาน</span>
                 </div>
                 <h1 class="text-2xl sm:text-4xl font-bold font-mali text-slate-800 mb-3">🎓 การนิเทศการสอน</h1>
-                <p class="text-slate-600 text-sm sm:text-base font-mali max-w-xl mx-auto leading-relaxed">บันทึกและสรุปผลการนิเทศการสอนของ<br><strong>นางสาวเขมมิกา สุทธิชาติ</strong> — ภาคเรียนที่ 1 ปีการศึกษา 2569</p>
+                <p class="text-slate-600 text-sm sm:text-base font-mali max-w-xl mx-auto leading-relaxed">บันทึกและสรุปผลการนิเทศการสอนของ<br><strong>นางสาวเขมมิกา สุทธิชาติ</strong> — ภาคเรียนที่ 1 และ ภาคเรียนที่ 2 ปีการศึกษา 2569</p>
                 <div class="flex items-center justify-center gap-3 mt-5 flex-wrap">
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-slate-700 text-xs font-mali font-semibold border border-slate-200 shadow-sm"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500"></i>นิเทศ 3 ครั้ง</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-slate-700 text-xs font-mali font-semibold border border-slate-200 shadow-sm"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500"></i>เทอม 1: นิเทศครบ 3 ครั้ง</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-slate-700 text-xs font-mali font-semibold border border-slate-200 shadow-sm"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-indigo-500"></i>เทอม 2: แผนนิเทศ 3 ครั้ง</span>
                     <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-slate-700 text-xs font-mali font-semibold border border-slate-200 shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-500"></i>วิทยาลัยอาชีวศึกษาสุราษฎร์ธานี</span>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-slate-700 text-xs font-mali font-semibold border border-slate-200 shadow-sm"><i data-lucide="monitor" class="w-3.5 h-3.5 text-blue-500"></i>รายวิชา 21901-2010</span>
+                </div>
+
+                <!-- Semester Switcher Tabs -->
+                <div class="flex justify-center mt-6">
+                    <div class="inline-flex flex-wrap items-center justify-center gap-2 bg-white/90 backdrop-blur-xl p-2 rounded-full border-2 border-violet-100 shadow-md">
+                        <button id="btn-eval-all" onclick="switchEvalTerm('all')" class="px-4 sm:px-5 py-2 rounded-full font-mali font-bold text-xs sm:text-sm transition-all bg-gradient-to-r from-violet-500 to-purple-600 text-white shadow-md flex items-center gap-1.5">
+                            <i data-lucide="layers" class="w-4 h-4"></i>
+                            <span>แสดงทั้งหมด (เทอม 1 & 2)</span>
+                        </button>
+                        <button id="btn-eval-1" onclick="switchEvalTerm('term1')" class="px-4 sm:px-5 py-2 rounded-full font-mali font-bold text-xs sm:text-sm transition-all text-slate-600 hover:bg-violet-50 flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <span>นิเทศ ภาคเรียนที่ 1/2569</span>
+                        </button>
+                        <button id="btn-eval-2" onclick="switchEvalTerm('term2')" class="px-4 sm:px-5 py-2 rounded-full font-mali font-bold text-xs sm:text-sm transition-all text-slate-600 hover:bg-indigo-50 flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                            <span>🚀 แผนนิเทศ ภาคเรียนที่ 2/2569</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <div id="eval-term1-section">
     <!-- ═══════════ นิเทศครั้งที่ 1 (ออนไซต์) ═══════════ -->
     <section class="mb-12 sm:mb-16" id="supervision-1">
         <div class="flex items-center gap-3 mb-6">
@@ -214,6 +237,130 @@
             </div>
         </div>
     </section>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- TERM 2 WRAPPER: แผนและการดำเนินงานนิเทศการสอน ภาคเรียนที่ 2/2569 -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <div id="eval-term2-section" class="scroll-mt-24 mb-14">
+        <div class="mb-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-100 text-indigo-800 text-xs font-mali font-bold border border-indigo-200 shadow-sm mb-3">
+                <i data-lucide="compass" class="w-4 h-4 text-indigo-600"></i>
+                <span>การดำเนินงานนิเทศการสอน ภาคเรียนที่ 2/2569</span>
+            </div>
+            <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 block">
+                แผนการรับการนิเทศและประเมินผลการสอน ภาคเรียนที่ 2/2569
+            </h2>
+            <p class="text-slate-500 text-xs sm:text-sm mt-2 font-mali max-w-2xl mx-auto">
+                รายวิชา 020413233 ปฏิบัติการสอนด้านเทคโนโลยีคอมพิวเตอร์ในสถานศึกษา 2 • วางแผนรับการนิเทศการสอนรวม 3 ครั้ง ร่วมกับครูพี่เลี้ยงและอาจารย์นิเทศก์ประจำหลักสูตร
+            </p>
+        </div>
+
+        <!-- 3 Supervision Plan Cards for Term 2 -->
+        <div class="space-y-8 mb-12">
+            <!-- Term 2 Supervision 1 -->
+            <div class="glass-card rounded-3xl p-6 sm:p-8 border-2 border-indigo-100/90 shadow-lg">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                    <div class="flex items-center gap-3.5">
+                        <div class="sup-badge online">1</div>
+                        <div>
+                            <h3 class="text-lg sm:text-2xl font-bold font-mali text-slate-800">นิเทศการสอน ครั้งที่ 1 (ภาคเรียนที่ 2/2569)</h3>
+                            <p class="text-slate-500 text-xs sm:text-sm font-mali">ช่วงเวลาตามแผน: พฤศจิกายน – ธันวาคม 2569 (สัปดาห์ที่ 5–6)</p>
+                        </div>
+                    </div>
+                    <span class="px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-mali font-bold border border-amber-200 inline-flex items-center gap-1.5 self-start sm:self-center">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+                        <span>กำลังเตรียมการนิเทศ</span>
+                    </span>
+                </div>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                    ตรวจเยี่ยมความพร้อมในการจัดการเรียนรู้ต้นภาคเรียนที่ 2/2569 ตรวจโครงการสอน (Course Outline) แผนการจัดการเรียนรู้ฐานสมรรถนะ การจัดชั้นเรียนในห้องปฏิบัติการคอมพิวเตอร์ และการกำหนดหัวข้อวิจัยในชั้นเรียน
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-slate-200/70 text-xs font-mali">
+                    <div class="bg-indigo-50/70 rounded-xl p-3 border border-indigo-100 text-indigo-800">
+                        <strong class="block mb-0.5">📄 เอกสารที่เตรียม</strong>
+                        โครงการสอน, แผนการสอนหน่วยที่ 1–4, ใบงาน
+                    </div>
+                    <div class="bg-purple-50/70 rounded-xl p-3 border border-purple-100 text-purple-800">
+                        <strong class="block mb-0.5">🎯 ประเด็นรับการประเมิน</strong>
+                        บุคลิกภาพความเป็นครู, การนำเข้าสู่บทเรียน, สื่อการสอน
+                    </div>
+                    <div class="bg-emerald-50/70 rounded-xl p-3 border border-emerald-100 text-emerald-800">
+                        <strong class="block mb-0.5">📸 หลักฐานร่องรอย</strong>
+                        ภาพถ่ายการนิเทศ, วิดีโอบันทึกการสอน, แบบประเมินครั้งที่ 1
+                    </div>
+                </div>
+            </div>
+
+            <!-- Term 2 Supervision 2 -->
+            <div class="glass-card rounded-3xl p-6 sm:p-8 border-2 border-violet-100/90 shadow-lg">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                    <div class="flex items-center gap-3.5">
+                        <div class="sup-badge online">2</div>
+                        <div>
+                            <h3 class="text-lg sm:text-2xl font-bold font-mali text-slate-800">นิเทศการสอน ครั้งที่ 2 (ภาคเรียนที่ 2/2569)</h3>
+                            <p class="text-slate-500 text-xs sm:text-sm font-mali">ช่วงเวลาตามแผน: มกราคม 2570 (สัปดาห์ที่ 11–12)</p>
+                        </div>
+                    </div>
+                    <span class="px-3.5 py-1.5 rounded-full bg-violet-100 text-violet-800 text-xs font-mali font-bold border border-violet-200 inline-flex items-center gap-1.5 self-start sm:self-center">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                        <span>ตามแผนการดำเนินงาน</span>
+                    </span>
+                </div>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                    ติดตามความก้าวหน้าในการจัดการเรียนรู้เชิงรุก (Active Learning) การนำข้อเสนอแนะจากการนิเทศครั้งที่ 1 มาพัฒนาปรับปรุง และการใช้นวัตกรรมสื่อการสอนดิจิทัลควบคู่กับการเก็บข้อมูลวิจัยในชั้นเรียน
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-slate-200/70 text-xs font-mali">
+                    <div class="bg-indigo-50/70 rounded-xl p-3 border border-indigo-100 text-indigo-800">
+                        <strong class="block mb-0.5">📄 เอกสารที่เตรียม</strong>
+                        แผนการสอนบูรณาการนวัตกรรม, เครื่องมือวิจัยในชั้นเรียน
+                    </div>
+                    <div class="bg-purple-50/70 rounded-xl p-3 border border-purple-100 text-purple-800">
+                        <strong class="block mb-0.5">🎯 ประเด็นรับการประเมิน</strong>
+                        เทคนิคการสอนปฏิบัติ, การใช้สื่อ/AI, การมีส่วนร่วมของผู้เรียน
+                    </div>
+                    <div class="bg-emerald-50/70 rounded-xl p-3 border border-emerald-100 text-emerald-800">
+                        <strong class="block mb-0.5">📸 หลักฐานร่องรอย</strong>
+                        คลิปวิดีโอการสอน YouTube, ภาพบรรยากาศ, ผลประเมินครั้งที่ 2
+                    </div>
+                </div>
+            </div>
+
+            <!-- Term 2 Supervision 3 -->
+            <div class="glass-card rounded-3xl p-6 sm:p-8 border-2 border-pink-100/90 shadow-lg">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                    <div class="flex items-center gap-3.5">
+                        <div class="sup-badge">3</div>
+                        <div>
+                            <h3 class="text-lg sm:text-2xl font-bold font-mali text-slate-800">นิเทศการสอน ครั้งที่ 3 — ครั้งสุดท้าย (ภาคเรียนที่ 2/2569)</h3>
+                            <p class="text-slate-500 text-xs sm:text-sm font-mali">ช่วงเวลาตามแผน: กุมภาพันธ์ 2570 (สัปดาห์ที่ 15–16)</p>
+                        </div>
+                    </div>
+                    <span class="px-3.5 py-1.5 rounded-full bg-pink-100 text-pink-800 text-xs font-mali font-bold border border-pink-200 inline-flex items-center gap-1.5 self-start sm:self-center">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                        <span>ตามแผนการดำเนินงาน</span>
+                    </span>
+                </div>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                    ประเมินสรุปผลการฝึกปฏิบัติการสอนด้านเทคโนโลยีคอมพิวเตอร์ในสถานศึกษา 2 การนำเสนอผลงานโครงงานของผู้เรียน การวัดและประเมินผลตามสภาพจริง และการสรุปเล่มรายงานวิจัยในชั้นเรียนและเล่มประเมินผลการปฏิบัติงานตลอดปีการศึกษา
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-slate-200/70 text-xs font-mali">
+                    <div class="bg-indigo-50/70 rounded-xl p-3 border border-indigo-100 text-indigo-800">
+                        <strong class="block mb-0.5">📄 เอกสารที่เตรียม</strong>
+                        แผนการสอนปลายภาค, รายงานวิจัย 5 บท, เล่มประเมินผล 2/2569
+                    </div>
+                    <div class="bg-purple-50/70 rounded-xl p-3 border border-purple-100 text-purple-800">
+                        <strong class="block mb-0.5">🎯 ประเด็นรับการประเมิน</strong>
+                        สมรรถนะวิชาชีพครูครบทุกด้าน, ผลสัมฤทธิ์และชิ้นงานผู้เรียน
+                    </div>
+                    <div class="bg-emerald-50/70 rounded-xl p-3 border border-emerald-100 text-emerald-800">
+                        <strong class="block mb-0.5">📸 หลักฐานร่องรอย</strong>
+                        เล่มประเมินผลการปฏิบัติงานฉบับสมบูรณ์, แฟ้มสะสมงาน (Portfolio)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="mt-8 mb-8 mx-auto max-w-4xl">
@@ -266,9 +413,52 @@
         });
     }
 
+    function switchEvalTerm(mode) {
+        const sec1 = document.getElementById('eval-term1-section');
+        const sec2 = document.getElementById('eval-term2-section');
+        const btnAll = document.getElementById('btn-eval-all');
+        const btn1 = document.getElementById('btn-eval-1');
+        const btn2 = document.getElementById('btn-eval-2');
+
+        const activeViolet = "px-4 sm:px-5 py-2 rounded-full font-mali font-bold text-xs sm:text-sm transition-all bg-gradient-to-r from-violet-500 to-purple-600 text-white shadow-md flex items-center gap-1.5";
+        const activeIndigo = "px-4 sm:px-5 py-2 rounded-full font-mali font-bold text-xs sm:text-sm transition-all bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md flex items-center gap-1.5";
+        const inactive = "px-4 sm:px-5 py-2 rounded-full font-mali font-bold text-xs sm:text-sm transition-all text-slate-600 hover:bg-violet-50 flex items-center gap-1.5";
+
+        if (mode === 'term1') {
+            if (sec1) sec1.style.display = 'block';
+            if (sec2) sec2.style.display = 'none';
+            if (btnAll) btnAll.className = inactive;
+            if (btn1) btn1.className = activeViolet;
+            if (btn2) btn2.className = inactive;
+        } else if (mode === 'term2') {
+            if (sec1) sec1.style.display = 'none';
+            if (sec2) sec2.style.display = 'block';
+            if (btnAll) btnAll.className = inactive;
+            if (btn1) btn1.className = inactive;
+            if (btn2) btn2.className = activeIndigo;
+        } else {
+            if (sec1) sec1.style.display = 'block';
+            if (sec2) sec2.style.display = 'block';
+            if (btnAll) btnAll.className = activeViolet;
+            if (btn1) btn1.className = inactive;
+            if (btn2) btn2.className = inactive;
+        }
+    }
+
+    function handleEvalHash() {
+        const hash = window.location.hash;
+        if (hash === '#term2') {
+            switchEvalTerm('term2');
+        } else if (hash === '#term1') {
+            switchEvalTerm('term1');
+        }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         buildSwiper('sup1-wrapper', sup1Photos, 'sup1-swiper');
         buildSwiper('sup2-wrapper', sup2Photos, 'sup2-swiper');
+        handleEvalHash();
+        window.addEventListener('hashchange', handleEvalHash);
     });
 </script>
 </body>

@@ -185,21 +185,63 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Semester Switcher Tabs -->
+            <div class="flex justify-center mt-6 px-3">
+                <div class="inline-flex flex-wrap items-center justify-center gap-2 bg-white/85 backdrop-blur-xl p-2 rounded-full border-2 border-pink-100 shadow-lg">
+                    <button id="btn-term-all" onclick="switchReportTerm('all')" class="px-4 sm:px-5 py-2 rounded-full font-mali font-bold text-xs sm:text-sm transition-all bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-md flex items-center gap-1.5">
+                        <i data-lucide="layers" class="w-4 h-4"></i>
+                        <span>แสดงทั้งหมด (เทอม 1 & 2)</span>
+                    </button>
+                    <button id="btn-term-1" onclick="switchReportTerm('term1')" class="px-4 sm:px-5 py-2 rounded-full font-mali font-bold text-xs sm:text-sm transition-all text-slate-600 hover:bg-pink-50 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        <span>ภาคเรียนที่ 1/2569</span>
+                    </button>
+                    <button id="btn-term-2" onclick="switchReportTerm('term2')" class="px-4 sm:px-5 py-2 rounded-full font-mali font-bold text-xs sm:text-sm transition-all text-slate-600 hover:bg-indigo-50 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                        <span>🚀 ภาคเรียนที่ 2/2569 (เทอม 2)</span>
+                    </button>
+                </div>
+            </div>
         </section>
 
         <!-- Course & Timing Info Grid -->
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-12">
             
-            <!-- Course Card -->
-            <div class="glass-card rounded-3xl p-5 sm:p-6 lg:col-span-3">
-                <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center border border-blue-200 shadow-sm">
-                        <i data-lucide="book-open" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+            <!-- Course Card: Term 1 -->
+            <div class="glass-card rounded-3xl p-5 sm:p-6 lg:col-span-3 border-2 border-blue-100/80" id="course-card-term1">
+                <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center border border-blue-200 shadow-sm">
+                            <i data-lucide="book-open" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 flex-wrap mb-1">
+                                <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-mali font-bold border border-emerald-200">ภาคเรียนที่ 1/2569 • เสร็จสมบูรณ์</span>
+                                <span class="font-mali font-bold text-xs sm:text-sm text-slate-500">รายวิชาที่ลงทะเบียนฝึกประสบการณ์วิชาชีพครู</span>
+                            </div>
+                            <p class="text-base sm:text-xl text-slate-800 font-bold leading-snug">020413232 ปฏิบัติการสอนด้านเทคโนโลยีคอมพิวเตอร์ในสถานศึกษา 1 (540 ชั่วโมง)</p>
+                            <p class="text-slate-500 text-xs sm:text-sm mt-1">Teaching Practice in Computer Technology in Educational Institute I</p>
+                        </div>
                     </div>
-                    <div>
-                        <h2 class="font-mali font-bold text-base sm:text-lg text-slate-500 mb-1">รายวิชาที่ลงทะเบียนฝึกประสบการณ์วิชาชีพครู</h2>
-                        <p class="text-base sm:text-xl text-slate-800 font-bold leading-snug">020413232 ปฏิบัติการสอนด้านเทคโนโลยีคอมพิวเตอร์ในสถานศึกษา 1 (540 ชั่วโมง)</p>
-                        <p class="text-slate-500 text-xs sm:text-sm mt-1">Teaching Practice in Computer Technology in Educational Institute I</p>
+                </div>
+            </div>
+
+            <!-- Course Card: Term 2 -->
+            <div class="glass-card rounded-3xl p-5 sm:p-6 lg:col-span-3 border-2 border-indigo-200/90 bg-gradient-to-r from-white/80 via-indigo-50/40 to-pink-50/40" id="course-card-term2">
+                <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center border border-indigo-200 shadow-sm">
+                            <i data-lucide="sparkles" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 flex-wrap mb-1">
+                                <span class="px-2.5 py-0.5 rounded-full bg-indigo-600 text-white text-xs font-mali font-bold shadow-sm">🚀 ภาคเรียนที่ 2/2569 • กำลังดำเนินการ</span>
+                                <span class="font-mali font-bold text-xs sm:text-sm text-slate-500">รายวิชาที่ลงทะเบียนฝึกประสบการณ์วิชาชีพครู</span>
+                            </div>
+                            <p class="text-base sm:text-xl text-slate-800 font-bold leading-snug">020413233 ปฏิบัติการสอนด้านเทคโนโลยีคอมพิวเตอร์ในสถานศึกษา 2 (540 ชั่วโมง)</p>
+                            <p class="text-slate-500 text-xs sm:text-sm mt-1">Teaching Practice in Computer Technology in Educational Institute II</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -226,11 +268,11 @@
                         <i data-lucide="calendar-days" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </div>
                     <h3 class="font-mali font-bold text-slate-500 text-xs sm:text-sm mb-1.5">ระยะเวลาในการฝึกประสบการณ์</h3>
-                    <p class="text-base sm:text-lg text-slate-800 font-bold">5 พฤษภาคม 2569</p>
+                    <p class="text-base sm:text-lg text-slate-800 font-bold">5 พฤษภาคม 2569 – 31 มีนาคม 2570</p>
                 </div>
                 <p class="text-slate-500 text-xs sm:text-sm flex items-center gap-1 mt-2 font-medium">
                     <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-orange-500"></i>
-                    <span>สิ้นสุด 31 มีนาคม 2570</span>
+                    <span>เทอม 1 (พ.ค.–ก.ย. 69) • เทอม 2 (ต.ค. 69–มี.ค. 70)</span>
                 </p>
             </div>
 
@@ -342,119 +384,449 @@
             </div>
         </section>
 
-        <!-- Section: ตารางสอนที่ได้รับมอบหมาย (Teaching Schedule) -->
-        <section class="mb-12 sm:mb-16">
-            <div class="mb-8 text-center">
-                <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 inline-block relative">
-                    ตารางสอนที่ได้รับมอบหมายใน ปีการศึกษา 1/2569
-                    <div class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-full"></div>
-                </h2>
-                <p class="text-slate-500 text-xs sm:text-sm mt-2 font-mali">ตารางภาระงานสอนและรายวิชาปฏิบัติการสอน ปีการศึกษา 1/2569</p>
-            </div>
-
-            <div class="glass-card rounded-[2.5rem] p-4 sm:p-8 border-2 border-pink-100/90 shadow-xl overflow-hidden">
-                <div class="flex items-center justify-between mb-4 px-2">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-100 text-pink-700 text-xs font-mali font-bold border border-pink-200">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
-                        <span>ตารางภาระงานสอน</span>
+        <!-- ═══════════════════════════════════════════════════════════════════════ -->
+        <!-- TERM 1 WRAPPER: ข้อมูลรายงานการสอน ภาคเรียนที่ 1/2569 -->
+        <!-- ═══════════════════════════════════════════════════════════════════════ -->
+        <div id="term1-section" class="scroll-mt-24">
+            <!-- Section: ตารางสอนที่ได้รับมอบหมาย 1/2569 (Teaching Schedule) -->
+            <section class="mb-12 sm:mb-16">
+                <div class="mb-8 text-center">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-mali font-bold border border-emerald-200 mb-2">
+                        <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+                        <span>ภาคเรียนที่ 1/2569 (เสร็จสมบูรณ์)</span>
                     </div>
-                    <span class="text-xs text-slate-500 font-mali font-semibold bg-white/80 px-3 py-1 rounded-full border border-slate-200 shadow-sm">ปีการศึกษา 1/2569</span>
+                    <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 block relative">
+                        ตารางสอนที่ได้รับมอบหมายใน ปีการศึกษา 1/2569
+                    </h2>
+                    <p class="text-slate-500 text-xs sm:text-sm mt-2 font-mali">ตารางภาระงานสอนและรายวิชาปฏิบัติการสอน ปีการศึกษา 1/2569</p>
                 </div>
-                
-                <div class="rounded-2xl overflow-hidden border-2 border-white shadow-lg group relative bg-white">
+
+                <div class="glass-card rounded-[2.5rem] p-4 sm:p-8 border-2 border-pink-100/90 shadow-xl overflow-hidden">
+                    <div class="flex items-center justify-between mb-4 px-2">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-100 text-pink-700 text-xs font-mali font-bold border border-pink-200">
+                            <i data-lucide="calendar" class="w-4 h-4"></i>
+                            <span>ตารางภาระงานสอน 1/2569</span>
+                        </div>
+                        <span class="text-xs text-slate-500 font-mali font-semibold bg-white/80 px-3 py-1 rounded-full border border-slate-200 shadow-sm">ปีการศึกษา 1/2569</span>
+                    </div>
+                    
+                    <div class="rounded-2xl overflow-hidden border-2 border-white shadow-lg group relative bg-white">
+                        <img 
+                            src="Personal/teaching.png" 
+                            alt="ตารางภาระงานสอนของฉัน ปีการศึกษา 1/2569" 
+                            class="w-full h-auto object-contain rounded-2xl group-hover:scale-[1.01] transition-transform duration-500"
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: แผนการสอนรายวิชา 1/2569 (Lesson Plans & Course Outlines) -->
+            <section class="mb-12 sm:mb-16">
+                <div class="mb-8 text-center">
+                    <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 inline-block relative">
+                        แผนการจัดการเรียนรู้ / แผนการสอนรายวิชา (ภาคเรียนที่ 1/2569)
+                        <div class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-rose-400 via-purple-400 to-indigo-500 rounded-full"></div>
+                    </h2>
+                    <p class="text-slate-500 text-xs sm:text-sm mt-2 font-mali">รายละเอียดแผนการสอนและประมวลรายวิชา (Course Outline) ที่ได้รับมอบหมายในเทอม 1</p>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Course 1: การสร้างภาพเคลื่อนไหวเบื้องต้น -->
+                    <div class="glass-card rounded-[2.5rem] p-4 sm:p-7 border-2 border-rose-100/90 shadow-xl overflow-hidden">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 px-2">
+                            <div class="flex items-center gap-3.5">
+                                <div class="w-11 h-11 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center border border-rose-200 shadow-sm shrink-0">
+                                    <i data-lucide="film" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-mali font-bold text-slate-800 text-base sm:text-lg leading-tight">
+                                        แผนการสอน รายวิชาการสร้างภาพเคลื่อนไหวเบื้องต้น (1/2569)
+                                    </h3>
+                                    <p class="text-slate-500 text-xs font-mali mt-0.5">Basic Animation Course Lesson Plan</p>
+                                </div>
+                            </div>
+                            
+                            <a 
+                                href="https://drive.google.com/file/d/1jaTVVau6TJvilvkmcFM85XmJIcaW684m/view?usp=sharing" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="px-4 py-2 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white font-mali font-bold text-xs shadow-md hover:from-rose-600 hover:to-pink-600 transition-all flex items-center gap-1.5 active:scale-95 shrink-0"
+                            >
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                                <span>เปิดใน Google Drive</span>
+                            </a>
+                        </div>
+
+                        <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-md bg-white">
+                            <iframe 
+                                src="https://drive.google.com/file/d/1jaTVVau6TJvilvkmcFM85XmJIcaW684m/preview" 
+                                class="w-full h-[480px] sm:h-[580px] border-0 rounded-2xl" 
+                                loading="lazy"
+                                title="พรีวิวแผนการสอน รายวิชาการสร้างภาพเคลื่อนไหวเบื้องต้น"
+                            ></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Course 2: สื่อโมชันกราฟิก -->
+                    <div class="glass-card rounded-[2.5rem] p-4 sm:p-7 border-2 border-purple-100/90 shadow-xl overflow-hidden">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 px-2">
+                            <div class="flex items-center gap-3.5">
+                                <div class="w-11 h-11 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center border border-purple-200 shadow-sm shrink-0">
+                                    <i data-lucide="video" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-mali font-bold text-slate-800 text-base sm:text-lg leading-tight">
+                                        แผนการสอน รายวิชาสื่อโมชันกราฟิก (1/2569)
+                                    </h3>
+                                    <p class="text-slate-500 text-xs font-mali mt-0.5">Motion Graphics Course Lesson Plan</p>
+                                </div>
+                            </div>
+                            
+                            <a 
+                                href="https://drive.google.com/file/d/1-UeKtRvQkUjuvHspafQdGx_EcXxDD05N/view?usp=sharing" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-mali font-bold text-xs shadow-md hover:from-purple-700 hover:to-indigo-700 transition-all flex items-center gap-1.5 active:scale-95 shrink-0"
+                            >
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                                <span>เปิดใน Google Drive</span>
+                            </a>
+                        </div>
+
+                        <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-md bg-white">
+                            <iframe 
+                                src="https://drive.google.com/file/d/1-UeKtRvQkUjuvHspafQdGx_EcXxDD05N/preview" 
+                                class="w-full h-[480px] sm:h-[580px] border-0 rounded-2xl" 
+                                loading="lazy"
+                                title="พรีวิวแผนการสอน รายวิชาสื่อโมชันกราฟิก"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════════════ -->
+        <!-- TERM 2 WRAPPER: ข้อมูลและแผนการดำเนินงาน ภาคเรียนที่ 2/2569 -->
+        <!-- ═══════════════════════════════════════════════════════════════════════ -->
+        <div id="term2-section" class="scroll-mt-24">
+            <!-- Banner Header for Term 2 Lesson Plans (_Banner/4.png) -->
+            <section class="w-full mb-10 sm:mb-12">
+                <div class="w-full rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden shadow-xl border-2 sm:border-4 border-white/90 bg-white/40 relative">
                     <img 
-                        src="Personal/teaching.png" 
-                        alt="ตารางภาระงานสอนของฉัน ปีการศึกษา 1/2569" 
-                        class="w-full h-auto object-contain rounded-2xl group-hover:scale-[1.01] transition-transform duration-500"
+                        src="_Banner/4.png" 
+                        alt="แผนการสอนและการดำเนินงาน ภาคเรียนที่ 2/2569" 
+                        class="w-full h-auto object-cover max-h-[380px]"
                     >
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Section: แผนการสอนรายวิชา (Lesson Plans & Course Outlines) -->
-        <section class="mb-12 sm:mb-16">
-            <div class="mb-8 text-center">
-                <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 inline-block relative">
-                    แผนการจัดการเรียนรู้ / แผนการสอนรายวิชา
-                    <div class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-rose-400 via-purple-400 to-indigo-500 rounded-full"></div>
-                </h2>
-                <p class="text-slate-500 text-xs sm:text-sm mt-2 font-mali">รายละเอียดแผนการสอนและประมวลรายวิชา (Course Outline) ที่ได้รับมอบหมาย</p>
-            </div>
+            <!-- Section: แผนการดำเนินงานด้านการจัดการเรียนรู้ ภาคเรียนที่ 2/2569 -->
+            <section class="mb-12 sm:mb-16">
+                <div class="mb-8 text-center">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-100 text-indigo-700 text-xs font-mali font-bold border border-indigo-200 mb-3">
+                        <i data-lucide="compass" class="w-4 h-4 text-indigo-600"></i>
+                        <span>การดำเนินงานภาคเรียนที่ 2/2569 (ตุลาคม 2569 – มีนาคม 2570)</span>
+                    </div>
+                    <h2 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 block">
+                        แผนการดำเนินงานและภาระงานสอน ภาคเรียนที่ 2/2569
+                    </h2>
+                    <p class="text-slate-500 text-xs sm:text-sm mt-2 font-mali max-w-2xl mx-auto">
+                        วางแผนการจัดการเรียนรู้เชิงรุก (Active Learning) บูรณาการสื่อดิจิทัลและปัญญาประดิษฐ์ สำหรับผู้เรียนแผนกวิชาธุรกิจดิจิทัลและเทคโนโลยีสารสนเทศ
+                    </p>
+                </div>
 
-            <div class="space-y-8">
-                <!-- Course 1: การสร้างภาพเคลื่อนไหวเบื้องต้น -->
-                <div class="glass-card rounded-[2.5rem] p-4 sm:p-7 border-2 border-rose-100/90 shadow-xl overflow-hidden">
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 px-2">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-11 h-11 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center border border-rose-200 shadow-sm shrink-0">
-                                <i data-lucide="film" class="w-5 h-5"></i>
+                <!-- 4 Operational Steps for Term 2 Teaching -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+                    <div class="glass-card rounded-3xl p-5 border-2 border-indigo-100 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-9 h-9 rounded-xl bg-indigo-600 text-white font-mali font-bold text-sm flex items-center justify-center shadow-sm">01</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-[11px] font-mali font-bold border border-indigo-200">ต.ค. – พ.ย. 69</span>
                             </div>
-                            <div>
-                                <h3 class="font-mali font-bold text-slate-800 text-base sm:text-lg leading-tight">
-                                    แผนการสอน รายวิชาการสร้างภาพเคลื่อนไหวเบื้องต้น
-                                </h3>
-                                <p class="text-slate-500 text-xs font-mali mt-0.5">Basic Animation Course Lesson Plan</p>
-                            </div>
+                            <h3 class="font-mali font-bold text-slate-800 text-base mb-1.5">วิเคราะห์หลักสูตร & โครงการสอน</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                วิเคราะห์สมรรถนะรายวิชาตามหลักสูตรอาชีวศึกษา พ.ศ. 2567 จัดทำตารางวิเคราะห์งาน (Job Analysis) และโครงการสอน (Course Outline) ภาคเรียนที่ 2/2569
+                            </p>
                         </div>
-                        
-                        <a 
-                            href="https://drive.google.com/file/d/1jaTVVau6TJvilvkmcFM85XmJIcaW684m/view?usp=sharing" 
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="px-4 py-2 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white font-mali font-bold text-xs shadow-md hover:from-rose-600 hover:to-pink-600 transition-all flex items-center gap-1.5 active:scale-95 shrink-0"
-                        >
-                            <i data-lucide="external-link" class="w-4 h-4"></i>
-                            <span>เปิดใน Google Drive</span>
-                        </a>
+                        <div class="mt-4 pt-2.5 border-t border-slate-200/60 text-[11px] text-indigo-600 font-mali font-bold flex items-center gap-1">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+                            <span>เตรียมความพร้อมต้นภาคเรียน</span>
+                        </div>
                     </div>
 
-                    <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-md bg-white">
-                        <iframe 
-                            src="https://drive.google.com/file/d/1jaTVVau6TJvilvkmcFM85XmJIcaW684m/preview" 
-                            class="w-full h-[480px] sm:h-[580px] border-0 rounded-2xl" 
-                            loading="lazy"
-                            title="พรีวิวแผนการสอน รายวิชาการสร้างภาพเคลื่อนไหวเบื้องต้น"
-                        ></iframe>
+                    <div class="glass-card rounded-3xl p-5 border-2 border-pink-100 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-9 h-9 rounded-xl bg-pink-500 text-white font-mali font-bold text-sm flex items-center justify-center shadow-sm">02</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-pink-50 text-pink-700 text-[11px] font-mali font-bold border border-pink-200">พ.ย. 69 – ก.พ. 70</span>
+                            </div>
+                            <h3 class="font-mali font-bold text-slate-800 text-base mb-1.5">แผนการสอนฐานสมรรถนะ</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                ออกแบบแผนการจัดการเรียนรู้รายสัปดาห์ (18 สัปดาห์) เน้นการลงมือปฏิบัติจริง (Project-Based & Creativity-Based Learning) พร้อมใบงานและใบความรู้
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-2.5 border-t border-slate-200/60 text-[11px] text-pink-600 font-mali font-bold flex items-center gap-1">
+                            <i data-lucide="file-check" class="w-3.5 h-3.5"></i>
+                            <span>จัดทำแผนการสอนครบ 18 สัปดาห์</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-5 border-2 border-purple-100 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-9 h-9 rounded-xl bg-purple-600 text-white font-mali font-bold text-sm flex items-center justify-center shadow-sm">03</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 text-[11px] font-mali font-bold border border-purple-200">พ.ย. 69 – ก.พ. 70</span>
+                            </div>
+                            <h3 class="font-mali font-bold text-slate-800 text-base mb-1.5">พัฒนานวัตกรรมและสื่อดิจิทัล</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                สร้างสื่อการสอนมัลติมีเดีย วิดีโอสาธิตการปฏิบัติงาน และประยุกต์ใช้เครื่องมือ Generative AI เพื่อยกระดับทักษะดิจิทัลของผู้เรียนอาชีวศึกษา
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-2.5 border-t border-slate-200/60 text-[11px] text-purple-600 font-mali font-bold flex items-center gap-1">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                            <span>เชื่อมโยงกับวิจัยในชั้นเรียนเทอม 2</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-5 border-2 border-emerald-100 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-9 h-9 rounded-xl bg-emerald-600 text-white font-mali font-bold text-sm flex items-center justify-center shadow-sm">04</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-mali font-bold border border-emerald-200">ก.พ. – มี.ค. 70</span>
+                            </div>
+                            <h3 class="font-mali font-bold text-slate-800 text-base mb-1.5">วัดและประเมินผลตามสภาพจริง</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                ประเมินผลชิ้นงานดิจิทัลด้วยเกณฑ์ Rubric Score ทดสอบสมรรถนะผู้เรียน และสรุปรายงานผลสัมฤทธิ์ทางการเรียนประจำภาคเรียนที่ 2/2569
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-2.5 border-t border-slate-200/60 text-[11px] text-emerald-600 font-mali font-bold flex items-center gap-1">
+                            <i data-lucide="bar-chart-3" class="w-3.5 h-3.5"></i>
+                            <span>สรุปผลสัมฤทธิ์ปลายภาคเรียน</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Course 2: สื่อโมชันกราฟิก -->
-                <div class="glass-card rounded-[2.5rem] p-4 sm:p-7 border-2 border-purple-100/90 shadow-xl overflow-hidden">
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 px-2">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-11 h-11 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center border border-purple-200 shadow-sm shrink-0">
-                                <i data-lucide="video" class="w-5 h-5"></i>
+                <!-- Term 2 Teaching Schedule Box -->
+                <div class="glass-card rounded-[2.5rem] p-5 sm:p-8 border-2 border-indigo-100/90 shadow-xl mb-10">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center border border-indigo-200 shadow-sm shrink-0">
+                                <i data-lucide="calendar-clock" class="w-5 h-5"></i>
                             </div>
                             <div>
-                                <h3 class="font-mali font-bold text-slate-800 text-base sm:text-lg leading-tight">
-                                    แผนการสอน รายวิชาสื่อโมชันกราฟิก
-                                </h3>
-                                <p class="text-slate-500 text-xs font-mali mt-0.5">Motion Graphics Course Lesson Plan</p>
+                                <h3 class="font-mali font-bold text-slate-800 text-base sm:text-xl">ตารางสอนที่ได้รับมอบหมาย ปีการศึกษา 2/2569</h3>
+                                <p class="text-slate-500 text-xs font-mali">แผนกวิชาธุรกิจดิจิทัลและเทคโนโลยีสารสนเทศ วิทยาลัยอาชีวศึกษาสุราษฎร์ธานี</p>
                             </div>
                         </div>
-                        
-                        <a 
-                            href="https://drive.google.com/file/d/1-UeKtRvQkUjuvHspafQdGx_EcXxDD05N/view?usp=sharing" 
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-mali font-bold text-xs shadow-md hover:from-purple-700 hover:to-indigo-700 transition-all flex items-center gap-1.5 active:scale-95 shrink-0"
-                        >
-                            <i data-lucide="external-link" class="w-4 h-4"></i>
-                            <span>เปิดใน Google Drive</span>
-                        </a>
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="px-3.5 py-1.5 rounded-full bg-indigo-100 text-indigo-700 text-xs font-mali font-bold border border-indigo-200">ปีการศึกษา 2/2569</span>
+                            <a 
+                                href="https://drive.google.com/file/d/1PMukHS6JOZYqqSxHEy1FIyW9bOHHke-c/view?usp=sharing" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-mali font-bold text-xs shadow-md hover:from-indigo-700 hover:to-purple-700 transition-all flex items-center gap-1.5 active:scale-95 shrink-0"
+                            >
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                                <span>เปิดตารางสอนใน Google Drive</span>
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-md bg-white">
+                    <!-- Embedded Term 2 Teaching Schedule Preview -->
+                    <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-md bg-white mb-6">
                         <iframe 
-                            src="https://drive.google.com/file/d/1-UeKtRvQkUjuvHspafQdGx_EcXxDD05N/preview" 
+                            src="https://drive.google.com/file/d/1PMukHS6JOZYqqSxHEy1FIyW9bOHHke-c/preview" 
                             class="w-full h-[480px] sm:h-[580px] border-0 rounded-2xl" 
                             loading="lazy"
-                            title="พรีวิวแผนการสอน รายวิชาสื่อโมชันกราฟิก"
+                            title="ตารางการสอนในปีการศึกษาที่ 2/2569"
                         ></iframe>
                     </div>
+
+                    <!-- Schedule Summary Table for Term 2 -->
+                    <div class="overflow-x-auto rounded-2xl border border-indigo-100 bg-white/90 shadow-sm">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 text-slate-700 font-mali text-xs sm:text-sm border-b border-indigo-100">
+                                    <th class="py-3.5 px-4 font-bold">ลำดับ</th>
+                                    <th class="py-3.5 px-4 font-bold">รายวิชาที่ได้รับมอบหมาย (ภาคเรียนที่ 2/2569)</th>
+                                    <th class="py-3.5 px-4 font-bold">ระดับชั้น / กลุ่มเรียน</th>
+                                    <th class="py-3.5 px-4 font-bold">เอกสารแผนการเรียนรู้</th>
+                                    <th class="py-3.5 px-4 font-bold">สถานะ</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100 text-xs sm:text-sm text-slate-600">
+                                <tr class="hover:bg-indigo-50/40 transition-colors">
+                                    <td class="py-3.5 px-4 font-mali font-bold text-indigo-600">01</td>
+                                    <td class="py-3.5 px-4">
+                                        <span class="font-mali font-bold text-slate-800 block">รายวิชา การสร้างแบรนด์ธุรกิจ</span>
+                                        <span class="text-xs text-slate-400">Business Branding • ทฤษฎีควบคู่ปฏิบัติ</span>
+                                    </td>
+                                    <td class="py-3.5 px-4 font-mali font-bold text-indigo-700">ปวส. 1/1</td>
+                                    <td class="py-3.5 px-4">
+                                        <a href="https://drive.google.com/file/d/1p_BFGg_X-N6lZ0AEKxa_Gw8oyYM_lCqn/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline font-mali font-bold inline-flex items-center gap-1">
+                                            <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                                            <span>เปิดดูแผนการเรียนรู้</span>
+                                        </a>
+                                    </td>
+                                    <td class="py-3.5 px-4">
+                                        <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-mali font-bold">ดำเนินการสอน</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-indigo-50/40 transition-colors">
+                                    <td class="py-3.5 px-4 font-mali font-bold text-pink-600">02</td>
+                                    <td class="py-3.5 px-4">
+                                        <span class="font-mali font-bold text-slate-800 block">รายวิชา การประยุกต์ใช้เทคโนโลยีเพื่องานอาชีพ</span>
+                                        <span class="text-xs text-slate-400">Applying Technology for Career • ทฤษฎีควบคู่ปฏิบัติ</span>
+                                    </td>
+                                    <td class="py-3.5 px-4 font-mali font-bold text-pink-700">ปวส. 1/1 ธุรกิจแฟชั่น</td>
+                                    <td class="py-3.5 px-4">
+                                        <a href="https://drive.google.com/file/d/1ElgZ_AgVNrvZI9Ef7N7cR6J-Pwc6lblw/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-pink-600 hover:underline font-mali font-bold inline-flex items-center gap-1">
+                                            <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                                            <span>เปิดดูแผนการเรียนรู้</span>
+                                        </a>
+                                    </td>
+                                    <td class="py-3.5 px-4">
+                                        <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-mali font-bold">ดำเนินการสอน</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-indigo-50/40 transition-colors">
+                                    <td class="py-3.5 px-4 font-mali font-bold text-purple-600">03</td>
+                                    <td class="py-3.5 px-4">
+                                        <span class="font-mali font-bold text-slate-800 block">รายวิชา การใช้เทคโนโลยีเพื่องานอาชีพ</span>
+                                        <span class="text-xs text-slate-400">Using Technology for Career • ทฤษฎีควบคู่ปฏิบัติ</span>
+                                    </td>
+                                    <td class="py-3.5 px-4 font-mali font-bold text-purple-700">ปวช. 1/1 การตลาด</td>
+                                    <td class="py-3.5 px-4">
+                                        <a href="https://drive.google.com/file/d/1-YiHeDpWwDy4hO2wtQ45QMif1qaVYwNp/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-purple-600 hover:underline font-mali font-bold inline-flex items-center gap-1">
+                                            <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                                            <span>เปิดดูแผนการเรียนรู้</span>
+                                        </a>
+                                    </td>
+                                    <td class="py-3.5 px-4">
+                                        <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-mali font-bold">ดำเนินการสอน</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-        </section>
+
+                <!-- Term 2 Lesson Plan Cards (3 Assigned Courses) -->
+                <div class="space-y-8">
+                    <!-- Course 1: การสร้างแบรนด์ธุรกิจ ปวส. 1/1 -->
+                    <div class="glass-card rounded-[2.5rem] p-4 sm:p-7 border-2 border-indigo-100/90 shadow-xl overflow-hidden">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 px-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center border border-indigo-200 shadow-sm shrink-0">
+                                    <i data-lucide="award" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 flex-wrap mb-0.5">
+                                        <span class="px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-700 text-[11px] font-mali font-bold">รายวิชาที่ 1 • ปวส. 1/1</span>
+                                        <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-mali font-bold">ภาคเรียนที่ 2/2569</span>
+                                    </div>
+                                    <h3 class="font-mali font-bold text-slate-800 text-base sm:text-lg leading-tight">แผนการจัดการเรียนรู้ รายวิชา การสร้างแบรนด์ธุรกิจ (ปวส. 1/1)</h3>
+                                    <p class="text-slate-500 text-xs font-mali">เอกสารแผนการจัดการเรียนรู้ฐานสมรรถนะ ภาคเรียนที่ 2 ปีการศึกษา 2569</p>
+                                </div>
+                            </div>
+                            <a 
+                                href="https://drive.google.com/file/d/1p_BFGg_X-N6lZ0AEKxa_Gw8oyYM_lCqn/view?usp=sharing" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="px-4 py-2 rounded-full bg-white text-slate-700 hover:text-indigo-600 font-mali font-semibold text-xs border border-slate-200 shadow-sm flex items-center gap-1.5 transition-all hover:bg-slate-50 active:scale-95 shrink-0"
+                            >
+                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-indigo-500"></i>
+                                <span>เปิดใน Google Drive</span>
+                            </a>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-lg bg-slate-900/5 relative">
+                            <iframe 
+                                src="https://drive.google.com/file/d/1p_BFGg_X-N6lZ0AEKxa_Gw8oyYM_lCqn/preview" 
+                                class="w-full h-[500px] sm:h-[650px] border-0 rounded-2xl bg-white"
+                                allow="autoplay"
+                                loading="lazy"
+                                title="แผนการเรียนรู้ รายวิชา การสร้างแบรนด์ธุรกิจ ปวส. 1/1"
+                            ></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Course 2: การประยุกต์ใช้เทคโนโลยีเพื่องานอาชีพ ปวส. 1/1 ธุรกิจแฟชั่น -->
+                    <div class="glass-card rounded-[2.5rem] p-4 sm:p-7 border-2 border-pink-100/90 shadow-xl overflow-hidden">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 px-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center border border-pink-200 shadow-sm shrink-0">
+                                    <i data-lucide="laptop" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 flex-wrap mb-0.5">
+                                        <span class="px-2.5 py-0.5 rounded-full bg-pink-100 text-pink-700 text-[11px] font-mali font-bold">รายวิชาที่ 2 • ปวส. 1/1 ธุรกิจแฟชั่น</span>
+                                        <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-mali font-bold">ภาคเรียนที่ 2/2569</span>
+                                    </div>
+                                    <h3 class="font-mali font-bold text-slate-800 text-base sm:text-lg leading-tight">แผนการจัดการเรียนรู้ รายวิชา การประยุกต์ใช้เทคโนโลยีเพื่องานอาชีพ (ปวส. 1/1 ธุรกิจแฟชั่น)</h3>
+                                    <p class="text-slate-500 text-xs font-mali">เอกสารแผนการจัดการเรียนรู้ฐานสมรรถนะ ภาคเรียนที่ 2 ปีการศึกษา 2569</p>
+                                </div>
+                            </div>
+                            <a 
+                                href="https://drive.google.com/file/d/1ElgZ_AgVNrvZI9Ef7N7cR6J-Pwc6lblw/view?usp=sharing" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="px-4 py-2 rounded-full bg-white text-slate-700 hover:text-pink-600 font-mali font-semibold text-xs border border-slate-200 shadow-sm flex items-center gap-1.5 transition-all hover:bg-slate-50 active:scale-95 shrink-0"
+                            >
+                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-pink-500"></i>
+                                <span>เปิดใน Google Drive</span>
+                            </a>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-lg bg-slate-900/5 relative">
+                            <iframe 
+                                src="https://drive.google.com/file/d/1ElgZ_AgVNrvZI9Ef7N7cR6J-Pwc6lblw/preview" 
+                                class="w-full h-[500px] sm:h-[650px] border-0 rounded-2xl bg-white"
+                                allow="autoplay"
+                                loading="lazy"
+                                title="แผนการเรียนรู้ รายวิชา การประยุกต์ใช้เทคโนโลยีเพื่องานอาชีพ ปวส. 1/1 ธุรกิจแฟชั่น"
+                            ></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Course 3: การใช้เทคโนโลยีเพื่องานอาชีพ ปวช. 1/1 การตลาด -->
+                    <div class="glass-card rounded-[2.5rem] p-4 sm:p-7 border-2 border-purple-100/90 shadow-xl overflow-hidden">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 px-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center border border-purple-200 shadow-sm shrink-0">
+                                    <i data-lucide="monitor-smartphone" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 flex-wrap mb-0.5">
+                                        <span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-700 text-[11px] font-mali font-bold">รายวิชาที่ 3 • ปวช. 1/1 การตลาด</span>
+                                        <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-mali font-bold">ภาคเรียนที่ 2/2569</span>
+                                    </div>
+                                    <h3 class="font-mali font-bold text-slate-800 text-base sm:text-lg leading-tight">แผนการจัดการเรียนรู้ รายวิชา การใช้เทคโนโลยีเพื่องานอาชีพ (ปวช. 1/1 การตลาด)</h3>
+                                    <p class="text-slate-500 text-xs font-mali">เอกสารแผนการจัดการเรียนรู้ฐานสมรรถนะ ภาคเรียนที่ 2 ปีการศึกษา 2569</p>
+                                </div>
+                            </div>
+                            <a 
+                                href="https://drive.google.com/file/d/1-YiHeDpWwDy4hO2wtQ45QMif1qaVYwNp/view?usp=sharing" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="px-4 py-2 rounded-full bg-white text-slate-700 hover:text-purple-600 font-mali font-semibold text-xs border border-slate-200 shadow-sm flex items-center gap-1.5 transition-all hover:bg-slate-50 active:scale-95 shrink-0"
+                            >
+                                <i data-lucide="external-link" class="w-3.5 h-3.5 text-purple-500"></i>
+                                <span>เปิดใน Google Drive</span>
+                            </a>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden border-2 border-slate-200/80 shadow-lg bg-slate-900/5 relative">
+                            <iframe 
+                                src="https://drive.google.com/file/d/1-YiHeDpWwDy4hO2wtQ45QMif1qaVYwNp/preview" 
+                                class="w-full h-[500px] sm:h-[650px] border-0 rounded-2xl bg-white"
+                                allow="autoplay"
+                                loading="lazy"
+                                title="แผนการเรียนรู้ รายวิชา การใช้เทคโนโลยีเพื่องานอาชีพ ปวช. 1/1 การตลาด"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
         <!-- Footer -->
         <footer class="mt-16 mb-8 mx-auto max-w-4xl">
@@ -505,6 +877,59 @@
             const encodedName = encodeURIComponent(name);
             imgElement.src = `https://api.dicebear.com/7.x/notionists/svg?seed=${encodedName}&backgroundColor=ffd5dc,ffdfbf,d1d4f9,c0aede,b6e3f4`;
         }
+
+        // Semester Switcher Logic
+        function switchReportTerm(mode) {
+            const term1Sec = document.getElementById('term1-section');
+            const term2Sec = document.getElementById('term2-section');
+            const card1 = document.getElementById('course-card-term1');
+            const card2 = document.getElementById('course-card-term2');
+
+            const btnAll = document.getElementById('btn-term-all');
+            const btn1 = document.getElementById('btn-term-1');
+            const btn2 = document.getElementById('btn-term-2');
+
+            const activeCls = "px-4 sm:px-5 py-2 rounded-full font-mali font-bold text-xs sm:text-sm transition-all bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-md flex items-center gap-1.5";
+            const activeTerm2Cls = "px-4 sm:px-5 py-2 rounded-full font-mali font-bold text-xs sm:text-sm transition-all bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md flex items-center gap-1.5";
+            const inactiveCls = "px-4 sm:px-5 py-2 rounded-full font-mali font-bold text-xs sm:text-sm transition-all text-slate-600 hover:bg-pink-50 flex items-center gap-1.5";
+
+            if (mode === 'term1') {
+                if (term1Sec) term1Sec.style.display = 'block';
+                if (term2Sec) term2Sec.style.display = 'none';
+                if (card1) card1.style.display = 'block';
+                if (card2) card2.style.display = 'none';
+                if (btnAll) btnAll.className = inactiveCls;
+                if (btn1) btn1.className = activeCls;
+                if (btn2) btn2.className = inactiveCls;
+            } else if (mode === 'term2') {
+                if (term1Sec) term1Sec.style.display = 'none';
+                if (term2Sec) term2Sec.style.display = 'block';
+                if (card1) card1.style.display = 'none';
+                if (card2) card2.style.display = 'block';
+                if (btnAll) btnAll.className = inactiveCls;
+                if (btn1) btn1.className = inactiveCls;
+                if (btn2) btn2.className = activeTerm2Cls;
+            } else {
+                if (term1Sec) term1Sec.style.display = 'block';
+                if (term2Sec) term2Sec.style.display = 'block';
+                if (card1) card1.style.display = 'block';
+                if (card2) card2.style.display = 'block';
+                if (btnAll) btnAll.className = activeCls;
+                if (btn1) btn1.className = inactiveCls;
+                if (btn2) btn2.className = inactiveCls;
+            }
+        }
+
+        function handleReportHash() {
+            const hash = window.location.hash;
+            if (hash === '#term2') {
+                switchReportTerm('term2');
+            } else if (hash === '#term1') {
+                switchReportTerm('term1');
+            }
+        }
+        window.addEventListener('DOMContentLoaded', handleReportHash);
+        window.addEventListener('hashchange', handleReportHash);
     </script>
 </body>
 </html>
