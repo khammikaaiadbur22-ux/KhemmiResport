@@ -246,8 +246,28 @@
         updateToggleIcons();
     }
 
-    // Optional runtime partial sync from /partials/*.html when served over HTTP/HTTPS (GitHub Pages)
+    // Runtime partial sync from /partials/*.html when served over HTTP/HTTPS (GitHub Pages)
     async function syncPartialsIfNeeded() {
+        if (window.location.protocol.startsWith('http')) {
+            try {
+                // Ensure footer partial stays synced with /partials/footer.html
+                const footerEl = document.getElementById('site-footer');
+                if (footerEl) {
+                    const res = await fetch('partials/footer.html', { cache: 'no-cache' });
+                    if (res.ok) {
+                        const html = await res.text();
+                        const temp = document.createElement('div');
+                        temp.innerHTML = html.trim();
+                        const newFooter = temp.querySelector('#site-footer');
+                        if (newFooter) {
+                            footerEl.replaceWith(newFooter);
+                        }
+                    }
+                }
+            } catch (e) {
+                // Fallback to pre-rendered static partial in HTML
+            }
+        }
         bindSidebarEvents();
         if (window.lucide) window.lucide.createIcons();
     }
