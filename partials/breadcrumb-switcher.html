@@ -1,0 +1,22 @@
+<!-- Partial: 3-Level Breadcrumb & Standardized Term Switcher -->
+<div id="site-breadcrumb-switcher" class="glass-card rounded-3xl p-4 sm:p-5 mb-8 border-2 border-slate-200/90 shadow-lg space-y-3">
+    <!-- 3-Level Breadcrumb: หน้าหลัก › [ชื่อหมวด] › ภาคเรียนที่ X/2569 -->
+    <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs sm:text-sm font-mali flex-wrap">
+        <a href="index.html" class="text-slate-500 hover:text-indigo-600 transition-colors">หน้าหลัก</a>
+        <span class="text-slate-400 select-none">›</span>
+        <a href="{{CATEGORY_HREF}}" class="text-slate-600 hover:text-indigo-600 transition-colors font-semibold">{{CATEGORY_NAME}}</a>
+        <span class="text-slate-400 select-none">›</span>
+        <span class="text-indigo-700 font-bold bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200" aria-current="page">{{CURRENT_LEVEL_3}}</span>
+    </nav>
+
+    <!-- Standardized Term Switcher: [ภาพรวม] [ภาคเรียนที่ 1/2569] [ภาคเรียนที่ 2/2569] -->
+    <div class="pt-2.5 border-t border-slate-200/70 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <span class="text-xs font-mali text-slate-500 font-semibold">เลือกการแสดงผลตามภาคเรียน:</span>
+        <div class="inline-flex items-center gap-2 flex-wrap" role="tablist" aria-label="สลับภาคเรียน">
+            <a href="{{OVERVIEW_HREF}}" class="term-switch-btn {{OVERVIEW_CLASS}}" {{OVERVIEW_ARIA}}>ภาพรวม</a>
+            <a href="{{TERM1_HREF}}" class="term-switch-btn {{TERM1_CLASS}}" {{TERM1_ARIA}}>ภาคเรียนที่ 1/2569</a>
+            <a href="{{TERM2_HREF}}" class="term-switch-btn {{TERM2_CLASS}}" {{TERM2_ARIA}}>ภาคเรียนที่ 2/2569</a>
+        </div>
+    </div>
+</div>
+

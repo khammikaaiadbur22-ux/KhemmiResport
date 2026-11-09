@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>บันทึกผลการสอน - เขมมิกา สุทธิชาติ</title>
+    <title>บันทึกผลการสอน (ภาพรวม) - เขมมิกา สุทธิชาติ</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Mali & Itim -->
@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="nav.js?v=4" defer></script>
+    <script src="nav.js?v=5" defer></script>
     <!-- Swiper CSS & JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -99,80 +99,168 @@
         <div class="blob blob-3"></div>
     </div>
 
-    <!-- Unified Sticky Glass Navigation Header -->
-    <header class="sticky top-3 sm:top-5 z-50 max-w-6xl mx-auto px-3 sm:px-6">
-        <nav class="glass-nav rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between shadow-xl transition-all">
-            <!-- Brand Logo & Title -->
-            <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none">
-                <img 
-                    src="_Banner/701.jpeg" 
-                    onerror="this.src='_Banner/701.png'; this.onerror=null;" 
-                    alt="โลโก้หน้าเว็บ" 
-                    class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover shadow-md border-2 border-white/90 group-hover:scale-105 transition-transform shrink-0"
-                >
-                <div class="flex flex-col">
-                    <span class="font-mali font-bold text-slate-800 text-sm sm:text-base leading-tight group-hover:text-amber-600 transition-colors">บันทึกผลการสอน</span>
-                    <span class="text-[10px] sm:text-xs text-slate-500 font-medium hidden xs:inline">บันทึกภาระงานและผลการปฏิบัติงาน</span>
-                </div>
-            </a>
-
-            <!-- Navigation Links -->
-            <div class="flex items-center gap-1 sm:gap-1.5 flex-wrap">
-                <a href="index.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-blue-600 active:scale-95">
-                    <i data-lucide="home" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500 shrink-0"></i>
-                    <span class="hidden lg:inline">หน้าหลัก</span>
-                </a>
-                <a href="report.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-pink-600 active:scale-95">
-                    <i data-lucide="book-open" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-500 shrink-0"></i>
-                    <span class="hidden lg:inline">รายงานการสอน</span>
-                </a>
-                <a href="log.html" class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-mali font-bold text-xs sm:text-sm shadow-md flex items-center gap-1.5 transition-all">
-                    <i data-lucide="clipboard-list" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-                    <span>บันทึกผลการสอน</span>
-                </a>
-                <a href="school.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-blue-600 active:scale-95">
-                    <i data-lucide="building-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500 shrink-0"></i>
-                    <span class="hidden lg:inline">ข้อมูลวิทยาลัย</span>
-                </a>
-                <a href="research.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-emerald-600 active:scale-95">
-                    <i data-lucide="flask-conical" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500 shrink-0"></i>
-                    <span class="hidden lg:inline">Research</span>
-                </a>
-                                <a href="evaluation.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-violet-600 active:scale-95">
-                    <i data-lucide="star" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-violet-500 shrink-0"></i>
-                    <span class="hidden lg:inline">นิเทศการสอน</span>
-                </a>
-                <a href="profile.html" class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/80 hover:bg-white text-slate-700 font-mali font-semibold text-xs sm:text-sm border border-slate-200/90 shadow-sm flex items-center gap-1.5 transition-all hover:text-pink-600 active:scale-95">
-                    <i data-lucide="user" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-500 shrink-0"></i>
-                    <span>ผู้จัดทำ</span>
-                </a>
-            </div>
-        </nav>
-    </header>
-
     <!-- Main Container -->
-    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
-        <!-- Breadcrumb & Sub-page Quick Switcher -->
-        <div class="glass-card rounded-3xl p-4 sm:p-5 mb-8 border-2 border-amber-100/90 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs sm:text-sm font-mali flex-wrap">
-                <a href="index.html" class="text-slate-500 hover:text-amber-600 flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5"></i> หน้าหลัก</a>
-                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400"></i>
-                <span class="text-amber-700 font-bold bg-amber-50 px-3 py-1 rounded-full border border-amber-200">บันทึกผลการสอน (หน้าหลักหมวดหมู่)</span>
-            </nav>
-            <div class="flex items-center gap-2 flex-wrap w-full md:w-auto">
-                <span class="px-3.5 py-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-mali font-bold text-xs shadow-md flex items-center gap-1.5">
-                    <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
-                    <span>ภาพรวมหมวดหมู่</span>
-                </span>
-                <a href="log-term1.html" class="px-4 py-2 rounded-full bg-white hover:bg-amber-50 text-amber-700 border border-amber-200 font-mali font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all">
-                    <span>หน้าย่อย: บันทึกการสอน 1/2569</span>
-                </a>
-                <a href="log-term2.html" class="px-4 py-2 rounded-full bg-white hover:bg-indigo-50 text-indigo-700 border border-indigo-200 font-mali font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all">
-                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-                    <span>หน้าย่อย: บันทึกการสอน 2/2569</span>
-                </a>
+    <!-- Partial: Unified Header & Collapsible Left Sidebar Navigation -->
+<aside id="khemmi-sidebar" aria-label="เมนูหลักด้านซ้าย">
+    <button id="khemmi-edge-toggle" type="button" title="ย่อ/ขยายแถบเมนูด้านซ้าย" aria-label="ย่อหรือขยายแถบเมนู">
+        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+    </button>
+
+    <!-- Brand Logo (Identical across all pages, links to index.html) -->
+    <div class="sb-header-inner p-3.5 border-b border-slate-200/80 flex items-center justify-between gap-2">
+        <a href="index.html" class="flex items-center gap-2.5 min-w-0 group focus:outline-none">
+            <img 
+                src="_Banner/701.jpeg" 
+                onerror="this.src='_Banner/701.png'; this.onerror=null;" 
+                alt="โลโก้รายงานฝึกประสบการณ์วิชาชีพครู นางสาวเขมมิกา สุทธิชาติ" 
+                class="w-10 h-10 rounded-2xl object-cover shadow-md border-2 border-pink-200 group-hover:scale-105 transition-transform shrink-0"
+            >
+            <div class="sb-hide-collapsed min-w-0">
+                <span class="font-mali font-bold text-slate-800 text-xs sm:text-sm block truncate group-hover:text-pink-600 transition-colors">รายงานฝึกประสบการณ์วิชาชีพครู</span>
+                <span class="text-[11px] text-slate-500 font-mali block truncate">นางสาวเขมมิกา สุทธิชาติ</span>
             </div>
+        </a>
+    </div>
+
+    <!-- 7 Fixed Main Navigation Items -->
+    <nav class="sb-scroll" aria-label="เมนูหลัก 7 หมวดหมู่">
+        <ul class="space-y-1.5" id="sidebar-nav-list">
+            <li>
+                <a href="index.html" data-nav-key="home" class="sb-nav-item flex items-center gap-3 px-3 py-2.5 rounded-2xl font-mali text-xs sm:text-sm transition-all text-slate-700 hover:bg-slate-100/90 font-semibold" >
+                    <span class="w-9 h-9 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 shadow-xs sb-icon-box"><i data-lucide="home" class="w-4 h-4"></i></span>
+                    <span class="sb-hide-collapsed truncate">หน้าหลัก</span>
+                </a>
+            </li>
+            <li class="sb-group" data-group-key="report">
+                <a href="report.html" data-nav-key="report" class="sb-nav-item flex items-center justify-between gap-2 px-3 py-2.5 rounded-2xl font-mali text-xs sm:text-sm transition-all text-slate-700 hover:bg-slate-100/90 font-semibold" >
+                    <span class="flex items-center gap-3 min-w-0">
+                        <span class="w-9 h-9 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center shrink-0 shadow-xs sb-icon-box"><i data-lucide="book-open" class="w-4 h-4"></i></span>
+                        <span class="sb-hide-collapsed truncate">แผนการสอน</span>
+                    </span>
+                    <i data-lucide="chevron-down" class="sb-chevron sb-hide-collapsed w-4 h-4 shrink-0"></i>
+                </a>
+                <div class="sb-submenu">
+                    <a href="report.html" data-sub-href="report.html" class="sb-sub-link block px-3 py-1.5 rounded-xl text-xs font-mali mb-1 text-slate-600 hover:bg-slate-100/80">ภาพรวม</a>
+                    <a href="report-term1.html" data-sub-href="report-term1.html" class="sb-sub-link block px-3 py-1.5 rounded-xl text-xs font-mali mb-1 text-slate-600 hover:bg-slate-100/80">ภาคเรียนที่ 1/2569</a>
+                    <a href="report-term2.html" data-sub-href="report-term2.html" class="sb-sub-link block px-3 py-1.5 rounded-xl text-xs font-mali text-slate-600 hover:bg-slate-100/80">ภาคเรียนที่ 2/2569</a>
+                </div>
+            </li>
+            <li class="sb-group" data-group-key="log">
+                <a href="log.html" data-nav-key="log" class="sb-nav-item flex items-center justify-between gap-2 px-3 py-2.5 rounded-2xl font-mali text-xs sm:text-sm transition-all active bg-gradient-to-r from-pink-500 to-indigo-600 text-white font-bold shadow-md" aria-current="page">
+                    <span class="flex items-center gap-3 min-w-0">
+                        <span class="w-9 h-9 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0 shadow-xs sb-icon-box"><i data-lucide="clipboard-list" class="w-4 h-4"></i></span>
+                        <span class="sb-hide-collapsed truncate">บันทึกผลการสอน</span>
+                    </span>
+                    <i data-lucide="chevron-down" class="sb-chevron sb-hide-collapsed w-4 h-4 shrink-0"></i>
+                </a>
+                <div class="sb-submenu">
+                    <a href="log.html" data-sub-href="log.html" class="sb-sub-link block px-3 py-1.5 rounded-xl text-xs font-mali mb-1 active bg-indigo-50 text-indigo-700 font-bold border border-indigo-200">ภาพรวม</a>
+                    <a href="log-term1.html" data-sub-href="log-term1.html" class="sb-sub-link block px-3 py-1.5 rounded-xl text-xs font-mali mb-1 text-slate-600 hover:bg-slate-100/80">ภาคเรียนที่ 1/2569</a>
+                    <a href="log-term2.html" data-sub-href="log-term2.html" class="sb-sub-link block px-3 py-1.5 rounded-xl text-xs font-mali text-slate-600 hover:bg-slate-100/80">ภาคเรียนที่ 2/2569</a>
+                </div>
+            </li>
+            <li class="sb-group" data-group-key="research">
+                <a href="research.html" data-nav-key="research" class="sb-nav-item flex items-center justify-between gap-2 px-3 py-2.5 rounded-2xl font-mali text-xs sm:text-sm transition-all text-slate-700 hover:bg-slate-100/90 font-semibold" >
+                    <span class="flex items-center gap-3 min-w-0">
+                        <span class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 shadow-xs sb-icon-box"><i data-lucide="flask-conical" class="w-4 h-4"></i></span>
+                        <span class="sb-hide-collapsed truncate">งานวิจัยในชั้นเรียน</span>
+                    </span>
+                    <i data-lucide="chevron-down" class="sb-chevron sb-hide-collapsed w-4 h-4 shrink-0"></i>
+                </a>
+                <div class="sb-submenu">
+                    <a href="research.html" data-sub-href="research.html" class="sb-sub-link block px-3 py-1.5 rounded-xl text-xs font-mali mb-1 text-slate-600 hover:bg-slate-100/80">ภาพรวม</a>
+                    <a href="research-term1.html" data-sub-href="research-term1.html" class="sb-sub-link block px-3 py-1.5 rounded-xl text-xs font-mali mb-1 text-slate-600 hover:bg-slate-100/80">ภาคเรียนที่ 1/2569</a>
+                    <a href="research-term2.html" data-sub-href="research-term2.html" class="sb-sub-link block px-3 py-1.5 rounded-xl text-xs font-mali text-slate-600 hover:bg-slate-100/80">ภาคเรียนที่ 2/2569</a>
+                </div>
+            </li>
+            <li class="sb-group" data-group-key="evaluation">
+                <a href="evaluation.html" data-nav-key="evaluation" class="sb-nav-item flex items-center justify-between gap-2 px-3 py-2.5 rounded-2xl font-mali text-xs sm:text-sm transition-all text-slate-700 hover:bg-slate-100/90 font-semibold" >
+                    <span class="flex items-center gap-3 min-w-0">
+                        <span class="w-9 h-9 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center shrink-0 shadow-xs sb-icon-box"><i data-lucide="star" class="w-4 h-4"></i></span>
+                        <span class="sb-hide-collapsed truncate">การนิเทศการสอน</span>
+                    </span>
+                    <i data-lucide="chevron-down" class="sb-chevron sb-hide-collapsed w-4 h-4 shrink-0"></i>
+                </a>
+                <div class="sb-submenu">
+                    <a href="evaluation.html" data-sub-href="evaluation.html" class="sb-sub-link block px-3 py-1.5 rounded-xl text-xs font-mali mb-1 text-slate-600 hover:bg-slate-100/80">ภาพรวม</a>
+                    <a href="evaluation-term1.html" data-sub-href="evaluation-term1.html" class="sb-sub-link block px-3 py-1.5 rounded-xl text-xs font-mali mb-1 text-slate-600 hover:bg-slate-100/80">ภาคเรียนที่ 1/2569</a>
+                    <a href="evaluation-term2.html" data-sub-href="evaluation-term2.html" class="sb-sub-link block px-3 py-1.5 rounded-xl text-xs font-mali text-slate-600 hover:bg-slate-100/80">ภาคเรียนที่ 2/2569</a>
+                </div>
+            </li>
+            <li>
+                <a href="school.html" data-nav-key="school" class="sb-nav-item flex items-center gap-3 px-3 py-2.5 rounded-2xl font-mali text-xs sm:text-sm transition-all text-slate-700 hover:bg-slate-100/90 font-semibold" >
+                    <span class="w-9 h-9 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center shrink-0 shadow-xs sb-icon-box"><i data-lucide="building-2" class="w-4 h-4"></i></span>
+                    <span class="sb-hide-collapsed truncate">ข้อมูลวิทยาลัย</span>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html" data-nav-key="profile" class="sb-nav-item flex items-center gap-3 px-3 py-2.5 rounded-2xl font-mali text-xs sm:text-sm transition-all text-slate-700 hover:bg-slate-100/90 font-semibold" >
+                    <span class="w-9 h-9 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center shrink-0 shadow-xs sb-icon-box"><i data-lucide="user" class="w-4 h-4"></i></span>
+                    <span class="sb-hide-collapsed truncate">ผู้จัดทำ</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Collapse / Expand Sidebar Footer -->
+    <div class="p-2.5 border-t border-slate-200/80 bg-white/70">
+        <button id="khemmi-bottom-toggle" type="button" class="w-full flex items-center justify-center gap-2 py-2 px-2.5 rounded-xl bg-slate-100 hover:bg-indigo-50 text-slate-700 hover:text-indigo-700 font-mali font-bold text-xs border border-slate-200/80 transition-all cursor-pointer">
+            <i data-lucide="chevrons-left" class="w-4 h-4"></i>
+            <span class="sb-hide-collapsed">ย่อแถบเมนูด้านซ้าย</span>
+        </button>
+    </div>
+</aside>
+
+<!-- Unified Top Header Bar with 7 Fixed Menu Items -->
+<header id="site-header" class="sticky top-3 sm:top-5 z-40 max-w-6xl mx-auto px-3 sm:px-6 mb-4">
+    <nav aria-label="แถบเมนูนำทางส่วนหัว" class="glass-nav rounded-3xl px-4 sm:px-6 py-2.5 sm:py-3 flex flex-col lg:flex-row items-center justify-between gap-3 shadow-xl">
+        <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none">
+            <img 
+                src="_Banner/701.jpeg" 
+                onerror="this.src='_Banner/701.png'; this.onerror=null;" 
+                alt="โลโก้รายงานฝึกประสบการณ์วิชาชีพครู นางสาวเขมมิกา สุทธิชาติ" 
+                class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover shadow-md border-2 border-white/90 group-hover:scale-105 transition-transform shrink-0"
+            >
+            <div class="flex flex-col">
+                <span class="font-mali font-bold text-slate-800 text-sm sm:text-base leading-tight group-hover:text-pink-600 transition-colors">รายงานฝึกประสบการณ์วิชาชีพครู</span>
+                <span class="text-[10px] sm:text-xs text-slate-500 font-mali font-medium">นางสาวเขมมิกา สุทธิชาติ</span>
+            </div>
+        </a>
+
+        <div class="flex items-center gap-1 sm:gap-1.5 flex-wrap justify-center">
+            <a href="index.html" class="px-2.5 sm:px-3 py-1.5 rounded-full font-mali text-xs sm:text-sm flex items-center gap-1.5 transition-all bg-white/85 hover:bg-white text-slate-700 font-semibold border border-slate-200/90 shadow-xs" ><i data-lucide="home" class="w-3.5 h-3.5 shrink-0"></i><span>หน้าหลัก</span></a>
+            <a href="report.html" class="px-2.5 sm:px-3 py-1.5 rounded-full font-mali text-xs sm:text-sm flex items-center gap-1.5 transition-all bg-white/85 hover:bg-white text-slate-700 font-semibold border border-slate-200/90 shadow-xs" ><i data-lucide="book-open" class="w-3.5 h-3.5 shrink-0"></i><span>แผนการสอน</span></a>
+            <a href="log.html" class="px-2.5 sm:px-3 py-1.5 rounded-full font-mali text-xs sm:text-sm flex items-center gap-1.5 transition-all active bg-gradient-to-r from-pink-500 to-indigo-600 text-white font-bold shadow-md" aria-current="page"><i data-lucide="clipboard-list" class="w-3.5 h-3.5 shrink-0"></i><span>บันทึกผลการสอน</span></a>
+            <a href="research.html" class="px-2.5 sm:px-3 py-1.5 rounded-full font-mali text-xs sm:text-sm flex items-center gap-1.5 transition-all bg-white/85 hover:bg-white text-slate-700 font-semibold border border-slate-200/90 shadow-xs" ><i data-lucide="flask-conical" class="w-3.5 h-3.5 shrink-0"></i><span>งานวิจัยในชั้นเรียน</span></a>
+            <a href="evaluation.html" class="px-2.5 sm:px-3 py-1.5 rounded-full font-mali text-xs sm:text-sm flex items-center gap-1.5 transition-all bg-white/85 hover:bg-white text-slate-700 font-semibold border border-slate-200/90 shadow-xs" ><i data-lucide="star" class="w-3.5 h-3.5 shrink-0"></i><span>การนิเทศการสอน</span></a>
+            <a href="school.html" class="px-2.5 sm:px-3 py-1.5 rounded-full font-mali text-xs sm:text-sm flex items-center gap-1.5 transition-all bg-white/85 hover:bg-white text-slate-700 font-semibold border border-slate-200/90 shadow-xs" ><i data-lucide="building-2" class="w-3.5 h-3.5 shrink-0"></i><span>ข้อมูลวิทยาลัย</span></a>
+            <a href="profile.html" class="px-2.5 sm:px-3 py-1.5 rounded-full font-mali text-xs sm:text-sm flex items-center gap-1.5 transition-all bg-white/85 hover:bg-white text-slate-700 font-semibold border border-slate-200/90 shadow-xs" ><i data-lucide="user" class="w-3.5 h-3.5 shrink-0"></i><span>ผู้จัดทำ</span></a>
         </div>
+    </nav>
+</header>
+
+    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+        <!-- Partial: 3-Level Breadcrumb & Standardized Term Switcher -->
+<div id="site-breadcrumb-switcher" class="glass-card rounded-3xl p-4 sm:p-5 mb-8 border-2 border-slate-200/90 shadow-lg space-y-3">
+    <!-- 3-Level Breadcrumb: หน้าหลัก › [ชื่อหมวด] › ภาคเรียนที่ X/2569 -->
+    <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs sm:text-sm font-mali flex-wrap">
+        <a href="index.html" class="text-slate-500 hover:text-indigo-600 transition-colors">หน้าหลัก</a>
+        <span class="text-slate-400 select-none">›</span>
+        <a href="log.html" class="text-slate-600 hover:text-indigo-600 transition-colors font-semibold">บันทึกผลการสอน</a>
+        <span class="text-slate-400 select-none">›</span>
+        <span class="text-indigo-700 font-bold bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200" aria-current="page">ภาพรวม</span>
+    </nav>
+
+    <!-- Standardized Term Switcher: [ภาพรวม] [ภาคเรียนที่ 1/2569] [ภาคเรียนที่ 2/2569] -->
+    <div class="pt-2.5 border-t border-slate-200/70 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <span class="text-xs font-mali text-slate-500 font-semibold">เลือกการแสดงผลตามภาคเรียน:</span>
+        <div class="inline-flex items-center gap-2 flex-wrap" role="tablist" aria-label="สลับภาคเรียน">
+            <a href="log.html" class="term-switch-btn active px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-mali font-bold text-xs shadow-md transition-all" aria-current="page">ภาพรวม</a>
+            <a href="log-term1.html" class="term-switch-btn px-4 py-2 rounded-full bg-white hover:bg-indigo-50 text-slate-700 hover:text-indigo-700 border border-slate-200 font-mali font-bold text-xs shadow-xs transition-all" >ภาคเรียนที่ 1/2569</a>
+            <a href="log-term2.html" class="term-switch-btn px-4 py-2 rounded-full bg-white hover:bg-indigo-50 text-slate-700 hover:text-indigo-700 border border-slate-200 font-mali font-bold text-xs shadow-xs transition-all" >ภาคเรียนที่ 2/2569</a>
+        </div>
+    </div>
+</div>
 
         <!-- Cover Banner Section (_Banner/6.png) -->
         <section class="w-full mb-12 sm:mb-14 relative">
@@ -198,7 +286,7 @@
                     <span>โครงสร้างหน้าย่อย (Sub-pages Navigation)</span>
                 </div>
                 <h1 class="text-xl sm:text-3xl font-bold font-mali text-slate-800 block">
-                    เลือกเข้าชมหน้าย่อย: บันทึกผลการสอนตามภาคเรียน
+                    เลือกเข้าชม: บันทึกผลการสอนตามภาคเรียน
                 </h1>
                 <p class="text-slate-500 text-xs sm:text-sm mt-2 font-mali">
                     แยกหน้าแสดงผลสมุดบันทึกภาระงานรายสัปดาห์และตาราง Google Sheets ออกเป็น 2 หน้าย่อยตามภาคเรียน
@@ -235,7 +323,7 @@
                     </div>
                     <a href="log-term1.html" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-mali font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition-all active:scale-95">
                         <i data-lucide="folder-open" class="w-4 h-4"></i>
-                        <span>เข้าสู่หน้าย่อย: บันทึกผลการสอน 1/2569</span>
+                        <span>เปิดดูข้อมูล: บันทึกผลการสอน 1/2569</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </article>
@@ -269,21 +357,32 @@
                     </div>
                     <a href="log-term2.html" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-mali font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition-all active:scale-95">
                         <i data-lucide="sparkles" class="w-4 h-4"></i>
-                        <span>เข้าสู่หน้าย่อย: บันทึกผลการสอน 2/2569</span>
+                        <span>เปิดดูข้อมูล: บันทึกผลการสอน 2/2569</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </article>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="mt-12 mb-8 mx-auto max-w-4xl">
-            <div class="glass-card rounded-[2.5rem] p-6 sm:p-10 text-center flex flex-col items-center">
-                <h2 class="font-mali font-bold text-xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 mb-2">นางสาวเขมมิกา สุทธิชาติ</h2>
-                <p class="text-slate-500 font-mali font-medium mb-3 bg-white/70 px-4 py-1 rounded-full text-xs sm:text-sm border border-slate-200/60">รหัสนักศึกษา 6602041620041</p>
-                <p class="text-xs sm:text-sm text-slate-500 font-mali">ภาควิชาคอมพิวเตอร์ศึกษา คณะครุศาสตร์อุตสาหกรรม มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (มจพ.)</p>
-            </div>
-        </footer>
+        <!-- Partial: Standardized Unified Footer -->
+<footer id="site-footer" class="mt-14 mb-8 mx-auto max-w-4xl">
+    <div class="glass-card rounded-[2.5rem] p-6 sm:p-10 text-center relative overflow-hidden flex flex-col items-center">
+        <h2 class="font-mali font-bold text-xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 mb-2">
+            นางสาวเขมมิกา สุทธิชาติ
+        </h2>
+        <p class="text-slate-600 font-mali font-semibold mb-4 bg-white/70 px-4 py-1.5 rounded-full text-xs sm:text-sm inline-block border border-slate-200/80 shadow-xs">
+            นักศึกษาชั้นปีที่ 4 • รหัสนักศึกษา 6602041620041
+        </p>
+        <div class="w-full max-w-lg h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent mb-4"></div>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-mali">
+            ภาควิชาคอมพิวเตอร์ศึกษา คณะครุศาสตร์อุตสาหกรรม มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (มจพ.)
+        </p>
+    </div>
+</footer>
+
+
+
+
     </main>
     <script>
         lucide.createIcons();
